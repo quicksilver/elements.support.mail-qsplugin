@@ -18,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7F6E34010C10F58F00303BFE /* element.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = element.xml; sourceTree = "<group>"; };
 		7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSMailMediator.h; sourceTree = "<group>"; };
 		7F839CCE07CCD6CF003F2874 /* QSEmailActions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSEmailActions.m; sourceTree = "<group>"; };
 		7F839CD107CCD6CF003F2874 /* QSEmailActions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSEmailActions.h; sourceTree = "<group>"; };
@@ -66,7 +65,6 @@
 			children = (
 				7FB39971083FDEA60053AB86 /* QSMailSupportPrefPane.nib */,
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
-				7F6E34010C10F58F00303BFE /* element.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
