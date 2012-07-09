@@ -12,10 +12,16 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>E-mail Support</string>
+	<key>CFBundleDisplayName</key>
+	<string>E-mail Support</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>90</string>
+	<string>95</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.0</string>
 	<key>NSPrincipalClass</key>
 	<string>QSEmailSupport</string>
 	<key>QSActions</key>
@@ -123,7 +129,7 @@
 			<key>name</key>
 			<string>Compose Email</string>
 			<key>rankModification</key>
-			<real>0.10000000000000001</real>
+			<real>0.1</real>
 			<key>validatesObjects</key>
 			<false/>
 		</dict>
