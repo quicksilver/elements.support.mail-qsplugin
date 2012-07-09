@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7F839CD407CCD6CF003F2874 /* QSEmailActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F839CCE07CCD6CF003F2874 /* QSEmailActions.m */; };
-		7F839CD607CCD6CF003F2874 /* QSDirectMailMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F839CD007CCD6CF003F2874 /* QSDirectMailMediator.m */; };
 		7F839CD807CCD6CF003F2874 /* QSMailMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F839CD207CCD6CF003F2874 /* QSMailMediator.m */; };
 		7F839CD907CCD6E5003F2874 /* QSMailMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */; };
 		7F839D0807CCD7CB003F2874 /* Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F839D0707CCD7CB003F2874 /* Message.framework */; };
@@ -22,8 +21,6 @@
 		7F6E34010C10F58F00303BFE /* element.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = element.xml; sourceTree = "<group>"; };
 		7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSMailMediator.h; sourceTree = "<group>"; };
 		7F839CCE07CCD6CF003F2874 /* QSEmailActions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSEmailActions.m; sourceTree = "<group>"; };
-		7F839CCF07CCD6CF003F2874 /* QSDirectMailMediator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSDirectMailMediator.h; sourceTree = "<group>"; };
-		7F839CD007CCD6CF003F2874 /* QSDirectMailMediator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSDirectMailMediator.m; sourceTree = "<group>"; };
 		7F839CD107CCD6CF003F2874 /* QSEmailActions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSEmailActions.h; sourceTree = "<group>"; };
 		7F839CD207CCD6CF003F2874 /* QSMailMediator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSMailMediator.m; sourceTree = "<group>"; };
 		7F839D0707CCD7CB003F2874 /* Message.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Message.framework; path = /System/Library/Frameworks/Message.framework; sourceTree = "<absolute>"; };
@@ -96,8 +93,6 @@
 			children = (
 				7F839CD107CCD6CF003F2874 /* QSEmailActions.h */,
 				7F839CCE07CCD6CF003F2874 /* QSEmailActions.m */,
-				7F839CCF07CCD6CF003F2874 /* QSDirectMailMediator.h */,
-				7F839CD007CCD6CF003F2874 /* QSDirectMailMediator.m */,
 				7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */,
 				7F839CD207CCD6CF003F2874 /* QSMailMediator.m */,
 			);
@@ -211,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F839CD407CCD6CF003F2874 /* QSEmailActions.m in Sources */,
-				7F839CD607CCD6CF003F2874 /* QSDirectMailMediator.m in Sources */,
 				7F839CD807CCD6CF003F2874 /* QSMailMediator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
