@@ -191,6 +191,10 @@
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
+		<key>categories</key>
+		<array>
+			<string>Mail &amp; Chat</string>
+		</array>
 		<key>hidden</key>
 		<true/>
 		<key>qsversion</key>
