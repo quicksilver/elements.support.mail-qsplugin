@@ -4,24 +4,24 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>E-mail Support</string>
 	<key>CFBundleExecutable</key>
-	<string>Email Support</string>
+	<string>E-mail Support</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>E-mail Support</string>
-	<key>CFBundleDisplayName</key>
-	<string>E-mail Support</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>95</string>
-	<key>CFBundleShortVersionString</key>
-	<string>2.0.0</string>
 	<key>NSPrincipalClass</key>
 	<string>QSEmailSupport</string>
 	<key>QSActions</key>
@@ -197,8 +197,6 @@
 		</array>
 		<key>hidden</key>
 		<true/>
-		<key>qsversion</key>
-		<string>2E00</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
