@@ -10,7 +10,6 @@
 		7F839CD407CCD6CF003F2874 /* QSEmailActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F839CCE07CCD6CF003F2874 /* QSEmailActions.m */; };
 		7F839CD807CCD6CF003F2874 /* QSMailMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F839CD207CCD6CF003F2874 /* QSMailMediator.m */; };
 		7F839CD907CCD6E5003F2874 /* QSMailMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */; };
-		7F839D0807CCD7CB003F2874 /* Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F839D0707CCD7CB003F2874 /* Message.framework */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 		D4A32F1C15AB5FC10055469A /* QSMailSupportPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */; };
 		D4BB97F0159DFE9A00415FA2 /* Quicksilver.pch in Headers */ = {isa = PBXBuildFile; fileRef = D4BB97EA159DFE9A00415FA2 /* Quicksilver.pch */; };
@@ -60,7 +59,6 @@
 		7F839CCE07CCD6CF003F2874 /* QSEmailActions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSEmailActions.m; sourceTree = "<group>"; };
 		7F839CD107CCD6CF003F2874 /* QSEmailActions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSEmailActions.h; sourceTree = "<group>"; };
 		7F839CD207CCD6CF003F2874 /* QSMailMediator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSMailMediator.m; sourceTree = "<group>"; };
-		7F839D0707CCD7CB003F2874 /* Message.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Message.framework; path = /System/Library/Frameworks/Message.framework; sourceTree = "<absolute>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1AC9740486D14A00FE50C9 /* E-mail Support.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-mail Support.qsplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMailSupportPrefPane.xib; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			files = (
 				D4E1B2EF15AE6C2B0075F776 /* MailCore.framework in Frameworks */,
 				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
-				7F839D0807CCD7CB003F2874 /* Message.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +118,6 @@
 		2E58F364FFB232C311CA0CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F839D0707CCD7CB003F2874 /* Message.framework */,
 				DD92D38A0106425D02CA0E72 /* Cocoa.framework */,
 			);
 			name = Frameworks;
