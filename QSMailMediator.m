@@ -5,7 +5,7 @@ NSString *defaultMailClientID(){
 	OSStatus err; 
 	err = LSGetApplicationForURL((CFURLRef)[NSURL URLWithString: @"mailto:"], kLSRolesAll, NULL, (CFURLRef *)&appURL); 
 	if (err != noErr) {
-		NSLog(@"No default mail client found. Error %ld", err); 
+		NSLog(@"No default mail client found. Error %ld", (long)err); 
 		return nil;
 	}
 	NSDictionary *infoDict = (NSDictionary *)CFBundleCopyInfoDictionaryForURL((CFURLRef)appURL);
@@ -68,6 +68,11 @@ NSString *defaultMailClientID(){
 {
 	[mailScript release];
 	mailScript = [newMailScript retain];
+}
+
+- (NSDictionary *)smtpServerDetails
+{
+	return nil;
 }
 
 @end
