@@ -1,6 +1,5 @@
 #import "QSEmailActions.h"
 #import "QSMailMediator.h"
-#import <ApplicationServices/ApplicationServices.h> 
 
 # define kEmailAction @"QSEmailAction"
 # define kEmailItemAction @"QSEmailItemAction"
