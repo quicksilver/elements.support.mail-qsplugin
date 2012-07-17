@@ -173,8 +173,8 @@
 		[message release];
 		if ( !sent )
 		{
+			NSLog(@"Message could not be sent: %@", error);
 			NSBeep();
-			NSLog(@"Send Failed");
 		}
 		else{
 			NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
