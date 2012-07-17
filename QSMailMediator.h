@@ -7,7 +7,7 @@ NSString *preferredMailMediatorID();
 // keys
 #define QSMailMediatorServer @"HostName"
 #define QSMailMediatorPort @"PortNumber"
-#define QSMailMediatorSSL @"SSLEnabled"
+#define QSMailMediatorTLS @"UseTLS"
 #define QSMailMediatorAuthenticate @"ShouldUseAuthentication"
 #define QSMailMediatorUsername @"Username"
 #define QSMailMediatorPassword @"Password"
