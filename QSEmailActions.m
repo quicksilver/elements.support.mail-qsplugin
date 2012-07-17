@@ -165,7 +165,7 @@
 		
 		// set up the connection
 		NSDictionary *serverDetails = [mediator smtpServerDetails];
-		NSString *server = [serverDetails objectForKey:@"Hostname"];
+		NSString *server = [serverDetails objectForKey:QSMailMediatorServer];
 		
 		// send the message
 		NSError *error;

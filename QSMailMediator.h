@@ -4,17 +4,24 @@
 NSString *preferredMailMediatorID();
 #define kQSMailMediators @"QSMailMediators"
 
+// keys
+#define QSMailMediatorServer @"HostName"
+#define QSMailMediatorPort @"PortNumber"
+#define QSMailMediatorSSL @"SSLEnabled"
+#define QSMailMediatorAuthenticate @"ShouldUseAuthentication"
+#define QSMailMediatorUsername @"Username"
+#define QSMailMediatorPassword @"Password"
 
 @protocol QSMailMediator
 - (void) sendEmailTo:(NSArray *)addresses from:(NSString *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow;
 - (NSDictionary *)smtpServerDetails;
-/* smtpServerDetails keys (only Hostname is required)
-     Hostname - the name or IP of the server (string)
-     PortNumber - the port to connect to (string)
-     SSLEnabled - @"YES" or @"NO" (string)
-     ShouldUseAuthentication - @"YES" or @"NO" (string)
-     Username - username for authentication (string)
-     Password - password for authentication (string)
+/* smtpServerDetails keys (only QSMailMediatorServer is required)
+     QSMailMediatorServer - the name or IP of the server (string)
+     QSMailMediatorPort - the port to connect to (string)
+     QSMailMediatorSSL - @"YES" or @"NO" (string)
+     QSMailMediatorAuthenticate - @"YES" or @"NO" (string)
+     QSMailMediatorUsername - username for authentication (string)
+     QSMailMediatorPassword - password for authentication (string)
 */
 @end
 
