@@ -44,12 +44,7 @@
 #pragma mark - Quicksilver Actions
 
 - (QSObject *) sendEmailTo:(QSObject *)dObject{
-    NSArray *addresses=[dObject arrayForType:QSEmailAddressType];
-	NSString *addressesString=[addresses componentsJoinedByString:@","];
-	addressesString=[addressesString URLEncoding];
-	NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@",addressesString]];
-	if (!url) NSLog(@"Badurl: %@",[NSString stringWithFormat:@"mailto:%@",addressesString]);
-	[[NSWorkspace sharedWorkspace] openURL:url];
+	[self composeEmailTo:dObject withItem:nil sendNow:NO direct:NO];
     return nil;
 }
 
@@ -101,14 +96,22 @@
 		} else {
 			body = [iObject stringValue];
 		}
+	} else if (!iObject) {
+		subject = @"";
+		body = @"";
 	}
 
+	CTCoreAddress *from = [self defaultEmailAddress];
 	if (direct) {
-		CTCoreAddress *from = [self defaultEmailAddress];
 		[self sendMessageTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
 	} else {
-		NSString *from = [[self defaultEmailAddress] email];
-		[[QSMailMediator defaultMediator]sendEmailTo:[addresses allObjects] from:from subject:subject body:body attachments:attachments sendNow:sendNow];
+		NSString *fromString = nil;
+		if ([from name]) {
+			fromString = [NSString stringWithFormat:@"%@ <%@>", [from name], [from email]];
+		} else {
+			fromString = [from email];
+		}
+		[[QSMailMediator defaultMediator]sendEmailTo:[addresses allObjects] from:fromString subject:subject body:body attachments:attachments sendNow:sendNow];
 	}
 	return nil;
 }
