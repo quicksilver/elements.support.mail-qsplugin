@@ -166,14 +166,20 @@
 		// set up the connection
 		NSDictionary *serverDetails = [mediator smtpServerDetails];
 		NSString *server = [serverDetails objectForKey:QSMailMediatorServer];
+		NSUInteger port = [serverDetails objectForKey:QSMailMediatorPort] ? [[serverDetails objectForKey:QSMailMediatorPort] integerValue] : 25;
+		BOOL tls = [[serverDetails objectForKey:QSMailMediatorTLS] isEqualToString:@"YES"];
+		BOOL authn = [[serverDetails objectForKey:QSMailMediatorAuthenticate] isEqualToString:@"YES"];
+		NSString *username = [serverDetails objectForKey:QSMailMediatorUsername];
+		NSString *password = [serverDetails objectForKey:QSMailMediatorPassword];
+		//NSLog(@"params - s: %@, p: %ld, u: %@, p: %@, tls: %d, auth: %d", server, (long)port, username, @"obscured", tls, authn);
 		
 		// send the message
 		NSError *error;
-		BOOL sent = [CTSMTPConnection sendMessage:message server:server username:nil password:nil port:25 useTLS:NO useAuth:NO error:&error];
+		BOOL sent = [CTSMTPConnection sendMessage:message server:server username:username password:password port:port useTLS:tls useAuth:authn error:&error];
 		[message release];
 		if ( !sent )
 		{
-			NSLog(@"Message could not be sent: %@", error);
+			NSLog(@"Message could not be sent: %@", [error localizedDescription]);
 			NSBeep();
 		}
 		else{
