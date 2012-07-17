@@ -82,7 +82,7 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	if ([iObject containsType:QSFilePathType]) {
 		subject = [NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileSubject"], [iObject name]];
-		body = [[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileBody"], [iObject name]]stringByAppendingString:@"\r\r"];
+		body = [[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileBody"], [iObject name]]stringByAppendingString:@"\n\n"];
 		attachments = [iObject arrayForType:QSFilePathType];
 	} else if ([[iObject types] containsObject:NSStringPboardType]) {
 		NSString *string = [iObject stringValue];
@@ -97,7 +97,7 @@
 			subject = [subject substringToIndex:255];
 		}
 		if ([components count]>1) {
-			body = [[components subarrayWithRange:NSMakeRange(1,[components count]-1)] componentsJoinedByString:@"\r"];
+			body = [[components subarrayWithRange:NSMakeRange(1, [components count] - 1)] componentsJoinedByString:@"\n"];
 		} else {
 			body = [iObject stringValue];
 		}

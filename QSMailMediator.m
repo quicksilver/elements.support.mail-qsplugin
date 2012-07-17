@@ -35,7 +35,7 @@ NSString *defaultMailClientID(){
 	}
 	
 #ifdef DEBUG
-	NSLog(@"Sending Email:\r     To: %@\rSubject: %@\r   Body: %@\rAttachments: %@\r",[addresses componentsJoinedByString:@", "], subject, body, [pathArray componentsJoinedByString:@"\r"]);
+	NSLog(@"Sending Email:\n     To: %@\nSubject: %@\n   Body: %@\nAttachments: %@\n",[addresses componentsJoinedByString:@", "], subject, body, [pathArray componentsJoinedByString:@"\n"]);
 #endif
 	
 	NSDictionary *errorDict = nil;
