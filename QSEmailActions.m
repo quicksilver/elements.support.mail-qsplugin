@@ -76,37 +76,36 @@
 		name = [recipient name] ? [recipient name] : @"";
 		[addresses addObject:[CTCoreAddress addressWithName:[recipient name] email:[recipient objectForType:QSEmailAddressType]]];
 	}
-     NSString *subject=nil;
-    NSString *body=nil;
-    NSArray *attachments=nil;
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    if ([iObject containsType:QSFilePathType]){
-        subject=[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileSubject"],[iObject name]];
-        body=[[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileBody"],[iObject name]]stringByAppendingString:@"\r\r"];
-        attachments=[iObject arrayForType:QSFilePathType];
-    } else if ([[iObject types] containsObject:NSStringPboardType]){
-		NSString *string=[iObject stringValue];
-		NSString *delimiter=@"\n";
-		NSArray *components=[string componentsSeparatedByString:delimiter];
-		if (![components count]<2){
-			delimiter=@">>";
-			components=[string componentsSeparatedByString:delimiter];
+	NSString *subject = nil;
+	NSString *body = nil;
+	NSArray *attachments = nil;
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if ([iObject containsType:QSFilePathType]) {
+		subject = [NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileSubject"], [iObject name]];
+		body = [[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileBody"], [iObject name]]stringByAppendingString:@"\r\r"];
+		attachments = [iObject arrayForType:QSFilePathType];
+	} else if ([[iObject types] containsObject:NSStringPboardType]) {
+		NSString *string = [iObject stringValue];
+		NSString *delimiter = @"\n";
+		NSArray *components = [string componentsSeparatedByString:delimiter];
+		if (![components count] < 2) {
+			delimiter = @">>";
+			components = [string componentsSeparatedByString:delimiter];
 		}
-		subject=[components objectAtIndex:0];
-		if ([subject length]>255)subject=[subject substringToIndex:255];
-		
-		if ([components count]>1){
-			body=[[components subarrayWithRange:NSMakeRange(1,[components count]-1)]componentsJoinedByString:@"\r"];
-		}else{
-			body=[iObject stringValue];
-			
+		subject = [components objectAtIndex:0];
+		if ([subject length] > 255) {
+			subject = [subject substringToIndex:255];
+		}
+		if ([components count]>1) {
+			body = [[components subarrayWithRange:NSMakeRange(1,[components count]-1)] componentsJoinedByString:@"\r"];
+		} else {
+			body = [iObject stringValue];
 		}
 	}
-	
+
 	if (direct) {
 		CTCoreAddress *from = [self defaultEmailAddress];
 		[self sendMessageTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
-		
 	} else {
 		NSString *from = [[self defaultEmailAddress] email];
 		[[QSMailMediator defaultMediator]sendEmailTo:[addresses allObjects] from:from subject:subject body:body attachments:attachments sendNow:sendNow];
