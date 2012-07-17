@@ -184,6 +184,8 @@
 	</dict>
 	<key>QSDefaults</key>
 	<dict>
+		<key>QSMailActionCustomFrom</key>
+		<string>Home</string>
 		<key>QSMailActionFileBody</key>
 		<string>Your files are attached to this message</string>
 		<key>QSMailActionFileSubject</key>
