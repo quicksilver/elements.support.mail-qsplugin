@@ -68,16 +68,18 @@
     return [self composeEmailTo:(QSObject *)dObject withItem:(QSObject *)iObject sendNow:(BOOL)NO direct:NO];
 }
 
-- (QSObject *) composeEmailTo:(QSObject *)dObject withItem:(QSObject *)iObject sendNow:(BOOL)sendNow direct:(BOOL)direct
+- (QSObject *)composeEmailTo:(QSObject *)dObject withItem:(QSObject *)iObject sendNow:(BOOL)sendNow direct:(BOOL)direct
 {
-    NSArray *addresses=[dObject arrayForType:QSEmailAddressType];
-    NSString *subject=nil;
+	NSMutableSet *addresses = [NSMutableSet set];
+	NSString *name = nil;
+	for (QSObject *recipient in [dObject splitObjects]) {
+		name = [recipient name] ? [recipient name] : @"";
+		[addresses addObject:[CTCoreAddress addressWithName:[recipient name] email:[recipient objectForType:QSEmailAddressType]]];
+	}
+     NSString *subject=nil;
     NSString *body=nil;
     NSArray *attachments=nil;
-//	iObject = (QSObject *)[iObject resolvedObject];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-	NSString *from=[defaults objectForKey:@"QSMailActionCustomFrom"];
-	if (![from length])from=nil;
     if ([iObject containsType:QSFilePathType]){
         subject=[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileSubject"],[iObject name]];
         body=[[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileBody"],[iObject name]]stringByAppendingString:@"\r\r"];
@@ -101,71 +103,86 @@
 		}
 	}
 	
-	//  QSMailMediator *mediator=[QSMailMediator sharedInstance];
-	if (direct){
-		[self sendDirectEmailTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
+	if (direct) {
+		CTCoreAddress *from = [self defaultEmailAddress];
+		[self sendMessageTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
 		
-	}else{
-		[[QSMailMediator defaultMediator]sendEmailTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
+	} else {
+		NSString *from = [[self defaultEmailAddress] email];
+		[[QSMailMediator defaultMediator]sendEmailTo:[addresses allObjects] from:from subject:subject body:body attachments:attachments sendNow:sendNow];
 	}
-	
 	return nil;
 }
 
 # pragma mark - Helper Methods
 
-- (NSString*)defaultEmailAddress
+- (CTCoreAddress *)defaultEmailAddress
 {
-    NSDictionary *icDict = [(NSDictionary *) CFPreferencesCopyValue((CFStringRef) @"Version 2.5.4", (CFStringRef) @"com.apple.internetconfig", kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
-    return [[[icDict objectForKey:@"ic-added"] objectForKey:@"Email"] objectForKey:@"ic-data"];
+	/* If the user puts either "Home" or "Work" as their custom from address,
+	   look up the corresponding entry in their Contacts. Otherwise, just use
+	   the supplied address.
+	*/
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *whichAddress = [defaults objectForKey:@"QSMailActionCustomFrom"], *senderName = @"", *senderAddress = nil;
+	if ([[whichAddress lowercaseString] isEqualToString:@"home"] || [[whichAddress lowercaseString] isEqualToString:@"work"]) {
+		NSString *labelType = nil;
+		if ([[whichAddress lowercaseString] isEqualToString:@"home"]) {
+			labelType = kABEmailHomeLabel;
+		} else {
+			labelType = kABEmailWorkLabel;
+		}
+		ABPerson *me = [[ABAddressBook sharedAddressBook] me];
+		senderName = [NSString stringWithFormat:@"%@ %@", [me valueForProperty:kABFirstNameProperty], [me valueForProperty:kABLastNameProperty]];
+		for (NSUInteger i = 0; i < [(ABMultiValue *)[me valueForProperty:kABEmailProperty] count]; i++) {
+			if ([[(ABMultiValue *)[me valueForProperty:kABEmailProperty] labelAtIndex:i] isEqualToString:labelType]) {
+				senderAddress = [(ABMultiValue *)[me valueForProperty:kABEmailProperty] valueAtIndex:i];
+				break;
+			}
+		}
+	} else {
+		senderAddress = whichAddress;
+	}
+	return [CTCoreAddress addressWithName:senderName email:senderAddress];
 }
 
-- (void) sendDirectEmailTo:(NSArray *)addresses
-				from:(NSString *)sender 
-			 subject:(NSString *)subject 
-				body:(NSString *)body 
-		 attachments:(NSArray *)pathArray 
-			 sendNow:(BOOL)sendNow
+- (void) sendMessageTo:(NSSet *)addresses from:(CTCoreAddress *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow
 {
-    
-	//NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    //NSString* smtpFromAddress = from; //[defaultsstringForKey:PMXSMTPFromAddress];
-    BOOL sent;
-    NSMutableDictionary *headers;
-    NSFileWrapper* fw;
-    NSTextAttachment* ta;
-	body=[body stringByAppendingString:@"\r\r"];
-    NSMutableAttributedString* msg=[[[NSMutableAttributedString alloc]initWithString:body]autorelease];
-	
-	for (NSString *attachment in pathArray) {
-		fw = [[[NSFileWrapper alloc] initWithPath:attachment]autorelease]; //initRegularFileWithContents:[attachment dataUsingEncoding:NSNonLossyASCIIStringEncoding]];
-		[fw setPreferredFilename:[attachment lastPathComponent]];
-		ta = [[[NSTextAttachment alloc] initWithFileWrapper:fw]autorelease];
-		[msg appendAttributedString:[NSAttributedString attributedStringWithAttachment:ta]];
-	}
-	
-	
-	headers = [NSMutableDictionary dictionary];
-	[headers setObject:[addresses componentsJoinedByString:@","] forKey:@"To"];
-	if (subject) [headers setObject:subject forKey:@"Subject"];
-	if (sender)  [headers setObject:sender forKey:@"From"];
-	[headers setObject:@"Quicksilver" forKey:@"X-Mailer"];
-	[headers setObject:@"multipart/mixed" forKey:@"Content-Type"];
-	[headers setObject:@"1.0" forKey:@"Mime-Version"];
-	sent = [NSMailDelivery deliverMessage: msg
-								  headers: headers
-								   format: NSMIMEMailFormat
-								 protocol: nil];
-	
-	//NSLog(@"headers %@",headers);
-	if ( !sent )
-	{
+    id<QSMailMediator> mediator = [QSReg QSMailMediator];
+	if ([(QSMailMediator *)mediator respondsToSelector:@selector(smtpServerDetails)]) {
+		// set up the message
+		CTCoreMessage *message = [[CTCoreMessage alloc] init];
+		[message setTo:addresses];
+		[message setFrom:[NSSet setWithObject:sender]];
+		[message setSubject:subject];
+		// TODO: set X-Mailer to "Quicksilver VERSION"
+		[message setBody:body];
+		CTCoreAttachment *attachment = nil;
+		for (NSString *path in pathArray) {
+			attachment = [[CTCoreAttachment alloc] initWithContentsOfFile:path];
+			[message addAttachment:attachment];
+			[attachment release];
+		}
+		
+		// set up the connection
+		NSDictionary *serverDetails = [mediator smtpServerDetails];
+		NSString *server = [serverDetails objectForKey:@"Hostname"];
+		
+		// send the message
+		NSError *error;
+		BOOL sent = [CTSMTPConnection sendMessage:message server:server username:nil password:nil port:25 useTLS:NO useAuth:NO error:&error];
+		[message release];
+		if ( !sent )
+		{
+			NSBeep();
+			NSLog(@"Send Failed");
+		}
+		else{
+			NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
+			[sound play];
+		}
+	} else {
+		NSLog(@"Mail mediator does not provide SMTP server details.");
 		NSBeep();
-		NSLog(@"Send Failed");
-	}
-	else{
-		NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
-		[sound play];
 	}
 }
 
