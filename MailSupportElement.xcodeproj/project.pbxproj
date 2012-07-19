@@ -300,7 +300,7 @@
 			baseConfigurationReference = D4BB97E9159DFE9A00415FA2 /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					../Support/MailCore/include,
+					../Support/MailCore/Source,
 					"../Support/MailCore/libetpan/build-mac/include",
 				);
 				PRODUCT_NAME = "E-mail Support";
@@ -312,7 +312,7 @@
 			baseConfigurationReference = D4BB97E9159DFE9A00415FA2 /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					../Support/MailCore/include,
+					../Support/MailCore/Source,
 					"../Support/MailCore/libetpan/build-mac/include",
 				);
 				PRODUCT_NAME = "E-mail Support";
