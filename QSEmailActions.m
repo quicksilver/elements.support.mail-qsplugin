@@ -41,6 +41,15 @@
 	return nil;
 }
 
+- (NSImage *)iconForAction:(NSString *)actionID
+{
+    id<QSMailMediator> mediator = [QSReg QSMailMediator];
+	if ([(QSMailMediator *)mediator respondsToSelector:@selector(iconForAction:)]) {
+		return [mediator iconForAction:actionID];
+	}
+	return nil;
+}
+
 #pragma mark - Quicksilver Actions
 
 - (QSObject *) sendEmailTo:(QSObject *)dObject{

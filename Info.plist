@@ -36,8 +36,6 @@
 			<array>
 				<string>qs.contact.email</string>
 			</array>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -57,8 +55,6 @@
 				<string>NSFilenamesPboardType</string>
 				<string>NSStringPboardType</string>
 			</array>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -124,8 +120,6 @@
 			<array>
 				<string>qs.contact.email</string>
 			</array>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>name</key>
 			<string>Compose E-mail</string>
 			<key>rankModification</key>
@@ -145,8 +139,6 @@
 			</array>
 			<key>enabled</key>
 			<false/>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>identifier</key>
 			<string>QSArchiveFolderAction</string>
 			<key>indirectTypes</key>
@@ -170,8 +162,6 @@
 			</array>
 			<key>enabled</key>
 			<false/>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>qs.contact.email</string>

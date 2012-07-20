@@ -23,6 +23,15 @@ NSString *preferredMailMediatorID();
      QSMailMediatorUsername - username for authentication (string)
      QSMailMediatorPassword - password for authentication (string)
 */
+- (NSImage *)iconForAction:(NSString *)actionID;
+/* actions you can supply icons for:
+     QSComposeEmailItemAction
+     QSComposeEmailItemReverseAction
+     QSEmailAction
+     QSEmailItemAction
+     QSEmailItemReverseAction
+   You'll most likely just return the same one unconditionally.
+*/
 @end
 
 @interface QSMailMediator : NSObject <QSMailMediator> {
