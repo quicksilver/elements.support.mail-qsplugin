@@ -74,12 +74,6 @@
 
 - (QSObject *)composeEmailTo:(QSObject *)dObject withItem:(QSObject *)iObject sendNow:(BOOL)sendNow direct:(BOOL)direct
 {
-	NSMutableSet *addresses = [NSMutableSet set];
-	NSString *name = nil;
-	for (QSObject *recipient in [dObject splitObjects]) {
-		name = [recipient name] ? [recipient name] : @"";
-		[addresses addObject:[CTCoreAddress addressWithName:[recipient name] email:[recipient objectForType:QSEmailAddressType]]];
-	}
 	NSString *subject = nil;
 	NSString *body = nil;
 	NSArray *attachments = nil;
@@ -112,15 +106,22 @@
 
 	CTCoreAddress *from = [self defaultEmailAddress];
 	if (direct) {
+		NSMutableSet *addresses = [NSMutableSet set];
+		NSString *name = nil;
+		for (QSObject *recipient in [dObject splitObjects]) {
+			name = [recipient name] ? [recipient name] : @"";
+			[addresses addObject:[CTCoreAddress addressWithName:[recipient name] email:[recipient objectForType:QSEmailAddressType]]];
+		}
 		[self sendMessageTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
 	} else {
+		// mail mediators don't use MailCore types - convert before pasing info along
 		NSString *fromString = nil;
 		if ([from name]) {
 			fromString = [NSString stringWithFormat:@"%@ <%@>", [from name], [from email]];
 		} else {
 			fromString = [from email];
 		}
-		[[QSMailMediator defaultMediator]sendEmailTo:[addresses allObjects] from:fromString subject:subject body:body attachments:attachments sendNow:sendNow];
+		[[QSMailMediator defaultMediator] sendEmailTo:[dObject arrayForType:QSEmailAddressType] from:fromString subject:subject body:body attachments:attachments sendNow:sendNow];
 	}
 	return nil;
 }
