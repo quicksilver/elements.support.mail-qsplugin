@@ -177,10 +177,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FFF245E085E488500266176 /* Build configuration list for PBXNativeTarget "Email Support" */;
 			buildPhases = (
+				E1022B2806B3475D00299BEC /* ShellScript */,
 				8D1AC9660486D14A00FE50C9 /* Resources */,
 				8D1AC96A0486D14A00FE50C9 /* Sources */,
 				8D1AC96E0486D14A00FE50C9 /* Frameworks */,
-				E1022B2806B3475D00299BEC /* ShellScript */,
 				7F839CDC07CCD70A003F2874 /* Headers */,
 				D4E1B2F015AE6DBF0075F776 /* CopyFiles */,
 			);
@@ -271,7 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/bltrversion $INFOPLIST_FILE";
+			shellScript = "\"$QS_BUILD_ROOT/Tools/bltrversion\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
