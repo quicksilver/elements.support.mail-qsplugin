@@ -75,6 +75,12 @@ NSString *defaultMailClientID(){
 	return nil;
 }
 
+- (void)dealloc
+{
+    [mailScript release];
+    [super dealloc];
+}
+
 @end
 
 @implementation QSRegistry (QSMailMediator)
