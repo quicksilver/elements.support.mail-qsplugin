@@ -1,10 +1,16 @@
-About Quicksilver Plugins on Github
-===================================
+Quicksilver E-mail Support
+==========================
 
-This repository contains the current source code of a the Quicksilver Plugin / Module. If you're having issues with this plugin, feel free to log them at the [Quicksilver issue tracker](https://github.com/quicksilver/Quicksilver/issues).
+This plug-in depends on the [MailCore framework](https://github.com/mronge/MailCore). It's already included as a sub-project for this plug-in, but of course it has to exist on your system for that to work. To set it up, from this project's directory:
 
-Always be sure to check the [Google Groups](http://groups.google.com/group/blacktree-quicksilver/topics?gvc=2) first incase there's a solution to your problem, as well as the [QSApp.com Wiki](http://qsapp.com/wiki/).
+    mkdir ../Support
+    cd ../Support
+    git clone git://github.com/mronge/MailCore.git
+    cd MailCore
+    git submodule init
+    git submodule update
 
+Now, you should be able to come back to this project and build.
 
 Before You Try It Out
 ---------------------
@@ -22,23 +28,9 @@ This is easily done by backing up the following folders
 Before Building
 ---------------
 
-Before being able to build any of these plugins, you **MUST** set a new Source Tree for the `QSFramework` in the XCode Preferences.
+Quicksilver must be built from source. See the QSApp.com wiki for more information on [Building Quicksilver](http://qsapp.com/wiki/Building_Quicksilver).
 
-This is done by going into the XCode preferences, clicking 'Source Trees' and adding a new one with the following options:
-
-Setting Name: `QSFrameworks`  
-Display Name: a suitable name, e.g. `Quicksilver Frameworks`  
-Path: `/Applications/Quicksilver.app/Contents/Frameworks` (or path of Quicksilver.app if different)
-
-For some plugins to compile correctly a source tree must also be set for `QS_SOURCE_ROOT` that points to the location of the [Quicksilver source code](https://github.com/quicksilver/Quicksilver) you've downloaded onto your local machine.
-
-Setting Name: `QS_SOURCE_ROOT`	
-Display Name: a suitable name, e.g. `Quicksilver source code root`	 
-Path: `/Users/<user>/<path to Quicksilver source code>`
-
-See the QSApp.com wiki for more information on [Building Quicksilver](http://qsapp.com/wiki/Building_Quicksilver).
-
-Also check out the [Quicksilver Plugins Development Reference](http://projects.skurfer.com/QuicksilverPlug-inReference.mdown), especially the [Building and Testing section](http://projects.skurfer.com/QuicksilverPlug-inReference.mdown#building_and_testing).
+Also check out the [Quicksilver Plugins Development Reference](http://projects.skurfer.com/QuicksilverPlug-inReference.mdown).
 
 Legal Stuff 
 -----------

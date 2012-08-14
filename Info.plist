@@ -4,8 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>E-mail Support</string>
 	<key>CFBundleExecutable</key>
-	<string>Email Support</string>
+	<string>E-mail Support</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -14,8 +16,12 @@
 	<string>E-mail Support</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>90</string>
+	<string>97</string>
 	<key>NSPrincipalClass</key>
 	<string>QSEmailSupport</string>
 	<key>QSActions</key>
@@ -30,15 +36,13 @@
 			<array>
 				<string>qs.contact.email</string>
 			</array>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
 				<string>NSStringPboardType</string>
 			</array>
 			<key>name</key>
-			<string>Email Item... (Compose)</string>
+			<string>E-mail Item… (Compose)</string>
 		</dict>
 		<key>QSComposeEmailItemReverseAction</key>
 		<dict>
@@ -51,14 +55,12 @@
 				<string>NSFilenamesPboardType</string>
 				<string>NSStringPboardType</string>
 			</array>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>qs.contact.email</string>
 			</array>
 			<key>name</key>
-			<string>Email To... (Compose)</string>
+			<string>E-mail To… (Compose)</string>
 			<key>reverseArguments</key>
 			<true/>
 		</dict>
@@ -82,7 +84,7 @@
 				<string>NSStringPboardType</string>
 			</array>
 			<key>name</key>
-			<string>Email Item... (Send Directly)</string>
+			<string>E-mail Item… (Send Directly)</string>
 		</dict>
 		<key>QSDirectEmailItemReverseAction</key>
 		<dict>
@@ -104,7 +106,7 @@
 				<string>qs.contact.email</string>
 			</array>
 			<key>name</key>
-			<string>Email To... (Send Directly)</string>
+			<string>E-mail To… (Send Directly)</string>
 			<key>reverseArguments</key>
 			<true/>
 		</dict>
@@ -118,12 +120,10 @@
 			<array>
 				<string>qs.contact.email</string>
 			</array>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>name</key>
-			<string>Compose Email</string>
+			<string>Compose E-mail</string>
 			<key>rankModification</key>
-			<real>0.10000000000000001</real>
+			<real>0.1</real>
 			<key>validatesObjects</key>
 			<false/>
 		</dict>
@@ -139,8 +139,6 @@
 			</array>
 			<key>enabled</key>
 			<false/>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>identifier</key>
 			<string>QSArchiveFolderAction</string>
 			<key>indirectTypes</key>
@@ -149,7 +147,7 @@
 				<string>NSStringPboardType</string>
 			</array>
 			<key>name</key>
-			<string>Email Item... (Send)</string>
+			<string>E-mail Item… (Send)</string>
 		</dict>
 		<key>QSEmailItemReverseAction</key>
 		<dict>
@@ -164,20 +162,20 @@
 			</array>
 			<key>enabled</key>
 			<false/>
-			<key>icon</key>
-			<string>defaultMailClient</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>qs.contact.email</string>
 			</array>
 			<key>name</key>
-			<string>Email To... (Send)</string>
+			<string>E-mail To… (Send)</string>
 			<key>reverseArguments</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>QSDefaults</key>
 	<dict>
+		<key>QSMailActionCustomFrom</key>
+		<string>Home</string>
 		<key>QSMailActionFileBody</key>
 		<string>Your files are attached to this message</string>
 		<key>QSMailActionFileSubject</key>
@@ -185,10 +183,38 @@
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
+		<key>categories</key>
+		<array>
+			<string>Mail &amp; Chat</string>
+		</array>
+		<key>description</key>
+		<string>Works with your mail client to enable e-mail based actions</string>
+		<key>extendedDescription</key>
+		<string>&lt;h2&gt;E-mail Support&lt;/h2&gt;
+&lt;p&gt;This plug-in enables you to send mail (including attachments) directly from Quicksilver. You must have a mail client (such as Apple Mail) configured, and its plugin must be loaded.&lt;/p&gt;
+&lt;h3&gt;Sending&lt;/h3&gt;
+&lt;p&gt;You can send one or more files using the comma-trick or you can enter the text of your message into Quicksilver. When entering text, you can specify a subject by separating it from the rest of your message with &quot;&amp;gt;&amp;gt;&quot;. For example&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Tomorrow night&amp;gt;&amp;gt;Are you busy? That new movie is coming out.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;will be sent as&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Subject: Tomorrow night
+
+Are you busy? That new movie is coming out.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can&apos;t enter text when sending files, but you can set a message to accompany attachments by default in the preferences.&lt;/p&gt;
+&lt;p&gt;As a general rule, you can do either &quot;Contact(s) ⇥ E-mail Item… ⇥ Text/Files&quot; or &quot;Text/Files ⇥ E-mail To… ⇥ Contact(s)&quot;.&lt;/p&gt;
+&lt;h3&gt;Compose vs. Send vs. Direct&lt;/h3&gt;
+&lt;p&gt;The actions have either &quot;Compose&quot;, &quot;Send&quot;, or &quot;Direct&quot; in their name somewhere.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Compose&lt;/dt&gt;
+&lt;dd&gt;Send the text or file(s) using your e-mail client. A new message will open for further editing.&lt;/dd&gt;
+&lt;dt&gt;Send&lt;/dt&gt;
+&lt;dd&gt;Send the text or file(s) using your e-mail client. The message will be sent immediately.&lt;/dd&gt;
+&lt;dt&gt;Direct&lt;/dt&gt;
+&lt;dd&gt;Send the text or file(s) immedately without opening an e-mail client. Though the client doesn&apos;t need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.&lt;/dd&gt;
+&lt;/dl&gt;</string>
 		<key>hidden</key>
 		<true/>
-		<key>qsversion</key>
-		<string>2E00</string>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
@@ -208,7 +234,7 @@
 				<key>icon</key>
 				<string>com.apple.Mail</string>
 				<key>name</key>
-				<string>Email Options</string>
+				<string>E-mail Options</string>
 				<key>nibBundle</key>
 				<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 				<key>nibName</key>
