@@ -1,0 +1,32 @@
+## E-mail Support ##
+
+This plug-in enables you to send mail (including attachments) directly from Quicksilver. You must have a mail client (such as Apple Mail) configured, and its plugin must be loaded.
+
+### Sending ###
+
+You can send one or more files using the comma-trick or you can enter the text of your message into Quicksilver. When entering text, you can specify a subject by separating it from the rest of your message with ">>". For example
+
+    Tomorrow night>>Are you busy? That new movie is coming out.
+
+will be sent as
+
+    Subject: Tomorrow night
+    
+    Are you busy? That new movie is coming out.
+
+You can't enter text when sending files, but you can set a message to accompany attachments by default in the preferences.
+
+As a general rule, you can do either "Contact(s) ⇥ E-mail Item… ⇥ Text/Files" or "Text/Files ⇥ E-mail To… ⇥ Contact(s)".
+
+### Compose vs. Send vs. Direct ###
+
+The actions have either "Compose", "Send", or "Direct" in their name somewhere.
+
+Compose
+: Send the text or file(s) using your e-mail client. A new message will open for further editing.
+
+Send
+: Send the text or file(s) using your e-mail client. The message will be sent immediately.
+
+Direct
+: Send the text or file(s) immedately without opening an e-mail client. Though the client doesn't need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.
