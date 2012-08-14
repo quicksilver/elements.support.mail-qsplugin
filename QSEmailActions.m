@@ -178,6 +178,10 @@
 		// set up the connection
 		NSDictionary *serverDetails = [mediator smtpServerDetails];
 		NSString *server = [serverDetails objectForKey:QSMailMediatorServer];
+		if (!server) {
+			// can't continue without an SMTP server
+			return;
+		}
 		NSUInteger port = [serverDetails objectForKey:QSMailMediatorPort] ? [[serverDetails objectForKey:QSMailMediatorPort] integerValue] : 25;
 		BOOL tls = [[serverDetails objectForKey:QSMailMediatorTLS] isEqualToString:@"YES"];
 		BOOL authn = [[serverDetails objectForKey:QSMailMediatorAuthenticate] isEqualToString:@"YES"];
