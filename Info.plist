@@ -234,7 +234,7 @@ Are you busy? That new movie is coming out.
 				<key>icon</key>
 				<string>com.apple.Mail</string>
 				<key>name</key>
-				<string>Email Options</string>
+				<string>E-mail Options</string>
 				<key>nibBundle</key>
 				<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 				<key>nibName</key>
