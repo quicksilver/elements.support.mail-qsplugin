@@ -98,7 +98,12 @@ NSString *defaultMailClientID(){
 		if (mediator) {
 			[prefInstances setObject:mediator forKey:kQSMailMediators];
 		}
-		else NSLog(@"Mediator not found %@", [[NSUserDefaults standardUserDefaults] stringForKey:kQSMailMediators]);
+		else {
+			NSString *errorMessage = [NSString stringWithFormat:@"Mail mediator not found %@", [[NSUserDefaults standardUserDefaults] stringForKey:kQSMailMediators]];
+			NSLog(@"%@", errorMessage);
+			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
+
+		}
 	}
 	
 	return mediator;

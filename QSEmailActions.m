@@ -180,6 +180,7 @@
 		NSString *server = [serverDetails objectForKey:QSMailMediatorServer];
 		if (!server) {
 			// can't continue without an SMTP server
+			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingServerNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, @"The chosen e-mail handler does not provide an SMTP server.", QSNotifierText, nil]);
 			return;
 		}
 		NSUInteger port = [serverDetails objectForKey:QSMailMediatorPort] ? [[serverDetails objectForKey:QSMailMediatorPort] integerValue] : 25;
@@ -195,8 +196,9 @@
 		[message release];
 		if ( !sent )
 		{
-			NSLog(@"Message could not be sent: %@", [error localizedDescription]);
-			NSBeep();
+			NSString *errorMessage = [NSString stringWithFormat:@"Message could not be sent: %@", [error localizedDescription]];
+			NSLog(@"%@", errorMessage);
+			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"SendEmailMessageFailedNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
 		}
 		else{
 			NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
@@ -204,7 +206,7 @@
 		}
 	} else {
 		NSLog(@"Mail mediator does not provide SMTP server details.");
-		NSBeep();
+		QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingDetailsNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, @"The chosen e-mail handler does not provide SMTP server details.", QSNotifierText, nil]);
 	}
 }
 
