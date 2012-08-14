@@ -75,6 +75,11 @@ NSString *defaultMailClientID(){
 	return nil;
 }
 
+- (NSImage *)iconForAction:(NSString *)actionID
+{
+	return nil;
+}
+
 - (void)dealloc
 {
     [mailScript release];
