@@ -90,7 +90,7 @@
 			delimiter = @">>";
 			components = [string componentsSeparatedByString:delimiter];
 		}
-		subject = [components objectAtIndex:0];
+		subject = [[components objectAtIndex:0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		if ([subject length] > 255) {
 			subject = [subject substringToIndex:255];
 		}
@@ -99,6 +99,7 @@
 		} else {
 			body = [iObject stringValue];
 		}
+		body = [body stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	} else if (!iObject) {
 		subject = @"";
 		body = @"";
