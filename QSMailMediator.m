@@ -94,25 +94,32 @@ NSString *defaultMailClientID(){
 {
 	id <QSMailMediator> mediator=[prefInstances objectForKey:kQSMailMediators];
 	if (!mediator){
-		mediator = [self instanceForKey:[QSReg QSMailMediatorID] inTable:kQSMailMediators];
-		if (mediator) {
-			[prefInstances setObject:mediator forKey:kQSMailMediators];
-		}
-		else {
-			NSString *errorMessage = [NSString stringWithFormat:@"Mail mediator not found %@", [[NSUserDefaults standardUserDefaults] stringForKey:kQSMailMediators]];
+		mediator = [self instanceForKey:[self QSMailMediatorID] inTable:kQSMailMediators];
+    }
+    if (!mediator) {
+        NSDictionary *mailMediatorsDict = [QSReg tableNamed:kQSMailMediators];
+        NSString *errorMessage = nil;
+        // if only one mediator is available, use it
+        if ([mailMediatorsDict count] == 1) {
+            NSString *defaultMediator = [[mailMediatorsDict allKeys] lastObject];
+            mediator = [self instanceForKey:defaultMediator inTable:kQSMailMediators];
+            errorMessage = [NSString stringWithFormat:@"Mail mediator %@ not found, using %@ instead", [self QSMailMediatorID], defaultMediator];
+        } else {
+			errorMessage = [NSString stringWithFormat:@"Mail mediator %@ not found", [self QSMailMediatorID]];
 			NSLog(@"%@", errorMessage);
-			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
-
-		}
+        }
+        QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
 	}
-	
+    if (mediator) {
+        [prefInstances setObject:mediator forKey:kQSMailMediators];
+    }
 	return mediator;
 }
 
 - (NSString *)QSMailMediatorID
 {
 	NSString *key = [[NSUserDefaults standardUserDefaults] stringForKey:kQSMailMediators];
-	if (!key)key = defaultMailClientID();
+	if (!key) key = defaultMailClientID();
 	return key;
 }
 @end
