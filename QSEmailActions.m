@@ -6,6 +6,7 @@
 # define kEmailItemReverseAction @"QSEmailItemReverseAction"
 # define kComposeEmailItemAction @"QSComposeEmailItemAction"
 # define kComposeEmailItemReverseAction @"QSComposeEmailItemReverseAction"
+# define MaxSubjectLength 74
 #define kDirectEmailItemReverseAction @"QSDirectEmailItemReverseAction"
 
 @implementation QSEmailActions
@@ -91,8 +92,8 @@
 			components = [string componentsSeparatedByString:delimiter];
 		}
 		subject = [[components objectAtIndex:0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-		if ([subject length] > 255) {
-			subject = [subject substringToIndex:255];
+		if ([subject length] > MaxSubjectLength) {
+			subject = [subject substringToIndex:MaxSubjectLength];
 		}
 		if ([components count]>1) {
 			body = [[components subarrayWithRange:NSMakeRange(1, [components count] - 1)] componentsJoinedByString:@"\n"];
