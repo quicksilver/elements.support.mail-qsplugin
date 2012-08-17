@@ -214,7 +214,7 @@ Are you busy? That new movie is coming out.
 &lt;dd&gt;Send the text or file(s) immedately without opening an e-mail client. Though the client doesn&apos;t need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.&lt;/dd&gt;
 &lt;/dl&gt;</string>
 		<key>hidden</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
