@@ -145,14 +145,24 @@
 		} else {
 			labelType = kABEmailWorkLabel;
 		}
-		ABPerson *me = [[ABAddressBook sharedAddressBook] me];
-		senderName = [NSString stringWithFormat:@"%@ %@", [me valueForProperty:kABFirstNameProperty], [me valueForProperty:kABLastNameProperty]];
-		for (NSUInteger i = 0; i < [(ABMultiValue *)[me valueForProperty:kABEmailProperty] count]; i++) {
-			if ([[(ABMultiValue *)[me valueForProperty:kABEmailProperty] labelAtIndex:i] isEqualToString:labelType]) {
-				senderAddress = [(ABMultiValue *)[me valueForProperty:kABEmailProperty] valueAtIndex:i];
-				break;
-			}
-		}
+        NSArray *mes = nil;
+        if ([NSApplication isMountainLion]) {
+            mes = [[[ABAddressBook sharedAddressBook] me] linkedPeople];
+        } else {
+            mes = @[[[ABAddressBook sharedAddressBook] me]];
+        }
+        for (ABPerson *me in mes) {
+            for (NSUInteger i = 0; i < [(ABMultiValue *)[me valueForProperty:kABEmailProperty] count]; i++) {
+                if ([[(ABMultiValue *)[me valueForProperty:kABEmailProperty] labelAtIndex:i] isEqualToString:labelType]) {
+                    senderAddress = [(ABMultiValue *)[me valueForProperty:kABEmailProperty] valueAtIndex:i];
+                    senderName = [NSString stringWithFormat:@"%@ %@", [me valueForProperty:kABFirstNameProperty], [me valueForProperty:kABLastNameProperty]];
+                    break;
+                }
+            }
+            if (senderAddress) {
+                break;
+            }
+        }
 	} else {
 		senderAddress = whichAddress;
 	}
