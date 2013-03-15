@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.0</string>
+	<string>2.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>98</string>
+	<string>9A</string>
 	<key>NSPrincipalClass</key>
 	<string>QSEmailSupport</string>
 	<key>QSActions</key>
