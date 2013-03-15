@@ -186,7 +186,21 @@
 			return;
 		}
 		NSUInteger port = [serverDetails objectForKey:QSMailMediatorPort] ? [[serverDetails objectForKey:QSMailMediatorPort] integerValue] : 25;
+        CTSMTPConnectionType connType = 0;
 		BOOL tls = [[serverDetails objectForKey:QSMailMediatorTLS] isEqualToString:@"YES"];
+        switch (port) {
+            case 465:
+                connType = CTSMTPConnectionTypeTLS;
+                break;
+            
+            case 587:
+                connType = CTSMTPConnectionTypeStartTLS;
+                break;
+                
+            default:
+                connType = tls ? CTSMTPConnectionTypeTLS : CTSMTPConnectionTypePlain;
+                break;
+        }
 		BOOL authn = [[serverDetails objectForKey:QSMailMediatorAuthenticate] isEqualToString:@"YES"];
 		NSString *username = [serverDetails objectForKey:QSMailMediatorUsername];
 		NSString *password = [serverDetails objectForKey:QSMailMediatorPassword];
@@ -194,7 +208,7 @@
 		
 		// send the message
 		NSError *error;
-		BOOL sent = [CTSMTPConnection sendMessage:message server:server username:username password:password port:port useTLS:tls useAuth:authn error:&error];
+		BOOL sent = [CTSMTPConnection sendMessage:message server:server username:username password:password port:port connectionType:connType useAuth:authn error:&error];
 		[message release];
 		if ( !sent )
 		{
