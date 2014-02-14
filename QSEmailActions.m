@@ -25,8 +25,8 @@
 		}
         [newActions addObject:kEmailAction];
     }
-    else if (mediatorAvailable && ([[dObject types] containsObject:NSFilenamesPboardType] && [dObject validPaths])
-             || ([[dObject types] containsObject:NSStringPboardType] && ![[dObject types] containsObject:NSFilenamesPboardType])){
+    else if (mediatorAvailable && ([[dObject types] containsObject:QSFilePathType] && [dObject validPaths])
+             || ([[dObject types] containsObject:QSTextType] && ![[dObject types] containsObject:QSFilePathType])){
         [newActions addObject:kEmailItemReverseAction];
         [newActions addObject:kComposeEmailItemReverseAction];
     }
@@ -84,7 +84,7 @@
 		subject = [NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileSubject"], [iObject name]];
 		body = [[NSString stringWithFormat:[defaults objectForKey:@"QSMailActionFileBody"], [iObject name]]stringByAppendingString:@"\n\n"];
 		attachments = [iObject arrayForType:QSFilePathType];
-	} else if ([[iObject types] containsObject:NSStringPboardType]) {
+	} else if ([[iObject types] containsObject:QSTextType]) {
 		NSString *string = [iObject stringValue];
 		NSString *delimiter = @"\n";
 		NSArray *components = [string componentsSeparatedByString:delimiter];
