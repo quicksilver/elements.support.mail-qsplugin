@@ -246,7 +246,7 @@ Are you busy? That new movie is coming out.
 			<key>QSMailMediators</key>
 			<dict>
 				<key>allowDefault</key>
-				<true/>
+				<false/>
 				<key>bundle</key>
 				<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 				<key>classTable</key>
