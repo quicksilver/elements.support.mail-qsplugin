@@ -32,6 +32,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>composeEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Compose a message to %@ with %@ attached</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -50,6 +52,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>composeEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Compose a message, with %@ attached, to %@</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -70,6 +74,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendDirectEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send a message to %@ containing %@ immediately</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -92,6 +98,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendDirectEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send %@ to %@ immediately</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -116,6 +124,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendEmailTo:</string>
+			<key>commandFormat</key>
+			<string>Compose a new message to %@</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -133,6 +143,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send a message to %@ containing %@ using your mail client</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -155,6 +167,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send %@ to %@ using your mail client</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
