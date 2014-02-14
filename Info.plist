@@ -7,7 +7,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>E-mail Support</string>
 	<key>CFBundleExecutable</key>
-	<string>E-mail Support</string>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 	<key>CFBundleInfoDictionaryVersion</key>
