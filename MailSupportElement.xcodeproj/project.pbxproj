@@ -15,6 +15,7 @@
 		D4BB97F0159DFE9A00415FA2 /* Quicksilver.pch in Headers */ = {isa = PBXBuildFile; fileRef = D4BB97EA159DFE9A00415FA2 /* Quicksilver.pch */; };
 		D4E1B2EF15AE6C2B0075F776 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E1B2E515AE6BF30075F776 /* MailCore.framework */; };
 		D4E1B2F115AE6EC90075F776 /* MailCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D4E1B2E515AE6BF30075F776 /* MailCore.framework */; };
+		D4F61BB618ADD7C600D6C229 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F61BB518ADD7C600D6C229 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		D4BB97EA159DFE9A00415FA2 /* Quicksilver.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
 		D4BB97EB159DFE9A00415FA2 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D4E1B2CD15AE6BF10075F776 /* MailCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailCore.xcodeproj; path = ../Support/MailCore/MailCore.xcodeproj; sourceTree = "<group>"; };
+		D4F61BB518ADD7C600D6C229 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F61BB618ADD7C600D6C229 /* AddressBook.framework in Frameworks */,
 				D4E1B2EF15AE6C2B0075F776 /* MailCore.framework in Frameworks */,
 				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
 			);
@@ -118,6 +121,7 @@
 		2E58F364FFB232C311CA0CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4F61BB518ADD7C600D6C229 /* AddressBook.framework */,
 				DD92D38A0106425D02CA0E72 /* Cocoa.framework */,
 			);
 			name = Frameworks;

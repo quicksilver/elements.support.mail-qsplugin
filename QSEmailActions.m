@@ -1,5 +1,6 @@
 #import "QSEmailActions.h"
 #import "QSMailMediator.h"
+#import <AddressBook/AddressBook.h>
 
 # define kEmailAction @"QSEmailAction"
 # define kEmailItemAction @"QSEmailItemAction"
