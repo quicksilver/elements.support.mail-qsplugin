@@ -306,9 +306,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8D1AC9600486D14A00FE50C9 /* Email Support */ = {
+		8D1AC9600486D14A00FE50C9 /* E-mail Support */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FFF245E085E488500266176 /* Build configuration list for PBXNativeTarget "Email Support" */;
+			buildConfigurationList = 7FFF245E085E488500266176 /* Build configuration list for PBXNativeTarget "E-mail Support" */;
 			buildPhases = (
 				CDFCE55D19BEF97300695959 /* Softlink MailCore framework */,
 				8D1AC96A0486D14A00FE50C9 /* Sources */,
@@ -324,7 +324,7 @@
 				CD825C7019BF17E400032EA3 /* PBXTargetDependency */,
 				CD825C2819BF13FC00032EA3 /* PBXTargetDependency */,
 			);
-			name = "Email Support";
+			name = "E-mail Support";
 			productInstallPath = "$(HOME)/Developer/Palettes";
 			productName = QSMailSupport;
 			productReference = 8D1AC9740486D14A00FE50C9 /* E-mail Support.qsplugin */;
@@ -356,7 +356,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				8D1AC9600486D14A00FE50C9 /* Email Support */,
+				8D1AC9600486D14A00FE50C9 /* E-mail Support */,
 				CD825C6A19BF164400032EA3 /* Setup MailCore */,
 			);
 		};
@@ -578,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7FFF245E085E488500266176 /* Build configuration list for PBXNativeTarget "Email Support" */ = {
+		7FFF245E085E488500266176 /* Build configuration list for PBXNativeTarget "E-mail Support" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FFF2460085E488500266176 /* Release */,
@@ -603,6 +603,7 @@
 				CD825C6D19BF164400032EA3 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

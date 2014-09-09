@@ -7,7 +7,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>E-mail Support</string>
 	<key>CFBundleExecutable</key>
-	<string>E-mail Support</string>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>9A</string>
+	<string>9B</string>
 	<key>NSPrincipalClass</key>
 	<string>QSEmailSupport</string>
 	<key>QSActions</key>
@@ -32,6 +32,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>composeEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Compose a message to %@ with %@ attached</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -50,6 +52,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>composeEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Compose a message, with %@ attached, to %@</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -70,6 +74,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendDirectEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send a message to %@ containing %@ immediately</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -92,6 +98,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendDirectEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send %@ to %@ immediately</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -116,6 +124,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendEmailTo:</string>
+			<key>commandFormat</key>
+			<string>Compose a new message to %@</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -133,6 +143,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send a message to %@ containing %@ using your mail client</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.contact.email</string>
@@ -155,6 +167,8 @@
 			<string>QSEmailActions</string>
 			<key>actionSelector</key>
 			<string>sendEmailTo:withItem:</string>
+			<key>commandFormat</key>
+			<string>Send %@ to %@ using your mail client</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -193,7 +207,7 @@
 		<string>&lt;h2&gt;E-mail Support&lt;/h2&gt;
 &lt;p&gt;This plug-in enables you to send mail (including attachments) directly from Quicksilver. You must have a mail client (such as Apple Mail) configured, and its plugin must be loaded.&lt;/p&gt;
 &lt;h3&gt;Sending&lt;/h3&gt;
-&lt;p&gt;You can send one or more files using the comma-trick or you can enter the text of your message into Quicksilver. When entering text, you can specify a subject by separating it from the rest of your message with &quot;&amp;gt;&amp;gt;&quot;. For example&lt;/p&gt;
+&lt;p&gt;You can send one or more files using the comma-trick or you can enter the text of your message into Quicksilver. When entering text, you can specify a subject by separating it from the rest of your message with "&amp;gt;&amp;gt;". For example&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Tomorrow night&amp;gt;&amp;gt;Are you busy? That new movie is coming out.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;will be sent as&lt;/p&gt;
@@ -201,17 +215,17 @@
 
 Are you busy? That new movie is coming out.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can&apos;t enter text when sending files, but you can set a message to accompany attachments by default in the preferences.&lt;/p&gt;
-&lt;p&gt;As a general rule, you can do either &quot;Contact(s) ⇥ E-mail Item… ⇥ Text/Files&quot; or &quot;Text/Files ⇥ E-mail To… ⇥ Contact(s)&quot;.&lt;/p&gt;
+&lt;p&gt;You can't enter text when sending files, but you can set a message to accompany attachments by default in the preferences.&lt;/p&gt;
+&lt;p&gt;As a general rule, you can do either "Contact(s) ⇥ E-mail Item… ⇥ Text/Files" or "Text/Files ⇥ E-mail To… ⇥ Contact(s)".&lt;/p&gt;
 &lt;h3&gt;Compose vs. Send vs. Direct&lt;/h3&gt;
-&lt;p&gt;The actions have either &quot;Compose&quot;, &quot;Send&quot;, or &quot;Direct&quot; in their name somewhere.&lt;/p&gt;
+&lt;p&gt;The actions have either "Compose", "Send", or "Direct" in their name somewhere.&lt;/p&gt;
 &lt;dl&gt;
 &lt;dt&gt;Compose&lt;/dt&gt;
 &lt;dd&gt;Send the text or file(s) using your e-mail client. A new message will open for further editing.&lt;/dd&gt;
 &lt;dt&gt;Send&lt;/dt&gt;
 &lt;dd&gt;Send the text or file(s) using your e-mail client. The message will be sent immediately.&lt;/dd&gt;
 &lt;dt&gt;Direct&lt;/dt&gt;
-&lt;dd&gt;Send the text or file(s) immedately without opening an e-mail client. Though the client doesn&apos;t need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.&lt;/dd&gt;
+&lt;dd&gt;Send the text or file(s) immedately without opening an e-mail client. Though the client doesn't need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.&lt;/dd&gt;
 &lt;/dl&gt;</string>
 		<key>hidden</key>
 		<false/>
@@ -246,7 +260,7 @@ Are you busy? That new movie is coming out.
 			<key>QSMailMediators</key>
 			<dict>
 				<key>allowDefault</key>
-				<true/>
+				<false/>
 				<key>bundle</key>
 				<string>com.blacktree.Quicksilver.QSEmailSupport</string>
 				<key>classTable</key>
@@ -261,6 +275,11 @@ Are you busy? That new movie is coming out.
 				<string>mediator</string>
 			</dict>
 		</dict>
+	</dict>
+	<key>QSRequirements</key>
+	<dict>
+		<key>version</key>
+		<string>4001</string>
 	</dict>
 </dict>
 </plist>
