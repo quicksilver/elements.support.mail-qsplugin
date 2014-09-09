@@ -1,4 +1,4 @@
-#import "MailCore.h"
+#include <MailCore/MailCore.h>
 
 #define emailsShareDomain(email1,email2) ![[[email1 componentsSeparatedByString:@"@"]lastObject]caseInsensitiveCompare:[[email2 componentsSeparatedByString:@"@"]lastObject]]
 NSString *preferredMailMediatorID();
