@@ -28,7 +28,7 @@
 		CD859B6919BEE99B00128D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD859B6819BEE99B00128D31 /* Security.framework */; };
 		CDFCE54519BEEFBD00695959 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFCE54419BEEFBD00695959 /* AddressBook.framework */; };
 		CDFCE54819BEF46700695959 /* MailCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDFCE54619BEF45B00695959 /* MailCore.framework */; };
-		CDFCE54919BEF4B100695959 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFCE54619BEF45B00695959 /* MailCore.framework */; };
+		D4233F5819BFFAD00070C9F6 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFCE54619BEF45B00695959 /* MailCore.framework */; };
 		D4A32F1C15AB5FC10055469A /* QSMailSupportPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +123,7 @@
 		CD859B5619BEE96A00128D31 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = mailcore2.xcodeproj; sourceTree = "<group>"; };
 		CD859B6819BEE99B00128D31 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CDFCE54419BEEFBD00695959 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		CDFCE54619BEF45B00695959 /* MailCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MailCore.framework; path = "/Users/patrick/Developer/QS/QSPlugins/elements.support.mail/mailcore2/build-mac/build/Debug/MailCore.framework"; sourceTree = "<absolute>"; };
+		CDFCE54619BEF45B00695959 /* MailCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MailCore.framework; path = "MailCore.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMailSupportPrefPane.xib; sourceTree = "<group>"; };
 		D4BB97E6159DFE9A00415FA2 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D4BB97E7159DFE9A00415FA2 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDFCE54919BEF4B100695959 /* MailCore.framework in Frameworks */,
+				D4233F5819BFFAD00070C9F6 /* MailCore.framework in Frameworks */,
 				CDFCE54519BEEFBD00695959 /* AddressBook.framework in Frameworks */,
 				CD859B6919BEE99B00128D31 /* Security.framework in Frameworks */,
 				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
