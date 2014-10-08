@@ -1,15 +1,15 @@
 #import "QSMailMediator.h"
+#include <AddressBook/AddressBook.h>
 
 NSString *defaultMailClientID(){
-	NSURL *appURL = nil; 
+    CFURLRef appURL = NULL;
 	OSStatus err; 
-	err = LSGetApplicationForURL((CFURLRef)[NSURL URLWithString: @"mailto:"], kLSRolesAll, NULL, (CFURLRef *)&appURL); 
+	err = LSGetApplicationForURL((__bridge CFURLRef)[NSURL URLWithString: @"mailto:"], kLSRolesAll, NULL, &appURL);
 	if (err != noErr) {
 		NSLog(@"No default mail client found. Error %ld", (long)err); 
 		return nil;
 	}
-	NSDictionary *infoDict = (NSDictionary *)CFBundleCopyInfoDictionaryForURL((CFURLRef)appURL);
-	[infoDict autorelease];
+	NSDictionary *infoDict = (NSDictionary *)CFBridgingRelease(CFBundleCopyInfoDictionaryForURL(appURL));
 	return [infoDict objectForKey:(NSString *)kCFBundleIdentifierKey];
 }
 
@@ -18,6 +18,47 @@ NSString *defaultMailClientID(){
 + (id <QSMailMediator>)defaultMediator
 {
 	return [QSReg QSMailMediator];
+}
+
+# pragma mark - Helper Methods
+
+- (MCOAddress *)defaultEmailAddress
+{
+	/* If the user puts either "Home" or "Work" as their custom from address,
+     look up the corresponding entry in their Contacts. Otherwise, just use
+     the supplied address.
+     */
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *whichAddress = [defaults objectForKey:@"QSMailActionCustomFrom"], *senderName = @"", *senderAddress = nil;
+	if ([[whichAddress lowercaseString] isEqualToString:@"home"] || [[whichAddress lowercaseString] isEqualToString:@"work"]) {
+		NSString *labelType = nil;
+		if ([[whichAddress lowercaseString] isEqualToString:@"home"]) {
+			labelType = kABEmailHomeLabel;
+		} else {
+			labelType = kABEmailWorkLabel;
+		}
+        NSArray *mes = nil;
+        if ([NSApplication isMountainLion]) {
+            mes = [[[ABAddressBook sharedAddressBook] me] linkedPeople];
+        } else {
+            mes = @[[[ABAddressBook sharedAddressBook] me]];
+        }
+        for (ABPerson *me in mes) {
+            for (NSUInteger i = 0; i < [(ABMultiValue *)[me valueForProperty:kABEmailProperty] count]; i++) {
+                if ([[(ABMultiValue *)[me valueForProperty:kABEmailProperty] labelAtIndex:i] isEqualToString:labelType]) {
+                    senderAddress = [(ABMultiValue *)[me valueForProperty:kABEmailProperty] valueAtIndex:i];
+                    senderName = [NSString stringWithFormat:@"%@ %@", [me valueForProperty:kABFirstNameProperty], [me valueForProperty:kABLastNameProperty]];
+                    break;
+                }
+            }
+            if (senderAddress) {
+                break;
+            }
+        }
+	} else {
+		senderAddress = whichAddress;
+	}
+	return [MCOAddress addressWithDisplayName:senderAddress mailbox:senderAddress];
 }
 
 - (void) sendEmailTo:(NSArray *)addresses from:(NSString *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow
@@ -66,8 +107,7 @@ NSString *defaultMailClientID(){
 
 - (void)setMailScript:(NSAppleScript *)newMailScript
 {
-	[mailScript release];
-	mailScript = [newMailScript retain];
+	mailScript = newMailScript;
 }
 
 - (NSDictionary *)smtpServerDetails
@@ -80,11 +120,6 @@ NSString *defaultMailClientID(){
 	return nil;
 }
 
-- (void)dealloc
-{
-    [mailScript release];
-    [super dealloc];
-}
 
 @end
 

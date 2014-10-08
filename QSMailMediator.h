@@ -1,4 +1,4 @@
-#import "MailCore.h"
+#include <MailCore/MailCore.h>
 
 #define emailsShareDomain(email1,email2) ![[[email1 componentsSeparatedByString:@"@"]lastObject]caseInsensitiveCompare:[[email2 componentsSeparatedByString:@"@"]lastObject]]
 NSString *preferredMailMediatorID();
@@ -32,6 +32,13 @@ NSString *preferredMailMediatorID();
      QSEmailItemReverseAction
    You'll most likely just return the same one unconditionally.
 */
+
+/**
+ *  Returns the default from email address to be used
+ *
+ *  @return An NSString containing the default from address, as specified in the 'Email options' preference pane
+ */
+- (MCOAddress *)defaultEmailAddress;
 @end
 
 @interface QSMailMediator : NSObject <QSMailMediator> {
@@ -43,6 +50,9 @@ NSString *preferredMailMediatorID();
 - (NSAppleScript *)mailScript;
 - (void)setMailScript:(NSAppleScript *)newMailScript;
 - (NSString *)scriptPath;
+
+
+
 @end
 
 @interface QSRegistry (QSMailMediator)
