@@ -176,7 +176,7 @@
             break;
             
         default:
-            connType =  MCOConnectionTypeTLS;
+            connType = tls ? MCOConnectionTypeTLS : MCOConnectionTypeClear;
             break;
     }
     
