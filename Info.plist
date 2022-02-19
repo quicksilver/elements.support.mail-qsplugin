@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>9B</string>
+	<string>9C</string>
 	<key>NSPrincipalClass</key>
 	<string>QSEmailSupport</string>
 	<key>QSActions</key>
@@ -280,6 +280,8 @@ Are you busy? That new movie is coming out.
 	<dict>
 		<key>version</key>
 		<string>4001</string>
+		<key>osRequired</key>
+		<string>10.14</string>
 	</dict>
 </dict>
 </plist>
