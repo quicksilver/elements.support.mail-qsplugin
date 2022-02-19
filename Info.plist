@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.2</string>
+	<string>2.1.0</string>
 	<key>CFBundleSignature</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -207,7 +207,7 @@
 		<string>&lt;h2&gt;E-mail Support&lt;/h2&gt;
 &lt;p&gt;This plug-in enables you to send mail (including attachments) directly from Quicksilver. You must have a mail client (such as Apple Mail) configured, and its plugin must be loaded.&lt;/p&gt;
 &lt;h3&gt;Sending&lt;/h3&gt;
-&lt;p&gt;You can send one or more files using the comma-trick or you can enter the text of your message into Quicksilver. When entering text, you can specify a subject by separating it from the rest of your message with "&amp;gt;&amp;gt;". For example&lt;/p&gt;
+&lt;p&gt;You can send one or more files using the comma-trick or you can enter the text of your message into Quicksilver. When entering text, you can specify a subject by separating it from the rest of your message with &quot;&amp;gt;&amp;gt;&quot;. For example&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Tomorrow night&amp;gt;&amp;gt;Are you busy? That new movie is coming out.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;will be sent as&lt;/p&gt;
@@ -215,17 +215,17 @@
 
 Are you busy? That new movie is coming out.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can't enter text when sending files, but you can set a message to accompany attachments by default in the preferences.&lt;/p&gt;
-&lt;p&gt;As a general rule, you can do either "Contact(s) ⇥ E-mail Item… ⇥ Text/Files" or "Text/Files ⇥ E-mail To… ⇥ Contact(s)".&lt;/p&gt;
+&lt;p&gt;You can&apos;t enter text when sending files, but you can set a message to accompany attachments by default in the preferences.&lt;/p&gt;
+&lt;p&gt;As a general rule, you can do either &quot;Contact(s) ⇥ E-mail Item… ⇥ Text/Files&quot; or &quot;Text/Files ⇥ E-mail To… ⇥ Contact(s)&quot;.&lt;/p&gt;
 &lt;h3&gt;Compose vs. Send vs. Direct&lt;/h3&gt;
-&lt;p&gt;The actions have either "Compose", "Send", or "Direct" in their name somewhere.&lt;/p&gt;
+&lt;p&gt;The actions have either &quot;Compose&quot;, &quot;Send&quot;, or &quot;Direct&quot; in their name somewhere.&lt;/p&gt;
 &lt;dl&gt;
 &lt;dt&gt;Compose&lt;/dt&gt;
 &lt;dd&gt;Send the text or file(s) using your e-mail client. A new message will open for further editing.&lt;/dd&gt;
 &lt;dt&gt;Send&lt;/dt&gt;
 &lt;dd&gt;Send the text or file(s) using your e-mail client. The message will be sent immediately.&lt;/dd&gt;
 &lt;dt&gt;Direct&lt;/dt&gt;
-&lt;dd&gt;Send the text or file(s) immedately without opening an e-mail client. Though the client doesn't need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.&lt;/dd&gt;
+&lt;dd&gt;Send the text or file(s) immedately without opening an e-mail client. Though the client doesn&apos;t need to run, this action still requires that your e-mail client be configured with the details for at least one SMTP server.&lt;/dd&gt;
 &lt;/dl&gt;</string>
 		<key>hidden</key>
 		<false/>
