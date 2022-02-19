@@ -88,7 +88,7 @@
 		NSString *string = [iObject stringValue];
 		NSString *delimiter = @"\n";
 		NSArray *components = [string componentsSeparatedByString:delimiter];
-		if (![components count] < 2) {
+		if (!([components count] < 2)) {
 			delimiter = @">>";
 			components = [string componentsSeparatedByString:delimiter];
 		}
@@ -107,22 +107,22 @@
 		body = @"";
 	}
 
-	CTCoreAddress *from = [self defaultEmailAddress];
+	MCOAddress *from = [self defaultEmailAddress];
 	if (direct) {
 		NSMutableSet *addresses = [NSMutableSet set];
 		NSString *name = nil;
 		for (QSObject *recipient in [dObject splitObjects]) {
 			name = [recipient name] ? [recipient name] : @"";
-			[addresses addObject:[CTCoreAddress addressWithName:[recipient name] email:[recipient objectForType:QSEmailAddressType]]];
+			[addresses addObject:[MCOAddress addressWithDisplayName:[recipient name] mailbox:[recipient objectForType:QSEmailAddressType]]];
 		}
 		[self sendMessageTo:addresses from:from subject:subject body:body attachments:attachments sendNow:sendNow];
 	} else {
 		// mail mediators don't use MailCore types - convert before pasing info along
 		NSString *fromString = nil;
-		if ([from name]) {
-			fromString = [NSString stringWithFormat:@"%@ <%@>", [from name], [from email]];
+		if ([from displayName]) {
+			fromString = [NSString stringWithFormat:@"%@ <%@>", [from displayName], [from mailbox]];
 		} else {
-			fromString = [from email];
+			fromString = [from mailbox];
 		}
 		[[QSMailMediator defaultMediator] sendEmailTo:[dObject arrayForType:QSEmailAddressType] from:fromString subject:subject body:body attachments:attachments sendNow:sendNow];
 	}
@@ -131,7 +131,7 @@
 
 # pragma mark - Helper Methods
 
-- (CTCoreAddress *)defaultEmailAddress
+- (MCOAddress *)defaultEmailAddress
 {
 	/* If the user puts either "Home" or "Work" as their custom from address,
 	   look up the corresponding entry in their Contacts. Otherwise, just use
@@ -167,23 +167,24 @@
 	} else {
 		senderAddress = whichAddress;
 	}
-	return [CTCoreAddress addressWithName:senderName email:senderAddress];
+	return [MCOAddress addressWithDisplayName:senderName mailbox:senderAddress];
 }
 
-- (void) sendMessageTo:(NSSet *)addresses from:(CTCoreAddress *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow
+- (void) sendMessageTo:(NSSet *)addresses from:(MCOAddress *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow
 {
     id<QSMailMediator> mediator = [QSReg QSMailMediator];
 	if ([(QSMailMediator *)mediator respondsToSelector:@selector(smtpServerDetails)]) {
 		// set up the message
-		CTCoreMessage *message = [[CTCoreMessage alloc] init];
-		[message setTo:addresses];
-		[message setFrom:[NSSet setWithObject:sender]];
-		[message setSubject:subject];
+		MCOMessageBuilder *message = [[MCOMessageBuilder alloc] init];
+		
+		[[message header] setTo:[addresses allObjects]];
+		[[message header] setFrom:sender];
+		[[message header] setSubject:subject];
 		// TODO: set X-Mailer to "Quicksilver VERSION"
-		[message setBody:body];
-		CTCoreAttachment *attachment = nil;
+		[message setTextBody:body];
+		MCOAttachment *attachment = nil;
 		for (NSString *path in pathArray) {
-			attachment = [[CTCoreAttachment alloc] initWithContentsOfFile:path];
+			attachment = [MCOAttachment attachmentWithContentsOfFile:path];
 			[message addAttachment:attachment];
 			[attachment release];
 		}
@@ -197,40 +198,45 @@
 			return;
 		}
 		NSUInteger port = [serverDetails objectForKey:QSMailMediatorPort] ? [[serverDetails objectForKey:QSMailMediatorPort] integerValue] : 25;
-        CTSMTPConnectionType connType = 0;
+		MCOSMTPSession *smtpSession = [[MCOSMTPSession alloc] init];
+		smtpSession.hostname = server;
+		smtpSession.port = (unsigned int) port;
+		smtpSession.username = [serverDetails objectForKey:QSMailMediatorUsername];
+		smtpSession.password = [serverDetails objectForKey:QSMailMediatorPassword];
+		
 		BOOL tls = [[serverDetails objectForKey:QSMailMediatorTLS] isEqualToString:@"YES"];
-        switch (port) {
+		switch (port) {
             case 465:
-                connType = CTSMTPConnectionTypeTLS;
+				smtpSession.connectionType = MCOConnectionTypeTLS;
                 break;
             
             case 587:
-                connType = CTSMTPConnectionTypeStartTLS;
+				smtpSession.connectionType = MCOConnectionTypeStartTLS;
                 break;
                 
             default:
-                connType = tls ? CTSMTPConnectionTypeTLS : CTSMTPConnectionTypePlain;
+                smtpSession.connectionType = tls ? MCOConnectionTypeTLS : MCOConnectionTypeStartTLS;
                 break;
         }
-		BOOL authn = [[serverDetails objectForKey:QSMailMediatorAuthenticate] isEqualToString:@"YES"];
-		NSString *username = [serverDetails objectForKey:QSMailMediatorUsername];
-		NSString *password = [serverDetails objectForKey:QSMailMediatorPassword];
+		
 		//NSLog(@"params - s: %@, p: %ld, u: %@, p: %@, tls: %d, auth: %d", server, (long)port, username, @"obscured", tls, authn);
 		
+		
 		// send the message
-		NSError *error;
-		BOOL sent = [CTSMTPConnection sendMessage:message server:server username:username password:password port:port connectionType:connType useAuth:authn error:&error];
-		[message release];
-		if ( !sent )
-		{
-			NSString *errorMessage = [NSString stringWithFormat:@"Message could not be sent: %@", [error localizedDescription]];
-			NSLog(@"%@", errorMessage);
-			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"SendEmailMessageFailedNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
-		}
-		else{
-			NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
-			[sound play];
-		}
+		NSData * rfc822Data = [message data];
+		MCOSMTPSendOperation *sendOperation = [smtpSession sendOperationWithData:rfc822Data];
+
+		[sendOperation start:^(NSError *error) {
+			if(error) {
+				NSString *errorMessage = [NSString stringWithFormat:@"Message could not be sent: %@", [error localizedDescription]];
+				NSLog(@"%@", errorMessage);
+				QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"SendEmailMessageFailedNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
+			} else {
+				NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
+				[sound play];			}
+		}];
+		
+
 	} else {
 		NSLog(@"Mail mediator does not provide SMTP server details.");
 		QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingDetailsNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, @"The chosen e-mail handler does not provide SMTP server details.", QSNotifierText, nil]);
