@@ -1,16 +1,27 @@
 Quicksilver E-mail Support
 ==========================
 
-This plug-in depends on the [MailCore framework](https://github.com/mronge/MailCore). It's already included as a sub-project for this plug-in, but of course it has to exist on your system for that to work. To set it up, from this project's directory:
+This plug-in depends on the [MailCore framework](https://github.com/mronge/MailCore). It's already included as a sub-project for this plug-in. After checking out this project, make sure to run:
 
-    mkdir ../Support
-    cd ../Support
-    git clone git://github.com/mronge/MailCore.git
-    cd MailCore
-    git submodule init
-    git submodule update
+    git submodules update --init --recursive
 
 Now, you should be able to come back to this project and build.
+
+Building Other Mail Plugins that Rely on MailCore/QSMailMediator.h
+------------------------------------------------------------------
+
+If you plan on building other plugins that require either MailCore or the QSMailMediator.h file, make sure to add both to the 'Header Search Paths' build setting of your new plugin. To do this follow the steps below (this assumes you have an Xcode project called 'MyPlugin.xcodeproj'):
+
+1. Create your new plugin in the same root folder as the `elements.support.mail-qsplugin` folder. **Important**: do not rename the Email-Support folder from `elements.support.mail-qsplugin`
+2. Go to your plugin's build0settings by clicking the 'MyPlugin' icon in the sidebar, then clicking your plugin's target, and clicking 'Build Settings'
+3. Search for `header search paths` in the searchbar
+4. Find the 'Header Search Paths' setting. Open the text by double clicking the item
+5. Enter the text: `"$(SRCROOT)/../elements.support.mail-qsplugin"`
+6. Enter the text: `elements.support.mail-qsplugin/MailCore/build-mac/build/$(CONFIGURATION)/include`
+
+Here's a screenshot of how your configuration should look:
+
+![Header Search Paths](header-search-paths.png)
 
 Before You Try It Out
 ---------------------
