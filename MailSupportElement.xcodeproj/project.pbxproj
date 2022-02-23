@@ -12,7 +12,7 @@
 		7F839CD907CCD6E5003F2874 /* QSMailMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 		CD52178827C3AEAF00314359 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD52177F27C3AE8000314359 /* MailCore.framework */; };
-		CD52178927C3AEBD00314359 /* MailCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CD52177F27C3AE8000314359 /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD5217FC27C5DCA700314359 /* MailCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CD52177F27C3AE8000314359 /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDB5A04527C0743900F43DE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB5A04427C0743900F43DE0 /* Security.framework */; };
 		D4A32F1C15AB5FC10055469A /* QSMailSupportPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */; };
 		D4BB97F0159DFE9A00415FA2 /* Quicksilver.pch in Headers */ = {isa = PBXBuildFile; fileRef = D4BB97EA159DFE9A00415FA2 /* Quicksilver.pch */; };
@@ -92,7 +92,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD52178927C3AEBD00314359 /* MailCore.framework in Copy Frameworks */,
+				CD5217FC27C5DCA700314359 /* MailCore.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
