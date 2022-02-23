@@ -3,7 +3,7 @@ Quicksilver E-mail Support
 
 This plug-in depends on the [MailCore framework](https://github.com/mronge/MailCore). It's already included as a sub-project for this plug-in. After checking out this project, make sure to run:
 
-    git submodules update --init --recursive
+    git submodule update --init --recursive
 
 Now, you should be able to come back to this project and build.
 
