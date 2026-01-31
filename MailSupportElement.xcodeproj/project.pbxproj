@@ -11,79 +11,417 @@
 		7F839CD807CCD6CF003F2874 /* QSMailMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F839CD207CCD6CF003F2874 /* QSMailMediator.m */; };
 		7F839CD907CCD6E5003F2874 /* QSMailMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F839CCD07CCD6CF003F2874 /* QSMailMediator.h */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
-		CD52178827C3AEAF00314359 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD52177F27C3AE8000314359 /* MailCore.framework */; };
-		CD52178927C3AEBD00314359 /* MailCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CD52177F27C3AE8000314359 /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDB5A04527C0743900F43DE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB5A04427C0743900F43DE0 /* Security.framework */; };
+		CDE0F6DA2F2E0E43007AED48 /* libetpan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE0F6D42F2E0E43007AED48 /* libetpan.a */; };
+		CDE0F6DB2F2E0E43007AED48 /* libMailCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE0F6D52F2E0E43007AED48 /* libMailCore.a */; };
+		CDE0F6DC2F2E0E43007AED48 /* libctemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE0F6D32F2E0E43007AED48 /* libctemplate.a */; };
+		CDE0F6DD2F2E0E43007AED48 /* MailCore.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = CDE0F6D72F2E0E43007AED48 /* MailCore.framework.dSYM */; };
+		CDE0F6DE2F2E0E43007AED48 /* MCMessageConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63E2F2E0E43007AED48 /* MCMessageConstants.h */; };
+		CDE0F6DF2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68E2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h */; };
+		CDE0F6E02F2E0E43007AED48 /* mailstream_low.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B82F2E0E43007AED48 /* mailstream_low.h */; };
+		CDE0F6E12F2E0E43007AED48 /* dbstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F55B2F2E0E43007AED48 /* dbstorage.h */; };
+		CDE0F6E22F2E0E43007AED48 /* mboxdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5BE2F2E0E43007AED48 /* mboxdriver.h */; };
+		CDE0F6E32F2E0E43007AED48 /* mailpop3_socket.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A32F2E0E43007AED48 /* mailpop3_socket.h */; };
+		CDE0F6E42F2E0E43007AED48 /* mailstream_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B72F2E0E43007AED48 /* mailstream_helper.h */; };
+		CDE0F6E52F2E0E43007AED48 /* nntpdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D82F2E0E43007AED48 /* nntpdriver.h */; };
+		CDE0F6E62F2E0E43007AED48 /* MCNNTPGroupInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F64C2F2E0E43007AED48 /* MCNNTPGroupInfo.h */; };
+		CDE0F6E72F2E0E43007AED48 /* mailpop3_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A22F2E0E43007AED48 /* mailpop3_helper.h */; };
+		CDE0F6E82F2E0E43007AED48 /* MCOPOPFetchMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F69F2F2E0E43007AED48 /* MCOPOPFetchMessagesOperation.h */; };
+		CDE0F6E92F2E0E43007AED48 /* MCOPOP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F69C2F2E0E43007AED48 /* MCOPOP.h */; };
+		CDE0F6EA2F2E0E43007AED48 /* mailimf_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F58D2F2E0E43007AED48 /* mailimf_types.h */; };
+		CDE0F6EB2F2E0E43007AED48 /* MCSMTPOperationCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C32F2E0E43007AED48 /* MCSMTPOperationCallback.h */; };
+		CDE0F6EC2F2E0E43007AED48 /* MCBaseTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6032F2E0E43007AED48 /* MCBaseTypes.h */; };
+		CDE0F6ED2F2E0E43007AED48 /* MCOIMAPFolderStatusOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6712F2E0E43007AED48 /* MCOIMAPFolderStatusOperation.h */; };
+		CDE0F6EE2F2E0E43007AED48 /* MCMultipart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6422F2E0E43007AED48 /* MCMultipart.h */; };
+		CDE0F6EF2F2E0E43007AED48 /* mailmbox.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5932F2E0E43007AED48 /* mailmbox.h */; };
+		CDE0F6F02F2E0E43007AED48 /* quota_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E72F2E0E43007AED48 /* quota_parser.h */; };
+		CDE0F6F12F2E0E43007AED48 /* MCOIMAP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6612F2E0E43007AED48 /* MCOIMAP.h */; };
+		CDE0F6F22F2E0E43007AED48 /* MCIMAPNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6282F2E0E43007AED48 /* MCIMAPNamespace.h */; };
+		CDE0F6F32F2E0E43007AED48 /* mailprivacy_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5AA2F2E0E43007AED48 /* mailprivacy_types.h */; };
+		CDE0F6F42F2E0E43007AED48 /* MCOSMTPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6AC2F2E0E43007AED48 /* MCOSMTPSession.h */; };
+		CDE0F6F52F2E0E43007AED48 /* MCIMAPFetchNamespaceOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6192F2E0E43007AED48 /* MCIMAPFetchNamespaceOperation.h */; };
+		CDE0F6F62F2E0E43007AED48 /* maildriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F57A2F2E0E43007AED48 /* maildriver_types.h */; };
+		CDE0F6F72F2E0E43007AED48 /* MCNNTPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F64E2F2E0E43007AED48 /* MCNNTPOperation.h */; };
+		CDE0F6F82F2E0E43007AED48 /* mailstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B22F2E0E43007AED48 /* mailstorage.h */; };
+		CDE0F6F92F2E0E43007AED48 /* MCOIMAPFolderStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6702F2E0E43007AED48 /* MCOIMAPFolderStatus.h */; };
+		CDE0F6FA2F2E0E43007AED48 /* mime_message_driver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5CA2F2E0E43007AED48 /* mime_message_driver.h */; };
+		CDE0F6FB2F2E0E43007AED48 /* MCIMAPAppendMessageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F60E2F2E0E43007AED48 /* MCIMAPAppendMessageOperation.h */; };
+		CDE0F6FC2F2E0E43007AED48 /* MCIMAPFolderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F61C2F2E0E43007AED48 /* MCIMAPFolderInfo.h */; };
+		CDE0F6FD2F2E0E43007AED48 /* MCAccountValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F72F2E0E43007AED48 /* MCAccountValidator.h */; };
+		CDE0F6FE2F2E0E43007AED48 /* mailmime_content.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5992F2E0E43007AED48 /* mailmime_content.h */; };
+		CDE0F6FF2F2E0E43007AED48 /* MCONNTPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6942F2E0E43007AED48 /* MCONNTPOperation.h */; };
+		CDE0F7002F2E0E43007AED48 /* libetpan-config.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F56E2F2E0E43007AED48 /* libetpan-config.h */; };
+		CDE0F7012F2E0E43007AED48 /* carray.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5512F2E0E43007AED48 /* carray.h */; };
+		CDE0F7022F2E0E43007AED48 /* MCOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F69B2F2E0E43007AED48 /* MCOperationQueue.h */; };
+		CDE0F7032F2E0E43007AED48 /* mailprivacy_gnupg.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A72F2E0E43007AED48 /* mailprivacy_gnupg.h */; };
+		CDE0F7042F2E0E43007AED48 /* xgmlabels.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5EC2F2E0E43007AED48 /* xgmlabels.h */; };
+		CDE0F7052F2E0E43007AED48 /* acl.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F54D2F2E0E43007AED48 /* acl.h */; };
+		CDE0F7062F2E0E43007AED48 /* mailimap.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F57E2F2E0E43007AED48 /* mailimap.h */; };
+		CDE0F7072F2E0E43007AED48 /* mailstream_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5BB2F2E0E43007AED48 /* mailstream_types.h */; };
+		CDE0F7082F2E0E43007AED48 /* MCOHTMLRendererDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F65F2F2E0E43007AED48 /* MCOHTMLRendererDelegate.h */; };
+		CDE0F7092F2E0E43007AED48 /* mailsem.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5AB2F2E0E43007AED48 /* mailsem.h */; };
+		CDE0F70A2F2E0E43007AED48 /* MCONNTPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6962F2E0E43007AED48 /* MCONNTPSession.h */; };
+		CDE0F70B2F2E0E43007AED48 /* MCOIMAPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F67C2F2E0E43007AED48 /* MCOIMAPOperation.h */; };
+		CDE0F70C2F2E0E43007AED48 /* mailsmtp_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B12F2E0E43007AED48 /* mailsmtp_types.h */; };
+		CDE0F70D2F2E0E43007AED48 /* dbdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5582F2E0E43007AED48 /* dbdriver.h */; };
+		CDE0F70E2F2E0E43007AED48 /* MCPOPOperationCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B62F2E0E43007AED48 /* MCPOPOperationCallback.h */; };
+		CDE0F70F2F2E0E43007AED48 /* MCIMAP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F60D2F2E0E43007AED48 /* MCIMAP.h */; };
+		CDE0F7102F2E0E43007AED48 /* template_namelist.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5492F2E0E43007AED48 /* template_namelist.h */; };
+		CDE0F7112F2E0E43007AED48 /* MCIMAPCheckAccountOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6112F2E0E43007AED48 /* MCIMAPCheckAccountOperation.h */; };
+		CDE0F7122F2E0E43007AED48 /* mailimf.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F58C2F2E0E43007AED48 /* mailimf.h */; };
+		CDE0F7132F2E0E43007AED48 /* dbdriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F55A2F2E0E43007AED48 /* dbdriver_types.h */; };
+		CDE0F7142F2E0E43007AED48 /* pop3driver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E22F2E0E43007AED48 /* pop3driver_types.h */; };
+		CDE0F7152F2E0E43007AED48 /* MCOIMAPQuotaOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F67E2F2E0E43007AED48 /* MCOIMAPQuotaOperation.h */; };
+		CDE0F7162F2E0E43007AED48 /* imapdriver_tools.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5682F2E0E43007AED48 /* imapdriver_tools.h */; };
+		CDE0F7172F2E0E43007AED48 /* MCIMAPFolderInfoOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F61D2F2E0E43007AED48 /* MCIMAPFolderInfoOperation.h */; };
+		CDE0F7182F2E0E43007AED48 /* NSDictionary+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6CB2F2E0E43007AED48 /* NSDictionary+MCO.h */; };
+		CDE0F7192F2E0E43007AED48 /* xlist.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5EF2F2E0E43007AED48 /* xlist.h */; };
+		CDE0F71A2F2E0E43007AED48 /* MCPOPFetchMessageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B12F2E0E43007AED48 /* MCPOPFetchMessageOperation.h */; };
+		CDE0F71B2F2E0E43007AED48 /* MCONNTPFetchOverviewOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6902F2E0E43007AED48 /* MCONNTPFetchOverviewOperation.h */; };
+		CDE0F71C2F2E0E43007AED48 /* uidplus_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5EB2F2E0E43007AED48 /* uidplus_types.h */; };
+		CDE0F71D2F2E0E43007AED48 /* template.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5412F2E0E43007AED48 /* template.h */; };
+		CDE0F71E2F2E0E43007AED48 /* MCIMAPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F62B2F2E0E43007AED48 /* MCIMAPOperation.h */; };
+		CDE0F71F2F2E0E43007AED48 /* MCIMAPSearchExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6302F2E0E43007AED48 /* MCIMAPSearchExpression.h */; };
+		CDE0F7202F2E0E43007AED48 /* mhdriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C72F2E0E43007AED48 /* mhdriver_message.h */; };
+		CDE0F7212F2E0E43007AED48 /* mailmime_disposition.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F59B2F2E0E43007AED48 /* mailmime_disposition.h */; };
+		CDE0F7222F2E0E43007AED48 /* MCOAbstract.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6542F2E0E43007AED48 /* MCOAbstract.h */; };
+		CDE0F7232F2E0E43007AED48 /* MCIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6352F2E0E43007AED48 /* MCIterator.h */; };
+		CDE0F7242F2E0E43007AED48 /* MCRFC822.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6BC2F2E0E43007AED48 /* MCRFC822.h */; };
+		CDE0F7252F2E0E43007AED48 /* mailimf_write_file.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F58F2F2E0E43007AED48 /* mailimf_write_file.h */; };
+		CDE0F7262F2E0E43007AED48 /* MCOAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F65B2F2E0E43007AED48 /* MCOAttachment.h */; };
+		CDE0F7272F2E0E43007AED48 /* MCIndexSet.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6342F2E0E43007AED48 /* MCIndexSet.h */; };
+		CDE0F7282F2E0E43007AED48 /* pop3storage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E32F2E0E43007AED48 /* pop3storage.h */; };
+		CDE0F7292F2E0E43007AED48 /* MCPOPProgressCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B72F2E0E43007AED48 /* MCPOPProgressCallback.h */; };
+		CDE0F72A2F2E0E43007AED48 /* MCOAccountValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6592F2E0E43007AED48 /* MCOAccountValidator.h */; };
+		CDE0F72B2F2E0E43007AED48 /* mailimap_compress.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F57F2F2E0E43007AED48 /* mailimap_compress.h */; };
+		CDE0F72C2F2E0E43007AED48 /* MCOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6992F2E0E43007AED48 /* MCOperation.h */; };
+		CDE0F72D2F2E0E43007AED48 /* NSError+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6CC2F2E0E43007AED48 /* NSError+MCO.h */; };
+		CDE0F72E2F2E0E43007AED48 /* imapdriver_tools_private.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5692F2E0E43007AED48 /* imapdriver_tools_private.h */; };
+		CDE0F72F2F2E0E43007AED48 /* MCOIMAPFetchNamespaceOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F66B2F2E0E43007AED48 /* MCOIMAPFetchNamespaceOperation.h */; };
+		CDE0F7302F2E0E43007AED48 /* MCOPOPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A32F2E0E43007AED48 /* MCOPOPSession.h */; };
+		CDE0F7312F2E0E43007AED48 /* MCOPOPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A22F2E0E43007AED48 /* MCOPOPOperation.h */; };
+		CDE0F7322F2E0E43007AED48 /* MCIMAPIdleOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6222F2E0E43007AED48 /* MCIMAPIdleOperation.h */; };
+		CDE0F7332F2E0E43007AED48 /* MCNNTPFetchOverviewOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F64A2F2E0E43007AED48 /* MCNNTPFetchOverviewOperation.h */; };
+		CDE0F7342F2E0E43007AED48 /* mailimap_extension_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5812F2E0E43007AED48 /* mailimap_extension_types.h */; };
+		CDE0F7352F2E0E43007AED48 /* MCOSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A72F2E0E43007AED48 /* MCOSerializable.h */; };
+		CDE0F7362F2E0E43007AED48 /* mailmessage_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5962F2E0E43007AED48 /* mailmessage_types.h */; };
+		CDE0F7372F2E0E43007AED48 /* MCPOPAsyncSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6AF2F2E0E43007AED48 /* MCPOPAsyncSession.h */; };
+		CDE0F7382F2E0E43007AED48 /* newsnntp_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D72F2E0E43007AED48 /* newsnntp_types.h */; };
+		CDE0F7392F2E0E43007AED48 /* mailprivacy_smime.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A82F2E0E43007AED48 /* mailprivacy_smime.h */; };
+		CDE0F73A2F2E0E43007AED48 /* quota_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E82F2E0E43007AED48 /* quota_sender.h */; };
+		CDE0F73B2F2E0E43007AED48 /* mailsmtp_socket.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5AF2F2E0E43007AED48 /* mailsmtp_socket.h */; };
+		CDE0F73C2F2E0E43007AED48 /* acl_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F54E2F2E0E43007AED48 /* acl_types.h */; };
+		CDE0F73D2F2E0E43007AED48 /* MCIMAPSyncResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6332F2E0E43007AED48 /* MCIMAPSyncResult.h */; };
+		CDE0F73E2F2E0E43007AED48 /* template_modifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5482F2E0E43007AED48 /* template_modifiers.h */; };
+		CDE0F73F2F2E0E43007AED48 /* MCIMAPMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6232F2E0E43007AED48 /* MCIMAPMessage.h */; };
+		CDE0F7402F2E0E43007AED48 /* feedstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5602F2E0E43007AED48 /* feedstorage.h */; };
+		CDE0F7412F2E0E43007AED48 /* MCIMAPFetchContentOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6152F2E0E43007AED48 /* MCIMAPFetchContentOperation.h */; };
+		CDE0F7422F2E0E43007AED48 /* newsfeed_item.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D12F2E0E43007AED48 /* newsfeed_item.h */; };
+		CDE0F7432F2E0E43007AED48 /* MCOIMAPFetchParsedContentOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F66C2F2E0E43007AED48 /* MCOIMAPFetchParsedContentOperation.h */; };
+		CDE0F7442F2E0E43007AED48 /* MCIMAPQuotaOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F62F2F2E0E43007AED48 /* MCIMAPQuotaOperation.h */; };
+		CDE0F7452F2E0E43007AED48 /* MCIMAPFetchMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6182F2E0E43007AED48 /* MCIMAPFetchMessagesOperation.h */; };
+		CDE0F7462F2E0E43007AED48 /* charconv.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5522F2E0E43007AED48 /* charconv.h */; };
+		CDE0F7472F2E0E43007AED48 /* MCOProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A42F2E0E43007AED48 /* MCOProvider.h */; };
+		CDE0F7482F2E0E43007AED48 /* clist.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5542F2E0E43007AED48 /* clist.h */; };
+		CDE0F7492F2E0E43007AED48 /* MCJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6362F2E0E43007AED48 /* MCJSON.h */; };
+		CDE0F74A2F2E0E43007AED48 /* mailmime_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F59C2F2E0E43007AED48 /* mailmime_types.h */; };
+		CDE0F74B2F2E0E43007AED48 /* MCAsyncSMTP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6002F2E0E43007AED48 /* MCAsyncSMTP.h */; };
+		CDE0F74C2F2E0E43007AED48 /* MCAbstract.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F22F2E0E43007AED48 /* MCAbstract.h */; };
+		CDE0F74D2F2E0E43007AED48 /* mailmime.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5982F2E0E43007AED48 /* mailmime.h */; };
+		CDE0F74E2F2E0E43007AED48 /* MCONNTP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68B2F2E0E43007AED48 /* MCONNTP.h */; };
+		CDE0F74F2F2E0E43007AED48 /* nntpdriver_cached.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D92F2E0E43007AED48 /* nntpdriver_cached.h */; };
+		CDE0F7502F2E0E43007AED48 /* MCOIMAPBaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6632F2E0E43007AED48 /* MCOIMAPBaseOperation.h */; };
+		CDE0F7512F2E0E43007AED48 /* maildirdriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5762F2E0E43007AED48 /* maildirdriver_types.h */; };
+		CDE0F7522F2E0E43007AED48 /* maildir.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5702F2E0E43007AED48 /* maildir.h */; };
+		CDE0F7532F2E0E43007AED48 /* MCAbstractMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F32F2E0E43007AED48 /* MCAbstractMessage.h */; };
+		CDE0F7542F2E0E43007AED48 /* mailimap_id_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5842F2E0E43007AED48 /* mailimap_id_types.h */; };
+		CDE0F7552F2E0E43007AED48 /* mailstream_socket.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B92F2E0E43007AED48 /* mailstream_socket.h */; };
+		CDE0F7562F2E0E43007AED48 /* MCIMAPPart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F62D2F2E0E43007AED48 /* MCIMAPPart.h */; };
+		CDE0F7572F2E0E43007AED48 /* mhstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C92F2E0E43007AED48 /* mhstorage.h */; };
+		CDE0F7582F2E0E43007AED48 /* MCIMAPProgressCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F62E2F2E0E43007AED48 /* MCIMAPProgressCallback.h */; };
+		CDE0F7592F2E0E43007AED48 /* namespace_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5CD2F2E0E43007AED48 /* namespace_parser.h */; };
+		CDE0F75A2F2E0E43007AED48 /* annotatemore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F54F2F2E0E43007AED48 /* annotatemore.h */; };
+		CDE0F75B2F2E0E43007AED48 /* MCAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F82F2E0E43007AED48 /* MCAddress.h */; };
+		CDE0F75C2F2E0E43007AED48 /* MCNNTPProgressCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6512F2E0E43007AED48 /* MCNNTPProgressCallback.h */; };
+		CDE0F75D2F2E0E43007AED48 /* per_expand_data.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F53F2F2E0E43007AED48 /* per_expand_data.h */; };
+		CDE0F75E2F2E0E43007AED48 /* MCPOPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B52F2E0E43007AED48 /* MCPOPOperation.h */; };
+		CDE0F75F2F2E0E43007AED48 /* MCIMAPSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6312F2E0E43007AED48 /* MCIMAPSearchOperation.h */; };
+		CDE0F7602F2E0E43007AED48 /* MCIMAPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6322F2E0E43007AED48 /* MCIMAPSession.h */; };
+		CDE0F7612F2E0E43007AED48 /* maildriver_errors.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5792F2E0E43007AED48 /* maildriver_errors.h */; };
+		CDE0F7622F2E0E43007AED48 /* xgmthrid.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5EE2F2E0E43007AED48 /* xgmthrid.h */; };
+		CDE0F7632F2E0E43007AED48 /* chash.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5532F2E0E43007AED48 /* chash.h */; };
+		CDE0F7642F2E0E43007AED48 /* MCPOPMessageInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B32F2E0E43007AED48 /* MCPOPMessageInfo.h */; };
+		CDE0F7652F2E0E43007AED48 /* NSIndexSet+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6CD2F2E0E43007AED48 /* NSIndexSet+MCO.h */; };
+		CDE0F7662F2E0E43007AED48 /* MCOIMAPCustomCommandOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6662F2E0E43007AED48 /* MCOIMAPCustomCommandOperation.h */; };
+		CDE0F7672F2E0E43007AED48 /* imapstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F56B2F2E0E43007AED48 /* imapstorage.h */; };
+		CDE0F7682F2E0E43007AED48 /* feeddriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F55E2F2E0E43007AED48 /* feeddriver_message.h */; };
+		CDE0F7692F2E0E43007AED48 /* quota.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E62F2E0E43007AED48 /* quota.h */; };
+		CDE0F76A2F2E0E43007AED48 /* MCPOPFetchMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B22F2E0E43007AED48 /* MCPOPFetchMessagesOperation.h */; };
+		CDE0F76B2F2E0E43007AED48 /* mboxdriver_cached.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5BF2F2E0E43007AED48 /* mboxdriver_cached.h */; };
+		CDE0F76C2F2E0E43007AED48 /* feeddriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F55F2F2E0E43007AED48 /* feeddriver_types.h */; };
+		CDE0F76D2F2E0E43007AED48 /* MCIMAPCustomCommandOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6142F2E0E43007AED48 /* MCIMAPCustomCommandOperation.h */; };
+		CDE0F76E2F2E0E43007AED48 /* MCHashMap.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6092F2E0E43007AED48 /* MCHashMap.h */; };
+		CDE0F76F2F2E0E43007AED48 /* MCPOPNoopOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B42F2E0E43007AED48 /* MCPOPNoopOperation.h */; };
+		CDE0F7702F2E0E43007AED48 /* MCNNTPFetchAllArticlesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6472F2E0E43007AED48 /* MCNNTPFetchAllArticlesOperation.h */; };
+		CDE0F7712F2E0E43007AED48 /* MCUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C72F2E0E43007AED48 /* MCUtils.h */; };
+		CDE0F7722F2E0E43007AED48 /* MCICUTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F60C2F2E0E43007AED48 /* MCICUTypes.h */; };
+		CDE0F7732F2E0E43007AED48 /* imapdriver_cached.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5652F2E0E43007AED48 /* imapdriver_cached.h */; };
+		CDE0F7742F2E0E43007AED48 /* MailCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F12F2E0E43007AED48 /* MailCore.h */; };
+		CDE0F7752F2E0E43007AED48 /* MCAutoreleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6022F2E0E43007AED48 /* MCAutoreleasePool.h */; };
+		CDE0F7762F2E0E43007AED48 /* MCNNTPListNewsgroupsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F64D2F2E0E43007AED48 /* MCNNTPListNewsgroupsOperation.h */; };
+		CDE0F7772F2E0E43007AED48 /* annotatemore_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5502F2E0E43007AED48 /* annotatemore_types.h */; };
+		CDE0F7782F2E0E43007AED48 /* pop3driver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5DE2F2E0E43007AED48 /* pop3driver.h */; };
+		CDE0F7792F2E0E43007AED48 /* MCONNTPDisconnectOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68C2F2E0E43007AED48 /* MCONNTPDisconnectOperation.h */; };
+		CDE0F77A2F2E0E43007AED48 /* MCMessageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63F2F2E0E43007AED48 /* MCMessageHeader.h */; };
+		CDE0F77B2F2E0E43007AED48 /* NSData+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6CA2F2E0E43007AED48 /* NSData+MCO.h */; };
+		CDE0F77C2F2E0E43007AED48 /* MCSMTPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C22F2E0E43007AED48 /* MCSMTPOperation.h */; };
+		CDE0F77D2F2E0E43007AED48 /* MCIMAPIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6202F2E0E43007AED48 /* MCIMAPIdentity.h */; };
+		CDE0F77E2F2E0E43007AED48 /* nntpdriver_cached_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5DA2F2E0E43007AED48 /* nntpdriver_cached_message.h */; };
+		CDE0F77F2F2E0E43007AED48 /* mboxdriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C22F2E0E43007AED48 /* mboxdriver_types.h */; };
+		CDE0F7802F2E0E43007AED48 /* MCOIMAPSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6802F2E0E43007AED48 /* MCOIMAPSearchOperation.h */; };
+		CDE0F7812F2E0E43007AED48 /* MCOIMAPFetchMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F66A2F2E0E43007AED48 /* MCOIMAPFetchMessagesOperation.h */; };
+		CDE0F7822F2E0E43007AED48 /* MCNNTPPostOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6502F2E0E43007AED48 /* MCNNTPPostOperation.h */; };
+		CDE0F7832F2E0E43007AED48 /* mboxdriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C12F2E0E43007AED48 /* mboxdriver_message.h */; };
+		CDE0F7842F2E0E43007AED48 /* MCOMultipart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6892F2E0E43007AED48 /* MCOMultipart.h */; };
+		CDE0F7852F2E0E43007AED48 /* namespace.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5CC2F2E0E43007AED48 /* namespace.h */; };
+		CDE0F7862F2E0E43007AED48 /* mailstream_compress.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B62F2E0E43007AED48 /* mailstream_compress.h */; };
+		CDE0F7872F2E0E43007AED48 /* MCOIMAPFolderInfoOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F66F2F2E0E43007AED48 /* MCOIMAPFolderInfoOperation.h */; };
+		CDE0F7882F2E0E43007AED48 /* nntpdriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5DC2F2E0E43007AED48 /* nntpdriver_types.h */; };
+		CDE0F7892F2E0E43007AED48 /* MCNull.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6532F2E0E43007AED48 /* MCNull.h */; };
+		CDE0F78A2F2E0E43007AED48 /* template_annotator.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5422F2E0E43007AED48 /* template_annotator.h */; };
+		CDE0F78B2F2E0E43007AED48 /* template_string.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F54B2F2E0E43007AED48 /* template_string.h */; };
+		CDE0F78C2F2E0E43007AED48 /* MCIMAPNamespaceItem.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6292F2E0E43007AED48 /* MCIMAPNamespaceItem.h */; };
+		CDE0F78D2F2E0E43007AED48 /* MCOSMTPOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6AA2F2E0E43007AED48 /* MCOSMTPOperation.h */; };
+		CDE0F78E2F2E0E43007AED48 /* MCNNTPFetchArticleOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6482F2E0E43007AED48 /* MCNNTPFetchArticleOperation.h */; };
+		CDE0F78F2F2E0E43007AED48 /* MCSMTPAsyncSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C02F2E0E43007AED48 /* MCSMTPAsyncSession.h */; };
+		CDE0F7902F2E0E43007AED48 /* mailmime_types_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F59D2F2E0E43007AED48 /* mailmime_types_helper.h */; };
+		CDE0F7912F2E0E43007AED48 /* template_dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5442F2E0E43007AED48 /* template_dictionary.h */; };
+		CDE0F7922F2E0E43007AED48 /* mailmbox_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5942F2E0E43007AED48 /* mailmbox_types.h */; };
+		CDE0F7932F2E0E43007AED48 /* MCIMAPFetchFoldersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6172F2E0E43007AED48 /* MCIMAPFetchFoldersOperation.h */; };
+		CDE0F7942F2E0E43007AED48 /* MCOIMAPFetchContentOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6672F2E0E43007AED48 /* MCOIMAPFetchContentOperation.h */; };
+		CDE0F7952F2E0E43007AED48 /* MCIMAPIdentityOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6212F2E0E43007AED48 /* MCIMAPIdentityOperation.h */; };
+		CDE0F7962F2E0E43007AED48 /* MCSizeFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6BE2F2E0E43007AED48 /* MCSizeFormatter.h */; };
+		CDE0F7972F2E0E43007AED48 /* MCONNTPListNewsgroupsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6932F2E0E43007AED48 /* MCONNTPListNewsgroupsOperation.h */; };
+		CDE0F7982F2E0E43007AED48 /* MCLibetpanTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6372F2E0E43007AED48 /* MCLibetpanTypes.h */; };
+		CDE0F7992F2E0E43007AED48 /* MCONNTPPostOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6952F2E0E43007AED48 /* MCONNTPPostOperation.h */; };
+		CDE0F79A2F2E0E43007AED48 /* MCOSMTP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A82F2E0E43007AED48 /* MCOSMTP.h */; };
+		CDE0F79B2F2E0E43007AED48 /* mailstream_ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5BA2F2E0E43007AED48 /* mailstream_ssl.h */; };
+		CDE0F79C2F2E0E43007AED48 /* MCPOPFetchHeaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B02F2E0E43007AED48 /* MCPOPFetchHeaderOperation.h */; };
+		CDE0F79D2F2E0E43007AED48 /* mail.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F56F2F2E0E43007AED48 /* mail.h */; };
+		CDE0F79E2F2E0E43007AED48 /* MCIMAPMessageRenderingOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6252F2E0E43007AED48 /* MCIMAPMessageRenderingOperation.h */; };
+		CDE0F79F2F2E0E43007AED48 /* NSValue+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6D02F2E0E43007AED48 /* NSValue+MCO.h */; };
+		CDE0F7A02F2E0E43007AED48 /* MCAsyncIMAP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5FD2F2E0E43007AED48 /* MCAsyncIMAP.h */; };
+		CDE0F7A12F2E0E43007AED48 /* idle.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5632F2E0E43007AED48 /* idle.h */; };
+		CDE0F7A22F2E0E43007AED48 /* mailimap_types_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F58B2F2E0E43007AED48 /* mailimap_types_helper.h */; };
+		CDE0F7A32F2E0E43007AED48 /* pop3driver_cached_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E02F2E0E43007AED48 /* pop3driver_cached_message.h */; };
+		CDE0F7A42F2E0E43007AED48 /* MCOIMAPMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6762F2E0E43007AED48 /* MCOIMAPMessagePart.h */; };
+		CDE0F7A52F2E0E43007AED48 /* mboxdriver_cached_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C02F2E0E43007AED48 /* mboxdriver_cached_message.h */; };
+		CDE0F7A62F2E0E43007AED48 /* mailmh.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5972F2E0E43007AED48 /* mailmh.h */; };
+		CDE0F7A72F2E0E43007AED48 /* feeddriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F55D2F2E0E43007AED48 /* feeddriver.h */; };
+		CDE0F7A82F2E0E43007AED48 /* MCOIMAPNamespaceItem.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F67B2F2E0E43007AED48 /* MCOIMAPNamespaceItem.h */; };
+		CDE0F7A92F2E0E43007AED48 /* MCOMessageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6862F2E0E43007AED48 /* MCOMessageHeader.h */; };
+		CDE0F7AA2F2E0E43007AED48 /* MCONNTPGroupInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6922F2E0E43007AED48 /* MCONNTPGroupInfo.h */; };
+		CDE0F7AB2F2E0E43007AED48 /* MCHTMLCleaner.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F60A2F2E0E43007AED48 /* MCHTMLCleaner.h */; };
+		CDE0F7AC2F2E0E43007AED48 /* condstore_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5562F2E0E43007AED48 /* condstore_types.h */; };
+		CDE0F7AD2F2E0E43007AED48 /* MCIMAPMoveMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6262F2E0E43007AED48 /* MCIMAPMoveMessagesOperation.h */; };
+		CDE0F7AE2F2E0E43007AED48 /* mailpop3_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A52F2E0E43007AED48 /* mailpop3_types.h */; };
+		CDE0F7AF2F2E0E43007AED48 /* mboxstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C32F2E0E43007AED48 /* mboxstorage.h */; };
+		CDE0F7B02F2E0E43007AED48 /* mailmime_write_generic.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F59F2F2E0E43007AED48 /* mailmime_write_generic.h */; };
+		CDE0F7B12F2E0E43007AED48 /* find_ptr.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F53E2F2E0E43007AED48 /* find_ptr.h */; };
+		CDE0F7B22F2E0E43007AED48 /* mailstream_cfstream.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B52F2E0E43007AED48 /* mailstream_cfstream.h */; };
+		CDE0F7B32F2E0E43007AED48 /* MCOSMTPSendOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6AB2F2E0E43007AED48 /* MCOSMTPSendOperation.h */; };
+		CDE0F7B42F2E0E43007AED48 /* MCSMTPNoopOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C12F2E0E43007AED48 /* MCSMTPNoopOperation.h */; };
+		CDE0F7B52F2E0E43007AED48 /* hotmailstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5622F2E0E43007AED48 /* hotmailstorage.h */; };
+		CDE0F7B62F2E0E43007AED48 /* MCOAbstractMultipart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6572F2E0E43007AED48 /* MCOAbstractMultipart.h */; };
+		CDE0F7B72F2E0E43007AED48 /* MCIMAPFetchContentToFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6162F2E0E43007AED48 /* MCIMAPFetchContentToFileOperation.h */; };
+		CDE0F7B82F2E0E43007AED48 /* pop3driver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E12F2E0E43007AED48 /* pop3driver_message.h */; };
+		CDE0F7B92F2E0E43007AED48 /* MCSet.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6BD2F2E0E43007AED48 /* MCSet.h */; };
+		CDE0F7BA2F2E0E43007AED48 /* mailimf_write_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5912F2E0E43007AED48 /* mailimf_write_mem.h */; };
+		CDE0F7BB2F2E0E43007AED48 /* MCOAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F65A2F2E0E43007AED48 /* MCOAddress.h */; };
+		CDE0F7BC2F2E0E43007AED48 /* newsfeed_item_enclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D22F2E0E43007AED48 /* newsfeed_item_enclosure.h */; };
+		CDE0F7BD2F2E0E43007AED48 /* maildirdriver_cached.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5732F2E0E43007AED48 /* maildirdriver_cached.h */; };
+		CDE0F7BE2F2E0E43007AED48 /* mhdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C42F2E0E43007AED48 /* mhdriver.h */; };
+		CDE0F7BF2F2E0E43007AED48 /* MCONetService.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68A2F2E0E43007AED48 /* MCONetService.h */; };
+		CDE0F7C02F2E0E43007AED48 /* mailstorage_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B32F2E0E43007AED48 /* mailstorage_types.h */; };
+		CDE0F7C12F2E0E43007AED48 /* MCArray.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5FA2F2E0E43007AED48 /* MCArray.h */; };
+		CDE0F7C22F2E0E43007AED48 /* imapdriver_cached_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5662F2E0E43007AED48 /* imapdriver_cached_message.h */; };
+		CDE0F7C32F2E0E43007AED48 /* nntpdriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5DB2F2E0E43007AED48 /* nntpdriver_message.h */; };
+		CDE0F7C42F2E0E43007AED48 /* mailstream.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B42F2E0E43007AED48 /* mailstream.h */; };
+		CDE0F7C52F2E0E43007AED48 /* mailimap_oauth2.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5852F2E0E43007AED48 /* mailimap_oauth2.h */; };
+		CDE0F7C62F2E0E43007AED48 /* MCORange.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A52F2E0E43007AED48 /* MCORange.h */; };
+		CDE0F7C72F2E0E43007AED48 /* template_cache.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5432F2E0E43007AED48 /* template_cache.h */; };
+		CDE0F7C82F2E0E43007AED48 /* qresync.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E42F2E0E43007AED48 /* qresync.h */; };
+		CDE0F7C92F2E0E43007AED48 /* mailimap_socket.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5862F2E0E43007AED48 /* mailimap_socket.h */; };
+		CDE0F7CA2F2E0E43007AED48 /* mailimf_types_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F58E2F2E0E43007AED48 /* mailimf_types_helper.h */; };
+		CDE0F7CB2F2E0E43007AED48 /* MCOIMAPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6812F2E0E43007AED48 /* MCOIMAPSession.h */; };
+		CDE0F7CC2F2E0E43007AED48 /* MCOMailProvidersManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6842F2E0E43007AED48 /* MCOMailProvidersManager.h */; };
+		CDE0F7CD2F2E0E43007AED48 /* template_pathops.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F54A2F2E0E43007AED48 /* template_pathops.h */; };
+		CDE0F7CE2F2E0E43007AED48 /* MCOSMTPLoginOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A92F2E0E43007AED48 /* MCOSMTPLoginOperation.h */; };
+		CDE0F7CF2F2E0E43007AED48 /* MCIMAPConnectOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6122F2E0E43007AED48 /* MCIMAPConnectOperation.h */; };
+		CDE0F7D02F2E0E43007AED48 /* MCIMAPCopyMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6132F2E0E43007AED48 /* MCIMAPCopyMessagesOperation.h */; };
+		CDE0F7D12F2E0E43007AED48 /* MCMessageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6402F2E0E43007AED48 /* MCMessageParser.h */; };
+		CDE0F7D22F2E0E43007AED48 /* MCNNTPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6522F2E0E43007AED48 /* MCNNTPSession.h */; };
+		CDE0F7D32F2E0E43007AED48 /* MCIMAPFolderStatusOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F61F2F2E0E43007AED48 /* MCIMAPFolderStatusOperation.h */; };
+		CDE0F7D42F2E0E43007AED48 /* MCAbstractMultipart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F52F2E0E43007AED48 /* MCAbstractMultipart.h */; };
+		CDE0F7D52F2E0E43007AED48 /* namespace_sender.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5CE2F2E0E43007AED48 /* namespace_sender.h */; };
+		CDE0F7D62F2E0E43007AED48 /* MCAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6012F2E0E43007AED48 /* MCAttachment.h */; };
+		CDE0F7D72F2E0E43007AED48 /* mailimap_ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5892F2E0E43007AED48 /* mailimap_ssl.h */; };
+		CDE0F7D82F2E0E43007AED48 /* mailsmtp_oauth2.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5AE2F2E0E43007AED48 /* mailsmtp_oauth2.h */; };
+		CDE0F7D92F2E0E43007AED48 /* template_emitter.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5462F2E0E43007AED48 /* template_emitter.h */; };
+		CDE0F7DA2F2E0E43007AED48 /* pop3driver_cached.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5DF2F2E0E43007AED48 /* pop3driver_cached.h */; };
+		CDE0F7DB2F2E0E43007AED48 /* MCOMessageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6872F2E0E43007AED48 /* MCOMessageParser.h */; };
+		CDE0F7DC2F2E0E43007AED48 /* newsnntp_ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D62F2E0E43007AED48 /* newsnntp_ssl.h */; };
+		CDE0F7DD2F2E0E43007AED48 /* maildirdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5722F2E0E43007AED48 /* maildirdriver.h */; };
+		CDE0F7DE2F2E0E43007AED48 /* MCNNTPFetchHeaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6492F2E0E43007AED48 /* MCNNTPFetchHeaderOperation.h */; };
+		CDE0F7DF2F2E0E43007AED48 /* MCRange.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6BA2F2E0E43007AED48 /* MCRange.h */; };
+		CDE0F7E02F2E0E43007AED48 /* mailsmtp_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5AD2F2E0E43007AED48 /* mailsmtp_helper.h */; };
+		CDE0F7E12F2E0E43007AED48 /* mailsmtp.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5AC2F2E0E43007AED48 /* mailsmtp.h */; };
+		CDE0F7E22F2E0E43007AED48 /* MCMailProvidersManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63A2F2E0E43007AED48 /* MCMailProvidersManager.h */; };
+		CDE0F7E32F2E0E43007AED48 /* MCProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B92F2E0E43007AED48 /* MCProvider.h */; };
+		CDE0F7E42F2E0E43007AED48 /* MCSMTPProgressCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C42F2E0E43007AED48 /* MCSMTPProgressCallback.h */; };
+		CDE0F7E52F2E0E43007AED48 /* mailmime_write_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A02F2E0E43007AED48 /* mailmime_write_mem.h */; };
+		CDE0F7E62F2E0E43007AED48 /* MCMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6412F2E0E43007AED48 /* MCMessagePart.h */; };
+		CDE0F7E72F2E0E43007AED48 /* mailpop3.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A12F2E0E43007AED48 /* mailpop3.h */; };
+		CDE0F7E82F2E0E43007AED48 /* MCAsyncNNTP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5FE2F2E0E43007AED48 /* MCAsyncNNTP.h */; };
+		CDE0F7E92F2E0E43007AED48 /* MCOPOPNoopOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A12F2E0E43007AED48 /* MCOPOPNoopOperation.h */; };
+		CDE0F7EA2F2E0E43007AED48 /* MCIMAPFolder.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F61B2F2E0E43007AED48 /* MCIMAPFolder.h */; };
+		CDE0F7EB2F2E0E43007AED48 /* MCSMTPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C52F2E0E43007AED48 /* MCSMTPSession.h */; };
+		CDE0F7EC2F2E0E43007AED48 /* maildirstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5772F2E0E43007AED48 /* maildirstorage.h */; };
+		CDE0F7ED2F2E0E43007AED48 /* NSObject+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6CE2F2E0E43007AED48 /* NSObject+MCO.h */; };
+		CDE0F7EE2F2E0E43007AED48 /* template_enums.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5472F2E0E43007AED48 /* template_enums.h */; };
+		CDE0F7EF2F2E0E43007AED48 /* MCAsync.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5FC2F2E0E43007AED48 /* MCAsync.h */; };
+		CDE0F7F02F2E0E43007AED48 /* MCOIMAPMoveMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6782F2E0E43007AED48 /* MCOIMAPMoveMessagesOperation.h */; };
+		CDE0F7F12F2E0E43007AED48 /* maildriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5782F2E0E43007AED48 /* maildriver.h */; };
+		CDE0F7F22F2E0E43007AED48 /* MCOPOPMessageInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A02F2E0E43007AED48 /* MCOPOPMessageInfo.h */; };
+		CDE0F7F32F2E0E43007AED48 /* MCDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6072F2E0E43007AED48 /* MCDateFormatter.h */; };
+		CDE0F7F42F2E0E43007AED48 /* MCNNTPAsyncSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6462F2E0E43007AED48 /* MCNNTPAsyncSession.h */; };
+		CDE0F7F52F2E0E43007AED48 /* MCOIndexSet.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6822F2E0E43007AED48 /* MCOIndexSet.h */; };
+		CDE0F7F62F2E0E43007AED48 /* MCORFC822.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6A62F2E0E43007AED48 /* MCORFC822.h */; };
+		CDE0F7F72F2E0E43007AED48 /* MCMessageBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63D2F2E0E43007AED48 /* MCMessageBuilder.h */; };
+		CDE0F7F82F2E0E43007AED48 /* template_dictionary_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5452F2E0E43007AED48 /* template_dictionary_interface.h */; };
+		CDE0F7F92F2E0E43007AED48 /* mailimap_extension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5802F2E0E43007AED48 /* mailimap_extension.h */; };
+		CDE0F7FA2F2E0E43007AED48 /* MCONNTPFetchHeaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68F2F2E0E43007AED48 /* MCONNTPFetchHeaderOperation.h */; };
+		CDE0F7FB2F2E0E43007AED48 /* MCOIMAPIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6722F2E0E43007AED48 /* MCOIMAPIdentity.h */; };
+		CDE0F7FC2F2E0E43007AED48 /* mailmessage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5952F2E0E43007AED48 /* mailmessage.h */; };
+		CDE0F7FD2F2E0E43007AED48 /* MCIMAPCapabilityOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6102F2E0E43007AED48 /* MCIMAPCapabilityOperation.h */; };
+		CDE0F7FE2F2E0E43007AED48 /* xgmmsgid.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5ED2F2E0E43007AED48 /* xgmmsgid.h */; };
+		CDE0F7FF2F2E0E43007AED48 /* MCAbstractMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F42F2E0E43007AED48 /* MCAbstractMessagePart.h */; };
+		CDE0F8002F2E0E43007AED48 /* MCOIMAPCapabilityOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6642F2E0E43007AED48 /* MCOIMAPCapabilityOperation.h */; };
+		CDE0F8012F2E0E43007AED48 /* nntpstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5DD2F2E0E43007AED48 /* nntpstorage.h */; };
+		CDE0F8022F2E0E43007AED48 /* uidplus.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5EA2F2E0E43007AED48 /* uidplus.h */; };
+		CDE0F8032F2E0E43007AED48 /* mailprivacy_tools.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A92F2E0E43007AED48 /* mailprivacy_tools.h */; };
+		CDE0F8042F2E0E43007AED48 /* MCPOP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6AE2F2E0E43007AED48 /* MCPOP.h */; };
+		CDE0F8052F2E0E43007AED48 /* MCOIMAPFolderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F66E2F2E0E43007AED48 /* MCOIMAPFolderInfo.h */; };
+		CDE0F8062F2E0E43007AED48 /* MCAsyncPOP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5FF2F2E0E43007AED48 /* MCAsyncPOP.h */; };
+		CDE0F8072F2E0E43007AED48 /* libetpan_version.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F56D2F2E0E43007AED48 /* libetpan_version.h */; };
+		CDE0F8082F2E0E43007AED48 /* MCMainThread.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63B2F2E0E43007AED48 /* MCMainThread.h */; };
+		CDE0F8092F2E0E43007AED48 /* MCONNTPFetchAllArticlesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68D2F2E0E43007AED48 /* MCONNTPFetchAllArticlesOperation.h */; };
+		CDE0F80A2F2E0E43007AED48 /* MCNNTPOperationCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F64F2F2E0E43007AED48 /* MCNNTPOperationCallback.h */; };
+		CDE0F80B2F2E0E43007AED48 /* MCAddressDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F92F2E0E43007AED48 /* MCAddressDisplay.h */; };
+		CDE0F80C2F2E0E43007AED48 /* imapdriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5672F2E0E43007AED48 /* imapdriver_message.h */; };
+		CDE0F80D2F2E0E43007AED48 /* MCOUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6AD2F2E0E43007AED48 /* MCOUtils.h */; };
+		CDE0F80E2F2E0E43007AED48 /* mailmime_decode.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F59A2F2E0E43007AED48 /* mailmime_decode.h */; };
+		CDE0F80F2F2E0E43007AED48 /* qresync_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E52F2E0E43007AED48 /* qresync_types.h */; };
+		CDE0F8102F2E0E43007AED48 /* mailprivacy.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A62F2E0E43007AED48 /* mailprivacy.h */; };
+		CDE0F8112F2E0E43007AED48 /* MCOConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F65E2F2E0E43007AED48 /* MCOConstants.h */; };
+		CDE0F8122F2E0E43007AED48 /* MCIMAPFolderStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F61E2F2E0E43007AED48 /* MCIMAPFolderStatus.h */; };
+		CDE0F8132F2E0E43007AED48 /* MCOIMAPMultipart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6792F2E0E43007AED48 /* MCOIMAPMultipart.h */; };
+		CDE0F8142F2E0E43007AED48 /* mailmime_write_file.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F59E2F2E0E43007AED48 /* mailmime_write_file.h */; };
+		CDE0F8152F2E0E43007AED48 /* MCOPOPFetchHeaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F69D2F2E0E43007AED48 /* MCOPOPFetchHeaderOperation.h */; };
+		CDE0F8162F2E0E43007AED48 /* MCCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6052F2E0E43007AED48 /* MCCore.h */; };
+		CDE0F8172F2E0E43007AED48 /* newsfeed.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D02F2E0E43007AED48 /* newsfeed.h */; };
+		CDE0F8182F2E0E43007AED48 /* MCOIMAPIdleOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6742F2E0E43007AED48 /* MCOIMAPIdleOperation.h */; };
+		CDE0F8192F2E0E43007AED48 /* MCOIMAPFetchFoldersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6692F2E0E43007AED48 /* MCOIMAPFetchFoldersOperation.h */; };
+		CDE0F81A2F2E0E43007AED48 /* MCOperationCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F69A2F2E0E43007AED48 /* MCOperationCallback.h */; };
+		CDE0F81B2F2E0E43007AED48 /* enable.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F55C2F2E0E43007AED48 /* enable.h */; };
+		CDE0F81C2F2E0E43007AED48 /* MCValue.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C82F2E0E43007AED48 /* MCValue.h */; };
+		CDE0F81D2F2E0E43007AED48 /* MCLog.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6382F2E0E43007AED48 /* MCLog.h */; };
+		CDE0F81E2F2E0E43007AED48 /* maillock.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5922F2E0E43007AED48 /* maillock.h */; };
+		CDE0F81F2F2E0E43007AED48 /* mailimap_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5822F2E0E43007AED48 /* mailimap_helper.h */; };
+		CDE0F8202F2E0E43007AED48 /* NSString+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6CF2F2E0E43007AED48 /* NSString+MCO.h */; };
+		CDE0F8212F2E0E43007AED48 /* maildir_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5712F2E0E43007AED48 /* maildir_types.h */; };
+		CDE0F8222F2E0E43007AED48 /* mailimap_id.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5832F2E0E43007AED48 /* mailimap_id.h */; };
+		CDE0F8232F2E0E43007AED48 /* MCObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F65D2F2E0E43007AED48 /* MCObject.h */; };
+		CDE0F8242F2E0E43007AED48 /* mhdriver_cached.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C52F2E0E43007AED48 /* mhdriver_cached.h */; };
+		CDE0F8252F2E0E43007AED48 /* MCOIMAPSearchExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F67F2F2E0E43007AED48 /* MCOIMAPSearchExpression.h */; };
+		CDE0F8262F2E0E43007AED48 /* MCOIMAPAppendMessageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6622F2E0E43007AED48 /* MCOIMAPAppendMessageOperation.h */; };
+		CDE0F8272F2E0E43007AED48 /* NSArray+MCO.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C92F2E0E43007AED48 /* NSArray+MCO.h */; };
+		CDE0F8282F2E0E43007AED48 /* condstore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5552F2E0E43007AED48 /* condstore.h */; };
+		CDE0F8292F2E0E43007AED48 /* MCOAbstractMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6562F2E0E43007AED48 /* MCOAbstractMessagePart.h */; };
+		CDE0F82A2F2E0E43007AED48 /* newsnntp.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D42F2E0E43007AED48 /* newsnntp.h */; };
+		CDE0F82B2F2E0E43007AED48 /* MCIMAPMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6242F2E0E43007AED48 /* MCIMAPMessagePart.h */; };
+		CDE0F82C2F2E0E43007AED48 /* MCOIMAPMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6752F2E0E43007AED48 /* MCOIMAPMessage.h */; };
+		CDE0F82D2F2E0E43007AED48 /* MCIMAPFetchParsedContentOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F61A2F2E0E43007AED48 /* MCIMAPFetchParsedContentOperation.h */; };
+		CDE0F82E2F2E0E43007AED48 /* namespace_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5CF2F2E0E43007AED48 /* namespace_types.h */; };
+		CDE0F82F2F2E0E43007AED48 /* str_ref.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5402F2E0E43007AED48 /* str_ref.h */; };
+		CDE0F8302F2E0E43007AED48 /* MCIMAPMultipart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6272F2E0E43007AED48 /* MCIMAPMultipart.h */; };
+		CDE0F8312F2E0E43007AED48 /* MCMailProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6392F2E0E43007AED48 /* MCMailProvider.h */; };
+		CDE0F8322F2E0E43007AED48 /* MCNNTPFetchServerTimeOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F64B2F2E0E43007AED48 /* MCNNTPFetchServerTimeOperation.h */; };
+		CDE0F8332F2E0E43007AED48 /* MCMD5.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63C2F2E0E43007AED48 /* MCMD5.h */; };
+		CDE0F8342F2E0E43007AED48 /* mailsmtp_ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B02F2E0E43007AED48 /* mailsmtp_ssl.h */; };
+		CDE0F8352F2E0E43007AED48 /* imapdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5642F2E0E43007AED48 /* imapdriver.h */; };
+		CDE0F8362F2E0E43007AED48 /* MCOMessageBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6852F2E0E43007AED48 /* MCOMessageBuilder.h */; };
+		CDE0F8372F2E0E43007AED48 /* dbdriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5592F2E0E43007AED48 /* dbdriver_message.h */; };
+		CDE0F8382F2E0E43007AED48 /* MCOIMAPMessageRenderingOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6772F2E0E43007AED48 /* MCOIMAPMessageRenderingOperation.h */; };
+		CDE0F8392F2E0E43007AED48 /* MCNNTP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6452F2E0E43007AED48 /* MCNNTP.h */; };
+		CDE0F83A2F2E0E43007AED48 /* mailpop3_ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5A42F2E0E43007AED48 /* mailpop3_ssl.h */; };
+		CDE0F83B2F2E0E43007AED48 /* MCRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6BB2F2E0E43007AED48 /* MCRenderer.h */; };
+		CDE0F83C2F2E0E43007AED48 /* MCHash.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6082F2E0E43007AED48 /* MCHash.h */; };
+		CDE0F83D2F2E0E43007AED48 /* MCOIMAPIdentityOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6732F2E0E43007AED48 /* MCOIMAPIdentityOperation.h */; };
+		CDE0F83E2F2E0E43007AED48 /* maildirdriver_cached_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5742F2E0E43007AED48 /* maildirdriver_cached_message.h */; };
+		CDE0F83F2F2E0E43007AED48 /* data_message_driver.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5572F2E0E43007AED48 /* data_message_driver.h */; };
+		CDE0F8402F2E0E43007AED48 /* MCOMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6882F2E0E43007AED48 /* MCOMessagePart.h */; };
+		CDE0F8412F2E0E43007AED48 /* maildirdriver_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5752F2E0E43007AED48 /* maildirdriver_message.h */; };
+		CDE0F8422F2E0E43007AED48 /* newsnntp_socket.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D52F2E0E43007AED48 /* newsnntp_socket.h */; };
+		CDE0F8432F2E0E43007AED48 /* MCOObjectWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6972F2E0E43007AED48 /* MCOObjectWrapper.h */; };
+		CDE0F8442F2E0E43007AED48 /* mailthread.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5BC2F2E0E43007AED48 /* mailthread.h */; };
+		CDE0F8452F2E0E43007AED48 /* MCOPOPFetchMessageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F69E2F2E0E43007AED48 /* MCOPOPFetchMessageOperation.h */; };
+		CDE0F8462F2E0E43007AED48 /* mailfolder.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F57D2F2E0E43007AED48 /* mailfolder.h */; };
+		CDE0F8472F2E0E43007AED48 /* MCAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5FB2F2E0E43007AED48 /* MCAssert.h */; };
+		CDE0F8482F2E0E43007AED48 /* mailimap_sort.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5872F2E0E43007AED48 /* mailimap_sort.h */; };
+		CDE0F8492F2E0E43007AED48 /* MCOIMAPFetchContentToFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6682F2E0E43007AED48 /* MCOIMAPFetchContentToFileOperation.h */; };
+		CDE0F84A2F2E0E43007AED48 /* MCNetService.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6442F2E0E43007AED48 /* MCNetService.h */; };
+		CDE0F84B2F2E0E43007AED48 /* MCOIMAPNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F67A2F2E0E43007AED48 /* MCOIMAPNamespace.h */; };
+		CDE0F84C2F2E0E43007AED48 /* mmapstring.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5CB2F2E0E43007AED48 /* mmapstring.h */; };
+		CDE0F84D2F2E0E43007AED48 /* imapdriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F56A2F2E0E43007AED48 /* imapdriver_types.h */; };
+		CDE0F84E2F2E0E43007AED48 /* newsfeed_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5D32F2E0E43007AED48 /* newsfeed_types.h */; };
+		CDE0F84F2F2E0E43007AED48 /* mailimap_sort_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5882F2E0E43007AED48 /* mailimap_sort_types.h */; };
+		CDE0F8502F2E0E43007AED48 /* MCMXRecordResolverOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6432F2E0E43007AED48 /* MCMXRecordResolverOperation.h */; };
+		CDE0F8512F2E0E43007AED48 /* MCOMailProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6832F2E0E43007AED48 /* MCOMailProvider.h */; };
+		CDE0F8522F2E0E43007AED48 /* libetpan.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F56C2F2E0E43007AED48 /* libetpan.h */; };
+		CDE0F8532F2E0E43007AED48 /* MCData.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6062F2E0E43007AED48 /* MCData.h */; };
+		CDE0F8542F2E0E43007AED48 /* MCOOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6982F2E0E43007AED48 /* MCOOperation.h */; };
+		CDE0F8552F2E0E43007AED48 /* maildriver_types_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F57B2F2E0E43007AED48 /* maildriver_types_helper.h */; };
+		CDE0F8562F2E0E43007AED48 /* mailimap_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F58A2F2E0E43007AED48 /* mailimap_types.h */; };
+		CDE0F8572F2E0E43007AED48 /* mailengine.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F57C2F2E0E43007AED48 /* mailengine.h */; };
+		CDE0F8582F2E0E43007AED48 /* MCSMTP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6BF2F2E0E43007AED48 /* MCSMTP.h */; };
+		CDE0F8592F2E0E43007AED48 /* mhdriver_cached_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C62F2E0E43007AED48 /* mhdriver_cached_message.h */; };
+		CDE0F85A2F2E0E43007AED48 /* MCAbstractPart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5F62F2E0E43007AED48 /* MCAbstractPart.h */; };
+		CDE0F85B2F2E0E43007AED48 /* mhdriver_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5C82F2E0E43007AED48 /* mhdriver_types.h */; };
+		CDE0F85C2F2E0E43007AED48 /* MCObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F65C2F2E0E43007AED48 /* MCObjC.h */; };
+		CDE0F85D2F2E0E43007AED48 /* MCConnectionLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6042F2E0E43007AED48 /* MCConnectionLogger.h */; };
+		CDE0F85E2F2E0E43007AED48 /* MCIMAPNoopOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F62A2F2E0E43007AED48 /* MCIMAPNoopOperation.h */; };
+		CDE0F85F2F2E0E43007AED48 /* generic_cache_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5612F2E0E43007AED48 /* generic_cache_types.h */; };
+		CDE0F8602F2E0E43007AED48 /* MCHTMLRendererCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F60B2F2E0E43007AED48 /* MCHTMLRendererCallback.h */; };
+		CDE0F8612F2E0E43007AED48 /* MCIMAPAsyncSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F60F2F2E0E43007AED48 /* MCIMAPAsyncSession.h */; };
+		CDE0F8622F2E0E43007AED48 /* MCOAbstractPart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6582F2E0E43007AED48 /* MCOAbstractPart.h */; };
+		CDE0F8632F2E0E43007AED48 /* MCOHTMLRendererIMAPDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6602F2E0E43007AED48 /* MCOHTMLRendererIMAPDelegate.h */; };
+		CDE0F8642F2E0E43007AED48 /* quota_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5E92F2E0E43007AED48 /* quota_types.h */; };
+		CDE0F8652F2E0E43007AED48 /* mailthread_types.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5BD2F2E0E43007AED48 /* mailthread_types.h */; };
+		CDE0F8662F2E0E43007AED48 /* MCString.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6C62F2E0E43007AED48 /* MCString.h */; };
+		CDE0F8672F2E0E43007AED48 /* MCIMAPOperationCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F62C2F2E0E43007AED48 /* MCIMAPOperationCallback.h */; };
+		CDE0F8682F2E0E43007AED48 /* MCOAbstractMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6552F2E0E43007AED48 /* MCOAbstractMessage.h */; };
+		CDE0F8692F2E0E43007AED48 /* MCOIMAPCopyMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6652F2E0E43007AED48 /* MCOIMAPCopyMessagesOperation.h */; };
+		CDE0F86A2F2E0E43007AED48 /* MCPOPSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6B82F2E0E43007AED48 /* MCPOPSession.h */; };
+		CDE0F86B2F2E0E43007AED48 /* MCOIMAPFolder.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F66D2F2E0E43007AED48 /* MCOIMAPFolder.h */; };
+		CDE0F86C2F2E0E43007AED48 /* mailimf_write_generic.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5902F2E0E43007AED48 /* mailimf_write_generic.h */; };
+		CDE0F86D2F2E0E43007AED48 /* MCOIMAPPart.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F67D2F2E0E43007AED48 /* MCOIMAPPart.h */; };
+		CDE0F86E2F2E0E43007AED48 /* MCONNTPFetchServerTimeOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F6912F2E0E43007AED48 /* MCONNTPFetchServerTimeOperation.h */; };
+		CDE0F8702F2E12D6007AED48 /* Mail Sent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CDE0F86F2F2E12D6007AED48 /* Mail Sent.aiff */; };
 		D4A32F1C15AB5FC10055469A /* QSMailSupportPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */; };
 		D4BB97F0159DFE9A00415FA2 /* Quicksilver.pch in Headers */ = {isa = PBXBuildFile; fileRef = D4BB97EA159DFE9A00415FA2 /* Quicksilver.pch */; };
 		D4F61BB618ADD7C600D6C229 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F61BB518ADD7C600D6C229 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CD52177627C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C64EA537169E772200778456;
-			remoteInfo = "static mailcore2 osx";
-		};
-		CD52177827C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
-			remoteInfo = "static mailcore2 ios";
-		};
-		CD52177A27C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C64EA78C169F259200778456;
-			remoteInfo = tests;
-		};
-		CD52177C27C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C6A81B911706840C00882C15;
-			remoteInfo = "test-ios";
-		};
-		CD52177E27C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
-			remoteInfo = "mailcore osx";
-		};
-		CD52178027C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 27780C3A19CF9CD100C77E44;
-			remoteInfo = "mailcore ios";
-		};
-		CD52178227C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C6B5AE0219F630B3001352A6;
-			remoteInfo = unittest;
-		};
-		CD52178427C3AE8000314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C600B6141A242C3F000728F1;
-			remoteInfo = unittestcpp;
-		};
-		CD52178627C3AEA100314359 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C6BD288C170BD71100A91AC1;
-			remoteInfo = "mailcore osx";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D4E1B2F015AE6DBF0075F776 /* Copy Frameworks */ = {
@@ -92,7 +430,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD52178927C3AEBD00314359 /* MailCore.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,8 +443,414 @@
 		7F839CD207CCD6CF003F2874 /* QSMailMediator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSMailMediator.m; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1AC9740486D14A00FE50C9 /* E-mail Support.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-mail Support.qsplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "MailCore/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		CDB5A04427C0743900F43DE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CDE0F53E2F2E0E43007AED48 /* find_ptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = find_ptr.h; sourceTree = "<group>"; };
+		CDE0F53F2F2E0E43007AED48 /* per_expand_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = per_expand_data.h; sourceTree = "<group>"; };
+		CDE0F5402F2E0E43007AED48 /* str_ref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = str_ref.h; sourceTree = "<group>"; };
+		CDE0F5412F2E0E43007AED48 /* template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
+		CDE0F5422F2E0E43007AED48 /* template_annotator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_annotator.h; sourceTree = "<group>"; };
+		CDE0F5432F2E0E43007AED48 /* template_cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_cache.h; sourceTree = "<group>"; };
+		CDE0F5442F2E0E43007AED48 /* template_dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_dictionary.h; sourceTree = "<group>"; };
+		CDE0F5452F2E0E43007AED48 /* template_dictionary_interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_dictionary_interface.h; sourceTree = "<group>"; };
+		CDE0F5462F2E0E43007AED48 /* template_emitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_emitter.h; sourceTree = "<group>"; };
+		CDE0F5472F2E0E43007AED48 /* template_enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_enums.h; sourceTree = "<group>"; };
+		CDE0F5482F2E0E43007AED48 /* template_modifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_modifiers.h; sourceTree = "<group>"; };
+		CDE0F5492F2E0E43007AED48 /* template_namelist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_namelist.h; sourceTree = "<group>"; };
+		CDE0F54A2F2E0E43007AED48 /* template_pathops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_pathops.h; sourceTree = "<group>"; };
+		CDE0F54B2F2E0E43007AED48 /* template_string.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = template_string.h; sourceTree = "<group>"; };
+		CDE0F54D2F2E0E43007AED48 /* acl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = acl.h; sourceTree = "<group>"; };
+		CDE0F54E2F2E0E43007AED48 /* acl_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = acl_types.h; sourceTree = "<group>"; };
+		CDE0F54F2F2E0E43007AED48 /* annotatemore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = annotatemore.h; sourceTree = "<group>"; };
+		CDE0F5502F2E0E43007AED48 /* annotatemore_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = annotatemore_types.h; sourceTree = "<group>"; };
+		CDE0F5512F2E0E43007AED48 /* carray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = carray.h; sourceTree = "<group>"; };
+		CDE0F5522F2E0E43007AED48 /* charconv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = charconv.h; sourceTree = "<group>"; };
+		CDE0F5532F2E0E43007AED48 /* chash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chash.h; sourceTree = "<group>"; };
+		CDE0F5542F2E0E43007AED48 /* clist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clist.h; sourceTree = "<group>"; };
+		CDE0F5552F2E0E43007AED48 /* condstore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = condstore.h; sourceTree = "<group>"; };
+		CDE0F5562F2E0E43007AED48 /* condstore_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = condstore_types.h; sourceTree = "<group>"; };
+		CDE0F5572F2E0E43007AED48 /* data_message_driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = data_message_driver.h; sourceTree = "<group>"; };
+		CDE0F5582F2E0E43007AED48 /* dbdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbdriver.h; sourceTree = "<group>"; };
+		CDE0F5592F2E0E43007AED48 /* dbdriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbdriver_message.h; sourceTree = "<group>"; };
+		CDE0F55A2F2E0E43007AED48 /* dbdriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbdriver_types.h; sourceTree = "<group>"; };
+		CDE0F55B2F2E0E43007AED48 /* dbstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbstorage.h; sourceTree = "<group>"; };
+		CDE0F55C2F2E0E43007AED48 /* enable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = enable.h; sourceTree = "<group>"; };
+		CDE0F55D2F2E0E43007AED48 /* feeddriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = feeddriver.h; sourceTree = "<group>"; };
+		CDE0F55E2F2E0E43007AED48 /* feeddriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = feeddriver_message.h; sourceTree = "<group>"; };
+		CDE0F55F2F2E0E43007AED48 /* feeddriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = feeddriver_types.h; sourceTree = "<group>"; };
+		CDE0F5602F2E0E43007AED48 /* feedstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = feedstorage.h; sourceTree = "<group>"; };
+		CDE0F5612F2E0E43007AED48 /* generic_cache_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = generic_cache_types.h; sourceTree = "<group>"; };
+		CDE0F5622F2E0E43007AED48 /* hotmailstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hotmailstorage.h; sourceTree = "<group>"; };
+		CDE0F5632F2E0E43007AED48 /* idle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = idle.h; sourceTree = "<group>"; };
+		CDE0F5642F2E0E43007AED48 /* imapdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver.h; sourceTree = "<group>"; };
+		CDE0F5652F2E0E43007AED48 /* imapdriver_cached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver_cached.h; sourceTree = "<group>"; };
+		CDE0F5662F2E0E43007AED48 /* imapdriver_cached_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver_cached_message.h; sourceTree = "<group>"; };
+		CDE0F5672F2E0E43007AED48 /* imapdriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver_message.h; sourceTree = "<group>"; };
+		CDE0F5682F2E0E43007AED48 /* imapdriver_tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver_tools.h; sourceTree = "<group>"; };
+		CDE0F5692F2E0E43007AED48 /* imapdriver_tools_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver_tools_private.h; sourceTree = "<group>"; };
+		CDE0F56A2F2E0E43007AED48 /* imapdriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapdriver_types.h; sourceTree = "<group>"; };
+		CDE0F56B2F2E0E43007AED48 /* imapstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imapstorage.h; sourceTree = "<group>"; };
+		CDE0F56C2F2E0E43007AED48 /* libetpan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libetpan.h; sourceTree = "<group>"; };
+		CDE0F56D2F2E0E43007AED48 /* libetpan_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libetpan_version.h; sourceTree = "<group>"; };
+		CDE0F56E2F2E0E43007AED48 /* libetpan-config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libetpan-config.h"; sourceTree = "<group>"; };
+		CDE0F56F2F2E0E43007AED48 /* mail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mail.h; sourceTree = "<group>"; };
+		CDE0F5702F2E0E43007AED48 /* maildir.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildir.h; sourceTree = "<group>"; };
+		CDE0F5712F2E0E43007AED48 /* maildir_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildir_types.h; sourceTree = "<group>"; };
+		CDE0F5722F2E0E43007AED48 /* maildirdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildirdriver.h; sourceTree = "<group>"; };
+		CDE0F5732F2E0E43007AED48 /* maildirdriver_cached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildirdriver_cached.h; sourceTree = "<group>"; };
+		CDE0F5742F2E0E43007AED48 /* maildirdriver_cached_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildirdriver_cached_message.h; sourceTree = "<group>"; };
+		CDE0F5752F2E0E43007AED48 /* maildirdriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildirdriver_message.h; sourceTree = "<group>"; };
+		CDE0F5762F2E0E43007AED48 /* maildirdriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildirdriver_types.h; sourceTree = "<group>"; };
+		CDE0F5772F2E0E43007AED48 /* maildirstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildirstorage.h; sourceTree = "<group>"; };
+		CDE0F5782F2E0E43007AED48 /* maildriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildriver.h; sourceTree = "<group>"; };
+		CDE0F5792F2E0E43007AED48 /* maildriver_errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildriver_errors.h; sourceTree = "<group>"; };
+		CDE0F57A2F2E0E43007AED48 /* maildriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildriver_types.h; sourceTree = "<group>"; };
+		CDE0F57B2F2E0E43007AED48 /* maildriver_types_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maildriver_types_helper.h; sourceTree = "<group>"; };
+		CDE0F57C2F2E0E43007AED48 /* mailengine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailengine.h; sourceTree = "<group>"; };
+		CDE0F57D2F2E0E43007AED48 /* mailfolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailfolder.h; sourceTree = "<group>"; };
+		CDE0F57E2F2E0E43007AED48 /* mailimap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap.h; sourceTree = "<group>"; };
+		CDE0F57F2F2E0E43007AED48 /* mailimap_compress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_compress.h; sourceTree = "<group>"; };
+		CDE0F5802F2E0E43007AED48 /* mailimap_extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_extension.h; sourceTree = "<group>"; };
+		CDE0F5812F2E0E43007AED48 /* mailimap_extension_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_extension_types.h; sourceTree = "<group>"; };
+		CDE0F5822F2E0E43007AED48 /* mailimap_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_helper.h; sourceTree = "<group>"; };
+		CDE0F5832F2E0E43007AED48 /* mailimap_id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_id.h; sourceTree = "<group>"; };
+		CDE0F5842F2E0E43007AED48 /* mailimap_id_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_id_types.h; sourceTree = "<group>"; };
+		CDE0F5852F2E0E43007AED48 /* mailimap_oauth2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_oauth2.h; sourceTree = "<group>"; };
+		CDE0F5862F2E0E43007AED48 /* mailimap_socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_socket.h; sourceTree = "<group>"; };
+		CDE0F5872F2E0E43007AED48 /* mailimap_sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_sort.h; sourceTree = "<group>"; };
+		CDE0F5882F2E0E43007AED48 /* mailimap_sort_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_sort_types.h; sourceTree = "<group>"; };
+		CDE0F5892F2E0E43007AED48 /* mailimap_ssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_ssl.h; sourceTree = "<group>"; };
+		CDE0F58A2F2E0E43007AED48 /* mailimap_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_types.h; sourceTree = "<group>"; };
+		CDE0F58B2F2E0E43007AED48 /* mailimap_types_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimap_types_helper.h; sourceTree = "<group>"; };
+		CDE0F58C2F2E0E43007AED48 /* mailimf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimf.h; sourceTree = "<group>"; };
+		CDE0F58D2F2E0E43007AED48 /* mailimf_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimf_types.h; sourceTree = "<group>"; };
+		CDE0F58E2F2E0E43007AED48 /* mailimf_types_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimf_types_helper.h; sourceTree = "<group>"; };
+		CDE0F58F2F2E0E43007AED48 /* mailimf_write_file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimf_write_file.h; sourceTree = "<group>"; };
+		CDE0F5902F2E0E43007AED48 /* mailimf_write_generic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimf_write_generic.h; sourceTree = "<group>"; };
+		CDE0F5912F2E0E43007AED48 /* mailimf_write_mem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailimf_write_mem.h; sourceTree = "<group>"; };
+		CDE0F5922F2E0E43007AED48 /* maillock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maillock.h; sourceTree = "<group>"; };
+		CDE0F5932F2E0E43007AED48 /* mailmbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmbox.h; sourceTree = "<group>"; };
+		CDE0F5942F2E0E43007AED48 /* mailmbox_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmbox_types.h; sourceTree = "<group>"; };
+		CDE0F5952F2E0E43007AED48 /* mailmessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmessage.h; sourceTree = "<group>"; };
+		CDE0F5962F2E0E43007AED48 /* mailmessage_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmessage_types.h; sourceTree = "<group>"; };
+		CDE0F5972F2E0E43007AED48 /* mailmh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmh.h; sourceTree = "<group>"; };
+		CDE0F5982F2E0E43007AED48 /* mailmime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime.h; sourceTree = "<group>"; };
+		CDE0F5992F2E0E43007AED48 /* mailmime_content.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_content.h; sourceTree = "<group>"; };
+		CDE0F59A2F2E0E43007AED48 /* mailmime_decode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_decode.h; sourceTree = "<group>"; };
+		CDE0F59B2F2E0E43007AED48 /* mailmime_disposition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_disposition.h; sourceTree = "<group>"; };
+		CDE0F59C2F2E0E43007AED48 /* mailmime_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_types.h; sourceTree = "<group>"; };
+		CDE0F59D2F2E0E43007AED48 /* mailmime_types_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_types_helper.h; sourceTree = "<group>"; };
+		CDE0F59E2F2E0E43007AED48 /* mailmime_write_file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_write_file.h; sourceTree = "<group>"; };
+		CDE0F59F2F2E0E43007AED48 /* mailmime_write_generic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_write_generic.h; sourceTree = "<group>"; };
+		CDE0F5A02F2E0E43007AED48 /* mailmime_write_mem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailmime_write_mem.h; sourceTree = "<group>"; };
+		CDE0F5A12F2E0E43007AED48 /* mailpop3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailpop3.h; sourceTree = "<group>"; };
+		CDE0F5A22F2E0E43007AED48 /* mailpop3_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailpop3_helper.h; sourceTree = "<group>"; };
+		CDE0F5A32F2E0E43007AED48 /* mailpop3_socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailpop3_socket.h; sourceTree = "<group>"; };
+		CDE0F5A42F2E0E43007AED48 /* mailpop3_ssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailpop3_ssl.h; sourceTree = "<group>"; };
+		CDE0F5A52F2E0E43007AED48 /* mailpop3_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailpop3_types.h; sourceTree = "<group>"; };
+		CDE0F5A62F2E0E43007AED48 /* mailprivacy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailprivacy.h; sourceTree = "<group>"; };
+		CDE0F5A72F2E0E43007AED48 /* mailprivacy_gnupg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailprivacy_gnupg.h; sourceTree = "<group>"; };
+		CDE0F5A82F2E0E43007AED48 /* mailprivacy_smime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailprivacy_smime.h; sourceTree = "<group>"; };
+		CDE0F5A92F2E0E43007AED48 /* mailprivacy_tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailprivacy_tools.h; sourceTree = "<group>"; };
+		CDE0F5AA2F2E0E43007AED48 /* mailprivacy_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailprivacy_types.h; sourceTree = "<group>"; };
+		CDE0F5AB2F2E0E43007AED48 /* mailsem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsem.h; sourceTree = "<group>"; };
+		CDE0F5AC2F2E0E43007AED48 /* mailsmtp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsmtp.h; sourceTree = "<group>"; };
+		CDE0F5AD2F2E0E43007AED48 /* mailsmtp_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsmtp_helper.h; sourceTree = "<group>"; };
+		CDE0F5AE2F2E0E43007AED48 /* mailsmtp_oauth2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsmtp_oauth2.h; sourceTree = "<group>"; };
+		CDE0F5AF2F2E0E43007AED48 /* mailsmtp_socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsmtp_socket.h; sourceTree = "<group>"; };
+		CDE0F5B02F2E0E43007AED48 /* mailsmtp_ssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsmtp_ssl.h; sourceTree = "<group>"; };
+		CDE0F5B12F2E0E43007AED48 /* mailsmtp_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailsmtp_types.h; sourceTree = "<group>"; };
+		CDE0F5B22F2E0E43007AED48 /* mailstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstorage.h; sourceTree = "<group>"; };
+		CDE0F5B32F2E0E43007AED48 /* mailstorage_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstorage_types.h; sourceTree = "<group>"; };
+		CDE0F5B42F2E0E43007AED48 /* mailstream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream.h; sourceTree = "<group>"; };
+		CDE0F5B52F2E0E43007AED48 /* mailstream_cfstream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_cfstream.h; sourceTree = "<group>"; };
+		CDE0F5B62F2E0E43007AED48 /* mailstream_compress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_compress.h; sourceTree = "<group>"; };
+		CDE0F5B72F2E0E43007AED48 /* mailstream_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_helper.h; sourceTree = "<group>"; };
+		CDE0F5B82F2E0E43007AED48 /* mailstream_low.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_low.h; sourceTree = "<group>"; };
+		CDE0F5B92F2E0E43007AED48 /* mailstream_socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_socket.h; sourceTree = "<group>"; };
+		CDE0F5BA2F2E0E43007AED48 /* mailstream_ssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_ssl.h; sourceTree = "<group>"; };
+		CDE0F5BB2F2E0E43007AED48 /* mailstream_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailstream_types.h; sourceTree = "<group>"; };
+		CDE0F5BC2F2E0E43007AED48 /* mailthread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailthread.h; sourceTree = "<group>"; };
+		CDE0F5BD2F2E0E43007AED48 /* mailthread_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mailthread_types.h; sourceTree = "<group>"; };
+		CDE0F5BE2F2E0E43007AED48 /* mboxdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mboxdriver.h; sourceTree = "<group>"; };
+		CDE0F5BF2F2E0E43007AED48 /* mboxdriver_cached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mboxdriver_cached.h; sourceTree = "<group>"; };
+		CDE0F5C02F2E0E43007AED48 /* mboxdriver_cached_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mboxdriver_cached_message.h; sourceTree = "<group>"; };
+		CDE0F5C12F2E0E43007AED48 /* mboxdriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mboxdriver_message.h; sourceTree = "<group>"; };
+		CDE0F5C22F2E0E43007AED48 /* mboxdriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mboxdriver_types.h; sourceTree = "<group>"; };
+		CDE0F5C32F2E0E43007AED48 /* mboxstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mboxstorage.h; sourceTree = "<group>"; };
+		CDE0F5C42F2E0E43007AED48 /* mhdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mhdriver.h; sourceTree = "<group>"; };
+		CDE0F5C52F2E0E43007AED48 /* mhdriver_cached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mhdriver_cached.h; sourceTree = "<group>"; };
+		CDE0F5C62F2E0E43007AED48 /* mhdriver_cached_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mhdriver_cached_message.h; sourceTree = "<group>"; };
+		CDE0F5C72F2E0E43007AED48 /* mhdriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mhdriver_message.h; sourceTree = "<group>"; };
+		CDE0F5C82F2E0E43007AED48 /* mhdriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mhdriver_types.h; sourceTree = "<group>"; };
+		CDE0F5C92F2E0E43007AED48 /* mhstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mhstorage.h; sourceTree = "<group>"; };
+		CDE0F5CA2F2E0E43007AED48 /* mime_message_driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mime_message_driver.h; sourceTree = "<group>"; };
+		CDE0F5CB2F2E0E43007AED48 /* mmapstring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mmapstring.h; sourceTree = "<group>"; };
+		CDE0F5CC2F2E0E43007AED48 /* namespace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = namespace.h; sourceTree = "<group>"; };
+		CDE0F5CD2F2E0E43007AED48 /* namespace_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = namespace_parser.h; sourceTree = "<group>"; };
+		CDE0F5CE2F2E0E43007AED48 /* namespace_sender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = namespace_sender.h; sourceTree = "<group>"; };
+		CDE0F5CF2F2E0E43007AED48 /* namespace_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = namespace_types.h; sourceTree = "<group>"; };
+		CDE0F5D02F2E0E43007AED48 /* newsfeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsfeed.h; sourceTree = "<group>"; };
+		CDE0F5D12F2E0E43007AED48 /* newsfeed_item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsfeed_item.h; sourceTree = "<group>"; };
+		CDE0F5D22F2E0E43007AED48 /* newsfeed_item_enclosure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsfeed_item_enclosure.h; sourceTree = "<group>"; };
+		CDE0F5D32F2E0E43007AED48 /* newsfeed_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsfeed_types.h; sourceTree = "<group>"; };
+		CDE0F5D42F2E0E43007AED48 /* newsnntp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsnntp.h; sourceTree = "<group>"; };
+		CDE0F5D52F2E0E43007AED48 /* newsnntp_socket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsnntp_socket.h; sourceTree = "<group>"; };
+		CDE0F5D62F2E0E43007AED48 /* newsnntp_ssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsnntp_ssl.h; sourceTree = "<group>"; };
+		CDE0F5D72F2E0E43007AED48 /* newsnntp_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsnntp_types.h; sourceTree = "<group>"; };
+		CDE0F5D82F2E0E43007AED48 /* nntpdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nntpdriver.h; sourceTree = "<group>"; };
+		CDE0F5D92F2E0E43007AED48 /* nntpdriver_cached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nntpdriver_cached.h; sourceTree = "<group>"; };
+		CDE0F5DA2F2E0E43007AED48 /* nntpdriver_cached_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nntpdriver_cached_message.h; sourceTree = "<group>"; };
+		CDE0F5DB2F2E0E43007AED48 /* nntpdriver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nntpdriver_message.h; sourceTree = "<group>"; };
+		CDE0F5DC2F2E0E43007AED48 /* nntpdriver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nntpdriver_types.h; sourceTree = "<group>"; };
+		CDE0F5DD2F2E0E43007AED48 /* nntpstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nntpstorage.h; sourceTree = "<group>"; };
+		CDE0F5DE2F2E0E43007AED48 /* pop3driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pop3driver.h; sourceTree = "<group>"; };
+		CDE0F5DF2F2E0E43007AED48 /* pop3driver_cached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pop3driver_cached.h; sourceTree = "<group>"; };
+		CDE0F5E02F2E0E43007AED48 /* pop3driver_cached_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pop3driver_cached_message.h; sourceTree = "<group>"; };
+		CDE0F5E12F2E0E43007AED48 /* pop3driver_message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pop3driver_message.h; sourceTree = "<group>"; };
+		CDE0F5E22F2E0E43007AED48 /* pop3driver_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pop3driver_types.h; sourceTree = "<group>"; };
+		CDE0F5E32F2E0E43007AED48 /* pop3storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pop3storage.h; sourceTree = "<group>"; };
+		CDE0F5E42F2E0E43007AED48 /* qresync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qresync.h; sourceTree = "<group>"; };
+		CDE0F5E52F2E0E43007AED48 /* qresync_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qresync_types.h; sourceTree = "<group>"; };
+		CDE0F5E62F2E0E43007AED48 /* quota.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quota.h; sourceTree = "<group>"; };
+		CDE0F5E72F2E0E43007AED48 /* quota_parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quota_parser.h; sourceTree = "<group>"; };
+		CDE0F5E82F2E0E43007AED48 /* quota_sender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quota_sender.h; sourceTree = "<group>"; };
+		CDE0F5E92F2E0E43007AED48 /* quota_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quota_types.h; sourceTree = "<group>"; };
+		CDE0F5EA2F2E0E43007AED48 /* uidplus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uidplus.h; sourceTree = "<group>"; };
+		CDE0F5EB2F2E0E43007AED48 /* uidplus_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uidplus_types.h; sourceTree = "<group>"; };
+		CDE0F5EC2F2E0E43007AED48 /* xgmlabels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xgmlabels.h; sourceTree = "<group>"; };
+		CDE0F5ED2F2E0E43007AED48 /* xgmmsgid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xgmmsgid.h; sourceTree = "<group>"; };
+		CDE0F5EE2F2E0E43007AED48 /* xgmthrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xgmthrid.h; sourceTree = "<group>"; };
+		CDE0F5EF2F2E0E43007AED48 /* xlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xlist.h; sourceTree = "<group>"; };
+		CDE0F5F12F2E0E43007AED48 /* MailCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailCore.h; sourceTree = "<group>"; };
+		CDE0F5F22F2E0E43007AED48 /* MCAbstract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAbstract.h; sourceTree = "<group>"; };
+		CDE0F5F32F2E0E43007AED48 /* MCAbstractMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAbstractMessage.h; sourceTree = "<group>"; };
+		CDE0F5F42F2E0E43007AED48 /* MCAbstractMessagePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAbstractMessagePart.h; sourceTree = "<group>"; };
+		CDE0F5F52F2E0E43007AED48 /* MCAbstractMultipart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAbstractMultipart.h; sourceTree = "<group>"; };
+		CDE0F5F62F2E0E43007AED48 /* MCAbstractPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAbstractPart.h; sourceTree = "<group>"; };
+		CDE0F5F72F2E0E43007AED48 /* MCAccountValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAccountValidator.h; sourceTree = "<group>"; };
+		CDE0F5F82F2E0E43007AED48 /* MCAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAddress.h; sourceTree = "<group>"; };
+		CDE0F5F92F2E0E43007AED48 /* MCAddressDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAddressDisplay.h; sourceTree = "<group>"; };
+		CDE0F5FA2F2E0E43007AED48 /* MCArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCArray.h; sourceTree = "<group>"; };
+		CDE0F5FB2F2E0E43007AED48 /* MCAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAssert.h; sourceTree = "<group>"; };
+		CDE0F5FC2F2E0E43007AED48 /* MCAsync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAsync.h; sourceTree = "<group>"; };
+		CDE0F5FD2F2E0E43007AED48 /* MCAsyncIMAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAsyncIMAP.h; sourceTree = "<group>"; };
+		CDE0F5FE2F2E0E43007AED48 /* MCAsyncNNTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAsyncNNTP.h; sourceTree = "<group>"; };
+		CDE0F5FF2F2E0E43007AED48 /* MCAsyncPOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAsyncPOP.h; sourceTree = "<group>"; };
+		CDE0F6002F2E0E43007AED48 /* MCAsyncSMTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAsyncSMTP.h; sourceTree = "<group>"; };
+		CDE0F6012F2E0E43007AED48 /* MCAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAttachment.h; sourceTree = "<group>"; };
+		CDE0F6022F2E0E43007AED48 /* MCAutoreleasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAutoreleasePool.h; sourceTree = "<group>"; };
+		CDE0F6032F2E0E43007AED48 /* MCBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCBaseTypes.h; sourceTree = "<group>"; };
+		CDE0F6042F2E0E43007AED48 /* MCConnectionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCConnectionLogger.h; sourceTree = "<group>"; };
+		CDE0F6052F2E0E43007AED48 /* MCCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCore.h; sourceTree = "<group>"; };
+		CDE0F6062F2E0E43007AED48 /* MCData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCData.h; sourceTree = "<group>"; };
+		CDE0F6072F2E0E43007AED48 /* MCDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCDateFormatter.h; sourceTree = "<group>"; };
+		CDE0F6082F2E0E43007AED48 /* MCHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHash.h; sourceTree = "<group>"; };
+		CDE0F6092F2E0E43007AED48 /* MCHashMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHashMap.h; sourceTree = "<group>"; };
+		CDE0F60A2F2E0E43007AED48 /* MCHTMLCleaner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHTMLCleaner.h; sourceTree = "<group>"; };
+		CDE0F60B2F2E0E43007AED48 /* MCHTMLRendererCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHTMLRendererCallback.h; sourceTree = "<group>"; };
+		CDE0F60C2F2E0E43007AED48 /* MCICUTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCICUTypes.h; sourceTree = "<group>"; };
+		CDE0F60D2F2E0E43007AED48 /* MCIMAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAP.h; sourceTree = "<group>"; };
+		CDE0F60E2F2E0E43007AED48 /* MCIMAPAppendMessageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPAppendMessageOperation.h; sourceTree = "<group>"; };
+		CDE0F60F2F2E0E43007AED48 /* MCIMAPAsyncSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPAsyncSession.h; sourceTree = "<group>"; };
+		CDE0F6102F2E0E43007AED48 /* MCIMAPCapabilityOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPCapabilityOperation.h; sourceTree = "<group>"; };
+		CDE0F6112F2E0E43007AED48 /* MCIMAPCheckAccountOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPCheckAccountOperation.h; sourceTree = "<group>"; };
+		CDE0F6122F2E0E43007AED48 /* MCIMAPConnectOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPConnectOperation.h; sourceTree = "<group>"; };
+		CDE0F6132F2E0E43007AED48 /* MCIMAPCopyMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPCopyMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6142F2E0E43007AED48 /* MCIMAPCustomCommandOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPCustomCommandOperation.h; sourceTree = "<group>"; };
+		CDE0F6152F2E0E43007AED48 /* MCIMAPFetchContentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFetchContentOperation.h; sourceTree = "<group>"; };
+		CDE0F6162F2E0E43007AED48 /* MCIMAPFetchContentToFileOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFetchContentToFileOperation.h; sourceTree = "<group>"; };
+		CDE0F6172F2E0E43007AED48 /* MCIMAPFetchFoldersOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFetchFoldersOperation.h; sourceTree = "<group>"; };
+		CDE0F6182F2E0E43007AED48 /* MCIMAPFetchMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFetchMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6192F2E0E43007AED48 /* MCIMAPFetchNamespaceOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFetchNamespaceOperation.h; sourceTree = "<group>"; };
+		CDE0F61A2F2E0E43007AED48 /* MCIMAPFetchParsedContentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFetchParsedContentOperation.h; sourceTree = "<group>"; };
+		CDE0F61B2F2E0E43007AED48 /* MCIMAPFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolder.h; sourceTree = "<group>"; };
+		CDE0F61C2F2E0E43007AED48 /* MCIMAPFolderInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolderInfo.h; sourceTree = "<group>"; };
+		CDE0F61D2F2E0E43007AED48 /* MCIMAPFolderInfoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolderInfoOperation.h; sourceTree = "<group>"; };
+		CDE0F61E2F2E0E43007AED48 /* MCIMAPFolderStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolderStatus.h; sourceTree = "<group>"; };
+		CDE0F61F2F2E0E43007AED48 /* MCIMAPFolderStatusOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolderStatusOperation.h; sourceTree = "<group>"; };
+		CDE0F6202F2E0E43007AED48 /* MCIMAPIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPIdentity.h; sourceTree = "<group>"; };
+		CDE0F6212F2E0E43007AED48 /* MCIMAPIdentityOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPIdentityOperation.h; sourceTree = "<group>"; };
+		CDE0F6222F2E0E43007AED48 /* MCIMAPIdleOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPIdleOperation.h; sourceTree = "<group>"; };
+		CDE0F6232F2E0E43007AED48 /* MCIMAPMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPMessage.h; sourceTree = "<group>"; };
+		CDE0F6242F2E0E43007AED48 /* MCIMAPMessagePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPMessagePart.h; sourceTree = "<group>"; };
+		CDE0F6252F2E0E43007AED48 /* MCIMAPMessageRenderingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPMessageRenderingOperation.h; sourceTree = "<group>"; };
+		CDE0F6262F2E0E43007AED48 /* MCIMAPMoveMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPMoveMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6272F2E0E43007AED48 /* MCIMAPMultipart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPMultipart.h; sourceTree = "<group>"; };
+		CDE0F6282F2E0E43007AED48 /* MCIMAPNamespace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPNamespace.h; sourceTree = "<group>"; };
+		CDE0F6292F2E0E43007AED48 /* MCIMAPNamespaceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPNamespaceItem.h; sourceTree = "<group>"; };
+		CDE0F62A2F2E0E43007AED48 /* MCIMAPNoopOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPNoopOperation.h; sourceTree = "<group>"; };
+		CDE0F62B2F2E0E43007AED48 /* MCIMAPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPOperation.h; sourceTree = "<group>"; };
+		CDE0F62C2F2E0E43007AED48 /* MCIMAPOperationCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPOperationCallback.h; sourceTree = "<group>"; };
+		CDE0F62D2F2E0E43007AED48 /* MCIMAPPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPPart.h; sourceTree = "<group>"; };
+		CDE0F62E2F2E0E43007AED48 /* MCIMAPProgressCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPProgressCallback.h; sourceTree = "<group>"; };
+		CDE0F62F2F2E0E43007AED48 /* MCIMAPQuotaOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPQuotaOperation.h; sourceTree = "<group>"; };
+		CDE0F6302F2E0E43007AED48 /* MCIMAPSearchExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPSearchExpression.h; sourceTree = "<group>"; };
+		CDE0F6312F2E0E43007AED48 /* MCIMAPSearchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPSearchOperation.h; sourceTree = "<group>"; };
+		CDE0F6322F2E0E43007AED48 /* MCIMAPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPSession.h; sourceTree = "<group>"; };
+		CDE0F6332F2E0E43007AED48 /* MCIMAPSyncResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIMAPSyncResult.h; sourceTree = "<group>"; };
+		CDE0F6342F2E0E43007AED48 /* MCIndexSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIndexSet.h; sourceTree = "<group>"; };
+		CDE0F6352F2E0E43007AED48 /* MCIterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCIterator.h; sourceTree = "<group>"; };
+		CDE0F6362F2E0E43007AED48 /* MCJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCJSON.h; sourceTree = "<group>"; };
+		CDE0F6372F2E0E43007AED48 /* MCLibetpanTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLibetpanTypes.h; sourceTree = "<group>"; };
+		CDE0F6382F2E0E43007AED48 /* MCLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLog.h; sourceTree = "<group>"; };
+		CDE0F6392F2E0E43007AED48 /* MCMailProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMailProvider.h; sourceTree = "<group>"; };
+		CDE0F63A2F2E0E43007AED48 /* MCMailProvidersManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMailProvidersManager.h; sourceTree = "<group>"; };
+		CDE0F63B2F2E0E43007AED48 /* MCMainThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMainThread.h; sourceTree = "<group>"; };
+		CDE0F63C2F2E0E43007AED48 /* MCMD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMD5.h; sourceTree = "<group>"; };
+		CDE0F63D2F2E0E43007AED48 /* MCMessageBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMessageBuilder.h; sourceTree = "<group>"; };
+		CDE0F63E2F2E0E43007AED48 /* MCMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMessageConstants.h; sourceTree = "<group>"; };
+		CDE0F63F2F2E0E43007AED48 /* MCMessageHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMessageHeader.h; sourceTree = "<group>"; };
+		CDE0F6402F2E0E43007AED48 /* MCMessageParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMessageParser.h; sourceTree = "<group>"; };
+		CDE0F6412F2E0E43007AED48 /* MCMessagePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMessagePart.h; sourceTree = "<group>"; };
+		CDE0F6422F2E0E43007AED48 /* MCMultipart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMultipart.h; sourceTree = "<group>"; };
+		CDE0F6432F2E0E43007AED48 /* MCMXRecordResolverOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMXRecordResolverOperation.h; sourceTree = "<group>"; };
+		CDE0F6442F2E0E43007AED48 /* MCNetService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNetService.h; sourceTree = "<group>"; };
+		CDE0F6452F2E0E43007AED48 /* MCNNTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTP.h; sourceTree = "<group>"; };
+		CDE0F6462F2E0E43007AED48 /* MCNNTPAsyncSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPAsyncSession.h; sourceTree = "<group>"; };
+		CDE0F6472F2E0E43007AED48 /* MCNNTPFetchAllArticlesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPFetchAllArticlesOperation.h; sourceTree = "<group>"; };
+		CDE0F6482F2E0E43007AED48 /* MCNNTPFetchArticleOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPFetchArticleOperation.h; sourceTree = "<group>"; };
+		CDE0F6492F2E0E43007AED48 /* MCNNTPFetchHeaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPFetchHeaderOperation.h; sourceTree = "<group>"; };
+		CDE0F64A2F2E0E43007AED48 /* MCNNTPFetchOverviewOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPFetchOverviewOperation.h; sourceTree = "<group>"; };
+		CDE0F64B2F2E0E43007AED48 /* MCNNTPFetchServerTimeOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPFetchServerTimeOperation.h; sourceTree = "<group>"; };
+		CDE0F64C2F2E0E43007AED48 /* MCNNTPGroupInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPGroupInfo.h; sourceTree = "<group>"; };
+		CDE0F64D2F2E0E43007AED48 /* MCNNTPListNewsgroupsOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPListNewsgroupsOperation.h; sourceTree = "<group>"; };
+		CDE0F64E2F2E0E43007AED48 /* MCNNTPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPOperation.h; sourceTree = "<group>"; };
+		CDE0F64F2F2E0E43007AED48 /* MCNNTPOperationCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPOperationCallback.h; sourceTree = "<group>"; };
+		CDE0F6502F2E0E43007AED48 /* MCNNTPPostOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPPostOperation.h; sourceTree = "<group>"; };
+		CDE0F6512F2E0E43007AED48 /* MCNNTPProgressCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPProgressCallback.h; sourceTree = "<group>"; };
+		CDE0F6522F2E0E43007AED48 /* MCNNTPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNNTPSession.h; sourceTree = "<group>"; };
+		CDE0F6532F2E0E43007AED48 /* MCNull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNull.h; sourceTree = "<group>"; };
+		CDE0F6542F2E0E43007AED48 /* MCOAbstract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAbstract.h; sourceTree = "<group>"; };
+		CDE0F6552F2E0E43007AED48 /* MCOAbstractMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAbstractMessage.h; sourceTree = "<group>"; };
+		CDE0F6562F2E0E43007AED48 /* MCOAbstractMessagePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAbstractMessagePart.h; sourceTree = "<group>"; };
+		CDE0F6572F2E0E43007AED48 /* MCOAbstractMultipart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAbstractMultipart.h; sourceTree = "<group>"; };
+		CDE0F6582F2E0E43007AED48 /* MCOAbstractPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAbstractPart.h; sourceTree = "<group>"; };
+		CDE0F6592F2E0E43007AED48 /* MCOAccountValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAccountValidator.h; sourceTree = "<group>"; };
+		CDE0F65A2F2E0E43007AED48 /* MCOAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAddress.h; sourceTree = "<group>"; };
+		CDE0F65B2F2E0E43007AED48 /* MCOAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOAttachment.h; sourceTree = "<group>"; };
+		CDE0F65C2F2E0E43007AED48 /* MCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCObjC.h; sourceTree = "<group>"; };
+		CDE0F65D2F2E0E43007AED48 /* MCObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCObject.h; sourceTree = "<group>"; };
+		CDE0F65E2F2E0E43007AED48 /* MCOConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOConstants.h; sourceTree = "<group>"; };
+		CDE0F65F2F2E0E43007AED48 /* MCOHTMLRendererDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOHTMLRendererDelegate.h; sourceTree = "<group>"; };
+		CDE0F6602F2E0E43007AED48 /* MCOHTMLRendererIMAPDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOHTMLRendererIMAPDelegate.h; sourceTree = "<group>"; };
+		CDE0F6612F2E0E43007AED48 /* MCOIMAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAP.h; sourceTree = "<group>"; };
+		CDE0F6622F2E0E43007AED48 /* MCOIMAPAppendMessageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPAppendMessageOperation.h; sourceTree = "<group>"; };
+		CDE0F6632F2E0E43007AED48 /* MCOIMAPBaseOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPBaseOperation.h; sourceTree = "<group>"; };
+		CDE0F6642F2E0E43007AED48 /* MCOIMAPCapabilityOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPCapabilityOperation.h; sourceTree = "<group>"; };
+		CDE0F6652F2E0E43007AED48 /* MCOIMAPCopyMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPCopyMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6662F2E0E43007AED48 /* MCOIMAPCustomCommandOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPCustomCommandOperation.h; sourceTree = "<group>"; };
+		CDE0F6672F2E0E43007AED48 /* MCOIMAPFetchContentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFetchContentOperation.h; sourceTree = "<group>"; };
+		CDE0F6682F2E0E43007AED48 /* MCOIMAPFetchContentToFileOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFetchContentToFileOperation.h; sourceTree = "<group>"; };
+		CDE0F6692F2E0E43007AED48 /* MCOIMAPFetchFoldersOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFetchFoldersOperation.h; sourceTree = "<group>"; };
+		CDE0F66A2F2E0E43007AED48 /* MCOIMAPFetchMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFetchMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F66B2F2E0E43007AED48 /* MCOIMAPFetchNamespaceOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFetchNamespaceOperation.h; sourceTree = "<group>"; };
+		CDE0F66C2F2E0E43007AED48 /* MCOIMAPFetchParsedContentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFetchParsedContentOperation.h; sourceTree = "<group>"; };
+		CDE0F66D2F2E0E43007AED48 /* MCOIMAPFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFolder.h; sourceTree = "<group>"; };
+		CDE0F66E2F2E0E43007AED48 /* MCOIMAPFolderInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFolderInfo.h; sourceTree = "<group>"; };
+		CDE0F66F2F2E0E43007AED48 /* MCOIMAPFolderInfoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFolderInfoOperation.h; sourceTree = "<group>"; };
+		CDE0F6702F2E0E43007AED48 /* MCOIMAPFolderStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFolderStatus.h; sourceTree = "<group>"; };
+		CDE0F6712F2E0E43007AED48 /* MCOIMAPFolderStatusOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPFolderStatusOperation.h; sourceTree = "<group>"; };
+		CDE0F6722F2E0E43007AED48 /* MCOIMAPIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPIdentity.h; sourceTree = "<group>"; };
+		CDE0F6732F2E0E43007AED48 /* MCOIMAPIdentityOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPIdentityOperation.h; sourceTree = "<group>"; };
+		CDE0F6742F2E0E43007AED48 /* MCOIMAPIdleOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPIdleOperation.h; sourceTree = "<group>"; };
+		CDE0F6752F2E0E43007AED48 /* MCOIMAPMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPMessage.h; sourceTree = "<group>"; };
+		CDE0F6762F2E0E43007AED48 /* MCOIMAPMessagePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPMessagePart.h; sourceTree = "<group>"; };
+		CDE0F6772F2E0E43007AED48 /* MCOIMAPMessageRenderingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPMessageRenderingOperation.h; sourceTree = "<group>"; };
+		CDE0F6782F2E0E43007AED48 /* MCOIMAPMoveMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPMoveMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6792F2E0E43007AED48 /* MCOIMAPMultipart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPMultipart.h; sourceTree = "<group>"; };
+		CDE0F67A2F2E0E43007AED48 /* MCOIMAPNamespace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPNamespace.h; sourceTree = "<group>"; };
+		CDE0F67B2F2E0E43007AED48 /* MCOIMAPNamespaceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPNamespaceItem.h; sourceTree = "<group>"; };
+		CDE0F67C2F2E0E43007AED48 /* MCOIMAPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPOperation.h; sourceTree = "<group>"; };
+		CDE0F67D2F2E0E43007AED48 /* MCOIMAPPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPPart.h; sourceTree = "<group>"; };
+		CDE0F67E2F2E0E43007AED48 /* MCOIMAPQuotaOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPQuotaOperation.h; sourceTree = "<group>"; };
+		CDE0F67F2F2E0E43007AED48 /* MCOIMAPSearchExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPSearchExpression.h; sourceTree = "<group>"; };
+		CDE0F6802F2E0E43007AED48 /* MCOIMAPSearchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPSearchOperation.h; sourceTree = "<group>"; };
+		CDE0F6812F2E0E43007AED48 /* MCOIMAPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIMAPSession.h; sourceTree = "<group>"; };
+		CDE0F6822F2E0E43007AED48 /* MCOIndexSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOIndexSet.h; sourceTree = "<group>"; };
+		CDE0F6832F2E0E43007AED48 /* MCOMailProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMailProvider.h; sourceTree = "<group>"; };
+		CDE0F6842F2E0E43007AED48 /* MCOMailProvidersManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMailProvidersManager.h; sourceTree = "<group>"; };
+		CDE0F6852F2E0E43007AED48 /* MCOMessageBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMessageBuilder.h; sourceTree = "<group>"; };
+		CDE0F6862F2E0E43007AED48 /* MCOMessageHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMessageHeader.h; sourceTree = "<group>"; };
+		CDE0F6872F2E0E43007AED48 /* MCOMessageParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMessageParser.h; sourceTree = "<group>"; };
+		CDE0F6882F2E0E43007AED48 /* MCOMessagePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMessagePart.h; sourceTree = "<group>"; };
+		CDE0F6892F2E0E43007AED48 /* MCOMultipart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOMultipart.h; sourceTree = "<group>"; };
+		CDE0F68A2F2E0E43007AED48 /* MCONetService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONetService.h; sourceTree = "<group>"; };
+		CDE0F68B2F2E0E43007AED48 /* MCONNTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTP.h; sourceTree = "<group>"; };
+		CDE0F68C2F2E0E43007AED48 /* MCONNTPDisconnectOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPDisconnectOperation.h; sourceTree = "<group>"; };
+		CDE0F68D2F2E0E43007AED48 /* MCONNTPFetchAllArticlesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPFetchAllArticlesOperation.h; sourceTree = "<group>"; };
+		CDE0F68E2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPFetchArticleOperation.h; sourceTree = "<group>"; };
+		CDE0F68F2F2E0E43007AED48 /* MCONNTPFetchHeaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPFetchHeaderOperation.h; sourceTree = "<group>"; };
+		CDE0F6902F2E0E43007AED48 /* MCONNTPFetchOverviewOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPFetchOverviewOperation.h; sourceTree = "<group>"; };
+		CDE0F6912F2E0E43007AED48 /* MCONNTPFetchServerTimeOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPFetchServerTimeOperation.h; sourceTree = "<group>"; };
+		CDE0F6922F2E0E43007AED48 /* MCONNTPGroupInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPGroupInfo.h; sourceTree = "<group>"; };
+		CDE0F6932F2E0E43007AED48 /* MCONNTPListNewsgroupsOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPListNewsgroupsOperation.h; sourceTree = "<group>"; };
+		CDE0F6942F2E0E43007AED48 /* MCONNTPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPOperation.h; sourceTree = "<group>"; };
+		CDE0F6952F2E0E43007AED48 /* MCONNTPPostOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPPostOperation.h; sourceTree = "<group>"; };
+		CDE0F6962F2E0E43007AED48 /* MCONNTPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCONNTPSession.h; sourceTree = "<group>"; };
+		CDE0F6972F2E0E43007AED48 /* MCOObjectWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOObjectWrapper.h; sourceTree = "<group>"; };
+		CDE0F6982F2E0E43007AED48 /* MCOOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOOperation.h; sourceTree = "<group>"; };
+		CDE0F6992F2E0E43007AED48 /* MCOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOperation.h; sourceTree = "<group>"; };
+		CDE0F69A2F2E0E43007AED48 /* MCOperationCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOperationCallback.h; sourceTree = "<group>"; };
+		CDE0F69B2F2E0E43007AED48 /* MCOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOperationQueue.h; sourceTree = "<group>"; };
+		CDE0F69C2F2E0E43007AED48 /* MCOPOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOP.h; sourceTree = "<group>"; };
+		CDE0F69D2F2E0E43007AED48 /* MCOPOPFetchHeaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPFetchHeaderOperation.h; sourceTree = "<group>"; };
+		CDE0F69E2F2E0E43007AED48 /* MCOPOPFetchMessageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPFetchMessageOperation.h; sourceTree = "<group>"; };
+		CDE0F69F2F2E0E43007AED48 /* MCOPOPFetchMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPFetchMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6A02F2E0E43007AED48 /* MCOPOPMessageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPMessageInfo.h; sourceTree = "<group>"; };
+		CDE0F6A12F2E0E43007AED48 /* MCOPOPNoopOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPNoopOperation.h; sourceTree = "<group>"; };
+		CDE0F6A22F2E0E43007AED48 /* MCOPOPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPOperation.h; sourceTree = "<group>"; };
+		CDE0F6A32F2E0E43007AED48 /* MCOPOPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOPOPSession.h; sourceTree = "<group>"; };
+		CDE0F6A42F2E0E43007AED48 /* MCOProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOProvider.h; sourceTree = "<group>"; };
+		CDE0F6A52F2E0E43007AED48 /* MCORange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCORange.h; sourceTree = "<group>"; };
+		CDE0F6A62F2E0E43007AED48 /* MCORFC822.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCORFC822.h; sourceTree = "<group>"; };
+		CDE0F6A72F2E0E43007AED48 /* MCOSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSerializable.h; sourceTree = "<group>"; };
+		CDE0F6A82F2E0E43007AED48 /* MCOSMTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSMTP.h; sourceTree = "<group>"; };
+		CDE0F6A92F2E0E43007AED48 /* MCOSMTPLoginOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSMTPLoginOperation.h; sourceTree = "<group>"; };
+		CDE0F6AA2F2E0E43007AED48 /* MCOSMTPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSMTPOperation.h; sourceTree = "<group>"; };
+		CDE0F6AB2F2E0E43007AED48 /* MCOSMTPSendOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSMTPSendOperation.h; sourceTree = "<group>"; };
+		CDE0F6AC2F2E0E43007AED48 /* MCOSMTPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOSMTPSession.h; sourceTree = "<group>"; };
+		CDE0F6AD2F2E0E43007AED48 /* MCOUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOUtils.h; sourceTree = "<group>"; };
+		CDE0F6AE2F2E0E43007AED48 /* MCPOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOP.h; sourceTree = "<group>"; };
+		CDE0F6AF2F2E0E43007AED48 /* MCPOPAsyncSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPAsyncSession.h; sourceTree = "<group>"; };
+		CDE0F6B02F2E0E43007AED48 /* MCPOPFetchHeaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPFetchHeaderOperation.h; sourceTree = "<group>"; };
+		CDE0F6B12F2E0E43007AED48 /* MCPOPFetchMessageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPFetchMessageOperation.h; sourceTree = "<group>"; };
+		CDE0F6B22F2E0E43007AED48 /* MCPOPFetchMessagesOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPFetchMessagesOperation.h; sourceTree = "<group>"; };
+		CDE0F6B32F2E0E43007AED48 /* MCPOPMessageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPMessageInfo.h; sourceTree = "<group>"; };
+		CDE0F6B42F2E0E43007AED48 /* MCPOPNoopOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPNoopOperation.h; sourceTree = "<group>"; };
+		CDE0F6B52F2E0E43007AED48 /* MCPOPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPOperation.h; sourceTree = "<group>"; };
+		CDE0F6B62F2E0E43007AED48 /* MCPOPOperationCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPOperationCallback.h; sourceTree = "<group>"; };
+		CDE0F6B72F2E0E43007AED48 /* MCPOPProgressCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPProgressCallback.h; sourceTree = "<group>"; };
+		CDE0F6B82F2E0E43007AED48 /* MCPOPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPOPSession.h; sourceTree = "<group>"; };
+		CDE0F6B92F2E0E43007AED48 /* MCProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCProvider.h; sourceTree = "<group>"; };
+		CDE0F6BA2F2E0E43007AED48 /* MCRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCRange.h; sourceTree = "<group>"; };
+		CDE0F6BB2F2E0E43007AED48 /* MCRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCRenderer.h; sourceTree = "<group>"; };
+		CDE0F6BC2F2E0E43007AED48 /* MCRFC822.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCRFC822.h; sourceTree = "<group>"; };
+		CDE0F6BD2F2E0E43007AED48 /* MCSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSet.h; sourceTree = "<group>"; };
+		CDE0F6BE2F2E0E43007AED48 /* MCSizeFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSizeFormatter.h; sourceTree = "<group>"; };
+		CDE0F6BF2F2E0E43007AED48 /* MCSMTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTP.h; sourceTree = "<group>"; };
+		CDE0F6C02F2E0E43007AED48 /* MCSMTPAsyncSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTPAsyncSession.h; sourceTree = "<group>"; };
+		CDE0F6C12F2E0E43007AED48 /* MCSMTPNoopOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTPNoopOperation.h; sourceTree = "<group>"; };
+		CDE0F6C22F2E0E43007AED48 /* MCSMTPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTPOperation.h; sourceTree = "<group>"; };
+		CDE0F6C32F2E0E43007AED48 /* MCSMTPOperationCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTPOperationCallback.h; sourceTree = "<group>"; };
+		CDE0F6C42F2E0E43007AED48 /* MCSMTPProgressCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTPProgressCallback.h; sourceTree = "<group>"; };
+		CDE0F6C52F2E0E43007AED48 /* MCSMTPSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSMTPSession.h; sourceTree = "<group>"; };
+		CDE0F6C62F2E0E43007AED48 /* MCString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCString.h; sourceTree = "<group>"; };
+		CDE0F6C72F2E0E43007AED48 /* MCUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUtils.h; sourceTree = "<group>"; };
+		CDE0F6C82F2E0E43007AED48 /* MCValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCValue.h; sourceTree = "<group>"; };
+		CDE0F6C92F2E0E43007AED48 /* NSArray+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6CA2F2E0E43007AED48 /* NSData+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6CB2F2E0E43007AED48 /* NSDictionary+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6CC2F2E0E43007AED48 /* NSError+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6CD2F2E0E43007AED48 /* NSIndexSet+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6CE2F2E0E43007AED48 /* NSObject+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6CF2F2E0E43007AED48 /* NSString+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6D02F2E0E43007AED48 /* NSValue+MCO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSValue+MCO.h"; sourceTree = "<group>"; };
+		CDE0F6D32F2E0E43007AED48 /* libctemplate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libctemplate.a; sourceTree = "<group>"; };
+		CDE0F6D42F2E0E43007AED48 /* libetpan.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libetpan.a; sourceTree = "<group>"; };
+		CDE0F6D52F2E0E43007AED48 /* libMailCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMailCore.a; sourceTree = "<group>"; };
+		CDE0F6D62F2E0E43007AED48 /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailCore.framework; sourceTree = "<group>"; };
+		CDE0F6D72F2E0E43007AED48 /* MailCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = MailCore.framework.dSYM; sourceTree = "<group>"; };
+		CDE0F86F2F2E12D6007AED48 /* Mail Sent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "Mail Sent.aiff"; sourceTree = "<group>"; };
 		D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMailSupportPrefPane.xib; sourceTree = "<group>"; };
 		D4BB97E6159DFE9A00415FA2 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D4BB97E7159DFE9A00415FA2 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -124,10 +867,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE0F6DA2F2E0E43007AED48 /* libetpan.a in Frameworks */,
+				CDE0F6DB2F2E0E43007AED48 /* libMailCore.a in Frameworks */,
+				CDE0F6DC2F2E0E43007AED48 /* libctemplate.a in Frameworks */,
 				CDB5A04527C0743900F43DE0 /* Security.framework in Frameworks */,
 				D4F61BB618ADD7C600D6C229 /* AddressBook.framework in Frameworks */,
 				8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */,
-				CD52178827C3AEAF00314359 /* MailCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +882,7 @@
 		0259C574FE90428111CA0C5A /* QSMailSupport */ = {
 			isa = PBXGroup;
 			children = (
-				CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */,
+				CDE0F6D82F2E0E43007AED48 /* MailCore-prebuilt */,
 				D4BB97E5159DFE9A00415FA2 /* Configuration */,
 				32DBCF9E0370C38000C91783 /* Classes */,
 				0259C582FE90428111CA0C5A /* Resources */,
@@ -150,6 +895,7 @@
 		0259C582FE90428111CA0C5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDE0F86F2F2E12D6007AED48 /* Mail Sent.aiff */,
 				D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */,
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
 			);
@@ -185,19 +931,449 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		CD52176C27C3AE8000314359 /* Products */ = {
+		CDE0F54C2F2E0E43007AED48 /* ctemplate */ = {
 			isa = PBXGroup;
 			children = (
-				CD52177727C3AE8000314359 /* libMailCore.a */,
-				CD52177927C3AE8000314359 /* libMailCore-ios.a */,
-				CD52177B27C3AE8000314359 /* tests */,
-				CD52177D27C3AE8000314359 /* test-ios.app */,
-				CD52177F27C3AE8000314359 /* MailCore.framework */,
-				CD52178127C3AE8000314359 /* MailCore.framework */,
-				CD52178327C3AE8000314359 /* unittest.xctest */,
-				CD52178527C3AE8000314359 /* unittestcpp */,
+				CDE0F53E2F2E0E43007AED48 /* find_ptr.h */,
+				CDE0F53F2F2E0E43007AED48 /* per_expand_data.h */,
+				CDE0F5402F2E0E43007AED48 /* str_ref.h */,
+				CDE0F5412F2E0E43007AED48 /* template.h */,
+				CDE0F5422F2E0E43007AED48 /* template_annotator.h */,
+				CDE0F5432F2E0E43007AED48 /* template_cache.h */,
+				CDE0F5442F2E0E43007AED48 /* template_dictionary.h */,
+				CDE0F5452F2E0E43007AED48 /* template_dictionary_interface.h */,
+				CDE0F5462F2E0E43007AED48 /* template_emitter.h */,
+				CDE0F5472F2E0E43007AED48 /* template_enums.h */,
+				CDE0F5482F2E0E43007AED48 /* template_modifiers.h */,
+				CDE0F5492F2E0E43007AED48 /* template_namelist.h */,
+				CDE0F54A2F2E0E43007AED48 /* template_pathops.h */,
+				CDE0F54B2F2E0E43007AED48 /* template_string.h */,
 			);
-			name = Products;
+			path = ctemplate;
+			sourceTree = "<group>";
+		};
+		CDE0F5F02F2E0E43007AED48 /* libetpan */ = {
+			isa = PBXGroup;
+			children = (
+				CDE0F54D2F2E0E43007AED48 /* acl.h */,
+				CDE0F54E2F2E0E43007AED48 /* acl_types.h */,
+				CDE0F54F2F2E0E43007AED48 /* annotatemore.h */,
+				CDE0F5502F2E0E43007AED48 /* annotatemore_types.h */,
+				CDE0F5512F2E0E43007AED48 /* carray.h */,
+				CDE0F5522F2E0E43007AED48 /* charconv.h */,
+				CDE0F5532F2E0E43007AED48 /* chash.h */,
+				CDE0F5542F2E0E43007AED48 /* clist.h */,
+				CDE0F5552F2E0E43007AED48 /* condstore.h */,
+				CDE0F5562F2E0E43007AED48 /* condstore_types.h */,
+				CDE0F5572F2E0E43007AED48 /* data_message_driver.h */,
+				CDE0F5582F2E0E43007AED48 /* dbdriver.h */,
+				CDE0F5592F2E0E43007AED48 /* dbdriver_message.h */,
+				CDE0F55A2F2E0E43007AED48 /* dbdriver_types.h */,
+				CDE0F55B2F2E0E43007AED48 /* dbstorage.h */,
+				CDE0F55C2F2E0E43007AED48 /* enable.h */,
+				CDE0F55D2F2E0E43007AED48 /* feeddriver.h */,
+				CDE0F55E2F2E0E43007AED48 /* feeddriver_message.h */,
+				CDE0F55F2F2E0E43007AED48 /* feeddriver_types.h */,
+				CDE0F5602F2E0E43007AED48 /* feedstorage.h */,
+				CDE0F5612F2E0E43007AED48 /* generic_cache_types.h */,
+				CDE0F5622F2E0E43007AED48 /* hotmailstorage.h */,
+				CDE0F5632F2E0E43007AED48 /* idle.h */,
+				CDE0F5642F2E0E43007AED48 /* imapdriver.h */,
+				CDE0F5652F2E0E43007AED48 /* imapdriver_cached.h */,
+				CDE0F5662F2E0E43007AED48 /* imapdriver_cached_message.h */,
+				CDE0F5672F2E0E43007AED48 /* imapdriver_message.h */,
+				CDE0F5682F2E0E43007AED48 /* imapdriver_tools.h */,
+				CDE0F5692F2E0E43007AED48 /* imapdriver_tools_private.h */,
+				CDE0F56A2F2E0E43007AED48 /* imapdriver_types.h */,
+				CDE0F56B2F2E0E43007AED48 /* imapstorage.h */,
+				CDE0F56C2F2E0E43007AED48 /* libetpan.h */,
+				CDE0F56D2F2E0E43007AED48 /* libetpan_version.h */,
+				CDE0F56E2F2E0E43007AED48 /* libetpan-config.h */,
+				CDE0F56F2F2E0E43007AED48 /* mail.h */,
+				CDE0F5702F2E0E43007AED48 /* maildir.h */,
+				CDE0F5712F2E0E43007AED48 /* maildir_types.h */,
+				CDE0F5722F2E0E43007AED48 /* maildirdriver.h */,
+				CDE0F5732F2E0E43007AED48 /* maildirdriver_cached.h */,
+				CDE0F5742F2E0E43007AED48 /* maildirdriver_cached_message.h */,
+				CDE0F5752F2E0E43007AED48 /* maildirdriver_message.h */,
+				CDE0F5762F2E0E43007AED48 /* maildirdriver_types.h */,
+				CDE0F5772F2E0E43007AED48 /* maildirstorage.h */,
+				CDE0F5782F2E0E43007AED48 /* maildriver.h */,
+				CDE0F5792F2E0E43007AED48 /* maildriver_errors.h */,
+				CDE0F57A2F2E0E43007AED48 /* maildriver_types.h */,
+				CDE0F57B2F2E0E43007AED48 /* maildriver_types_helper.h */,
+				CDE0F57C2F2E0E43007AED48 /* mailengine.h */,
+				CDE0F57D2F2E0E43007AED48 /* mailfolder.h */,
+				CDE0F57E2F2E0E43007AED48 /* mailimap.h */,
+				CDE0F57F2F2E0E43007AED48 /* mailimap_compress.h */,
+				CDE0F5802F2E0E43007AED48 /* mailimap_extension.h */,
+				CDE0F5812F2E0E43007AED48 /* mailimap_extension_types.h */,
+				CDE0F5822F2E0E43007AED48 /* mailimap_helper.h */,
+				CDE0F5832F2E0E43007AED48 /* mailimap_id.h */,
+				CDE0F5842F2E0E43007AED48 /* mailimap_id_types.h */,
+				CDE0F5852F2E0E43007AED48 /* mailimap_oauth2.h */,
+				CDE0F5862F2E0E43007AED48 /* mailimap_socket.h */,
+				CDE0F5872F2E0E43007AED48 /* mailimap_sort.h */,
+				CDE0F5882F2E0E43007AED48 /* mailimap_sort_types.h */,
+				CDE0F5892F2E0E43007AED48 /* mailimap_ssl.h */,
+				CDE0F58A2F2E0E43007AED48 /* mailimap_types.h */,
+				CDE0F58B2F2E0E43007AED48 /* mailimap_types_helper.h */,
+				CDE0F58C2F2E0E43007AED48 /* mailimf.h */,
+				CDE0F58D2F2E0E43007AED48 /* mailimf_types.h */,
+				CDE0F58E2F2E0E43007AED48 /* mailimf_types_helper.h */,
+				CDE0F58F2F2E0E43007AED48 /* mailimf_write_file.h */,
+				CDE0F5902F2E0E43007AED48 /* mailimf_write_generic.h */,
+				CDE0F5912F2E0E43007AED48 /* mailimf_write_mem.h */,
+				CDE0F5922F2E0E43007AED48 /* maillock.h */,
+				CDE0F5932F2E0E43007AED48 /* mailmbox.h */,
+				CDE0F5942F2E0E43007AED48 /* mailmbox_types.h */,
+				CDE0F5952F2E0E43007AED48 /* mailmessage.h */,
+				CDE0F5962F2E0E43007AED48 /* mailmessage_types.h */,
+				CDE0F5972F2E0E43007AED48 /* mailmh.h */,
+				CDE0F5982F2E0E43007AED48 /* mailmime.h */,
+				CDE0F5992F2E0E43007AED48 /* mailmime_content.h */,
+				CDE0F59A2F2E0E43007AED48 /* mailmime_decode.h */,
+				CDE0F59B2F2E0E43007AED48 /* mailmime_disposition.h */,
+				CDE0F59C2F2E0E43007AED48 /* mailmime_types.h */,
+				CDE0F59D2F2E0E43007AED48 /* mailmime_types_helper.h */,
+				CDE0F59E2F2E0E43007AED48 /* mailmime_write_file.h */,
+				CDE0F59F2F2E0E43007AED48 /* mailmime_write_generic.h */,
+				CDE0F5A02F2E0E43007AED48 /* mailmime_write_mem.h */,
+				CDE0F5A12F2E0E43007AED48 /* mailpop3.h */,
+				CDE0F5A22F2E0E43007AED48 /* mailpop3_helper.h */,
+				CDE0F5A32F2E0E43007AED48 /* mailpop3_socket.h */,
+				CDE0F5A42F2E0E43007AED48 /* mailpop3_ssl.h */,
+				CDE0F5A52F2E0E43007AED48 /* mailpop3_types.h */,
+				CDE0F5A62F2E0E43007AED48 /* mailprivacy.h */,
+				CDE0F5A72F2E0E43007AED48 /* mailprivacy_gnupg.h */,
+				CDE0F5A82F2E0E43007AED48 /* mailprivacy_smime.h */,
+				CDE0F5A92F2E0E43007AED48 /* mailprivacy_tools.h */,
+				CDE0F5AA2F2E0E43007AED48 /* mailprivacy_types.h */,
+				CDE0F5AB2F2E0E43007AED48 /* mailsem.h */,
+				CDE0F5AC2F2E0E43007AED48 /* mailsmtp.h */,
+				CDE0F5AD2F2E0E43007AED48 /* mailsmtp_helper.h */,
+				CDE0F5AE2F2E0E43007AED48 /* mailsmtp_oauth2.h */,
+				CDE0F5AF2F2E0E43007AED48 /* mailsmtp_socket.h */,
+				CDE0F5B02F2E0E43007AED48 /* mailsmtp_ssl.h */,
+				CDE0F5B12F2E0E43007AED48 /* mailsmtp_types.h */,
+				CDE0F5B22F2E0E43007AED48 /* mailstorage.h */,
+				CDE0F5B32F2E0E43007AED48 /* mailstorage_types.h */,
+				CDE0F5B42F2E0E43007AED48 /* mailstream.h */,
+				CDE0F5B52F2E0E43007AED48 /* mailstream_cfstream.h */,
+				CDE0F5B62F2E0E43007AED48 /* mailstream_compress.h */,
+				CDE0F5B72F2E0E43007AED48 /* mailstream_helper.h */,
+				CDE0F5B82F2E0E43007AED48 /* mailstream_low.h */,
+				CDE0F5B92F2E0E43007AED48 /* mailstream_socket.h */,
+				CDE0F5BA2F2E0E43007AED48 /* mailstream_ssl.h */,
+				CDE0F5BB2F2E0E43007AED48 /* mailstream_types.h */,
+				CDE0F5BC2F2E0E43007AED48 /* mailthread.h */,
+				CDE0F5BD2F2E0E43007AED48 /* mailthread_types.h */,
+				CDE0F5BE2F2E0E43007AED48 /* mboxdriver.h */,
+				CDE0F5BF2F2E0E43007AED48 /* mboxdriver_cached.h */,
+				CDE0F5C02F2E0E43007AED48 /* mboxdriver_cached_message.h */,
+				CDE0F5C12F2E0E43007AED48 /* mboxdriver_message.h */,
+				CDE0F5C22F2E0E43007AED48 /* mboxdriver_types.h */,
+				CDE0F5C32F2E0E43007AED48 /* mboxstorage.h */,
+				CDE0F5C42F2E0E43007AED48 /* mhdriver.h */,
+				CDE0F5C52F2E0E43007AED48 /* mhdriver_cached.h */,
+				CDE0F5C62F2E0E43007AED48 /* mhdriver_cached_message.h */,
+				CDE0F5C72F2E0E43007AED48 /* mhdriver_message.h */,
+				CDE0F5C82F2E0E43007AED48 /* mhdriver_types.h */,
+				CDE0F5C92F2E0E43007AED48 /* mhstorage.h */,
+				CDE0F5CA2F2E0E43007AED48 /* mime_message_driver.h */,
+				CDE0F5CB2F2E0E43007AED48 /* mmapstring.h */,
+				CDE0F5CC2F2E0E43007AED48 /* namespace.h */,
+				CDE0F5CD2F2E0E43007AED48 /* namespace_parser.h */,
+				CDE0F5CE2F2E0E43007AED48 /* namespace_sender.h */,
+				CDE0F5CF2F2E0E43007AED48 /* namespace_types.h */,
+				CDE0F5D02F2E0E43007AED48 /* newsfeed.h */,
+				CDE0F5D12F2E0E43007AED48 /* newsfeed_item.h */,
+				CDE0F5D22F2E0E43007AED48 /* newsfeed_item_enclosure.h */,
+				CDE0F5D32F2E0E43007AED48 /* newsfeed_types.h */,
+				CDE0F5D42F2E0E43007AED48 /* newsnntp.h */,
+				CDE0F5D52F2E0E43007AED48 /* newsnntp_socket.h */,
+				CDE0F5D62F2E0E43007AED48 /* newsnntp_ssl.h */,
+				CDE0F5D72F2E0E43007AED48 /* newsnntp_types.h */,
+				CDE0F5D82F2E0E43007AED48 /* nntpdriver.h */,
+				CDE0F5D92F2E0E43007AED48 /* nntpdriver_cached.h */,
+				CDE0F5DA2F2E0E43007AED48 /* nntpdriver_cached_message.h */,
+				CDE0F5DB2F2E0E43007AED48 /* nntpdriver_message.h */,
+				CDE0F5DC2F2E0E43007AED48 /* nntpdriver_types.h */,
+				CDE0F5DD2F2E0E43007AED48 /* nntpstorage.h */,
+				CDE0F5DE2F2E0E43007AED48 /* pop3driver.h */,
+				CDE0F5DF2F2E0E43007AED48 /* pop3driver_cached.h */,
+				CDE0F5E02F2E0E43007AED48 /* pop3driver_cached_message.h */,
+				CDE0F5E12F2E0E43007AED48 /* pop3driver_message.h */,
+				CDE0F5E22F2E0E43007AED48 /* pop3driver_types.h */,
+				CDE0F5E32F2E0E43007AED48 /* pop3storage.h */,
+				CDE0F5E42F2E0E43007AED48 /* qresync.h */,
+				CDE0F5E52F2E0E43007AED48 /* qresync_types.h */,
+				CDE0F5E62F2E0E43007AED48 /* quota.h */,
+				CDE0F5E72F2E0E43007AED48 /* quota_parser.h */,
+				CDE0F5E82F2E0E43007AED48 /* quota_sender.h */,
+				CDE0F5E92F2E0E43007AED48 /* quota_types.h */,
+				CDE0F5EA2F2E0E43007AED48 /* uidplus.h */,
+				CDE0F5EB2F2E0E43007AED48 /* uidplus_types.h */,
+				CDE0F5EC2F2E0E43007AED48 /* xgmlabels.h */,
+				CDE0F5ED2F2E0E43007AED48 /* xgmmsgid.h */,
+				CDE0F5EE2F2E0E43007AED48 /* xgmthrid.h */,
+				CDE0F5EF2F2E0E43007AED48 /* xlist.h */,
+			);
+			path = libetpan;
+			sourceTree = "<group>";
+		};
+		CDE0F6D12F2E0E43007AED48 /* MailCore */ = {
+			isa = PBXGroup;
+			children = (
+				CDE0F5F12F2E0E43007AED48 /* MailCore.h */,
+				CDE0F5F22F2E0E43007AED48 /* MCAbstract.h */,
+				CDE0F5F32F2E0E43007AED48 /* MCAbstractMessage.h */,
+				CDE0F5F42F2E0E43007AED48 /* MCAbstractMessagePart.h */,
+				CDE0F5F52F2E0E43007AED48 /* MCAbstractMultipart.h */,
+				CDE0F5F62F2E0E43007AED48 /* MCAbstractPart.h */,
+				CDE0F5F72F2E0E43007AED48 /* MCAccountValidator.h */,
+				CDE0F5F82F2E0E43007AED48 /* MCAddress.h */,
+				CDE0F5F92F2E0E43007AED48 /* MCAddressDisplay.h */,
+				CDE0F5FA2F2E0E43007AED48 /* MCArray.h */,
+				CDE0F5FB2F2E0E43007AED48 /* MCAssert.h */,
+				CDE0F5FC2F2E0E43007AED48 /* MCAsync.h */,
+				CDE0F5FD2F2E0E43007AED48 /* MCAsyncIMAP.h */,
+				CDE0F5FE2F2E0E43007AED48 /* MCAsyncNNTP.h */,
+				CDE0F5FF2F2E0E43007AED48 /* MCAsyncPOP.h */,
+				CDE0F6002F2E0E43007AED48 /* MCAsyncSMTP.h */,
+				CDE0F6012F2E0E43007AED48 /* MCAttachment.h */,
+				CDE0F6022F2E0E43007AED48 /* MCAutoreleasePool.h */,
+				CDE0F6032F2E0E43007AED48 /* MCBaseTypes.h */,
+				CDE0F6042F2E0E43007AED48 /* MCConnectionLogger.h */,
+				CDE0F6052F2E0E43007AED48 /* MCCore.h */,
+				CDE0F6062F2E0E43007AED48 /* MCData.h */,
+				CDE0F6072F2E0E43007AED48 /* MCDateFormatter.h */,
+				CDE0F6082F2E0E43007AED48 /* MCHash.h */,
+				CDE0F6092F2E0E43007AED48 /* MCHashMap.h */,
+				CDE0F60A2F2E0E43007AED48 /* MCHTMLCleaner.h */,
+				CDE0F60B2F2E0E43007AED48 /* MCHTMLRendererCallback.h */,
+				CDE0F60C2F2E0E43007AED48 /* MCICUTypes.h */,
+				CDE0F60D2F2E0E43007AED48 /* MCIMAP.h */,
+				CDE0F60E2F2E0E43007AED48 /* MCIMAPAppendMessageOperation.h */,
+				CDE0F60F2F2E0E43007AED48 /* MCIMAPAsyncSession.h */,
+				CDE0F6102F2E0E43007AED48 /* MCIMAPCapabilityOperation.h */,
+				CDE0F6112F2E0E43007AED48 /* MCIMAPCheckAccountOperation.h */,
+				CDE0F6122F2E0E43007AED48 /* MCIMAPConnectOperation.h */,
+				CDE0F6132F2E0E43007AED48 /* MCIMAPCopyMessagesOperation.h */,
+				CDE0F6142F2E0E43007AED48 /* MCIMAPCustomCommandOperation.h */,
+				CDE0F6152F2E0E43007AED48 /* MCIMAPFetchContentOperation.h */,
+				CDE0F6162F2E0E43007AED48 /* MCIMAPFetchContentToFileOperation.h */,
+				CDE0F6172F2E0E43007AED48 /* MCIMAPFetchFoldersOperation.h */,
+				CDE0F6182F2E0E43007AED48 /* MCIMAPFetchMessagesOperation.h */,
+				CDE0F6192F2E0E43007AED48 /* MCIMAPFetchNamespaceOperation.h */,
+				CDE0F61A2F2E0E43007AED48 /* MCIMAPFetchParsedContentOperation.h */,
+				CDE0F61B2F2E0E43007AED48 /* MCIMAPFolder.h */,
+				CDE0F61C2F2E0E43007AED48 /* MCIMAPFolderInfo.h */,
+				CDE0F61D2F2E0E43007AED48 /* MCIMAPFolderInfoOperation.h */,
+				CDE0F61E2F2E0E43007AED48 /* MCIMAPFolderStatus.h */,
+				CDE0F61F2F2E0E43007AED48 /* MCIMAPFolderStatusOperation.h */,
+				CDE0F6202F2E0E43007AED48 /* MCIMAPIdentity.h */,
+				CDE0F6212F2E0E43007AED48 /* MCIMAPIdentityOperation.h */,
+				CDE0F6222F2E0E43007AED48 /* MCIMAPIdleOperation.h */,
+				CDE0F6232F2E0E43007AED48 /* MCIMAPMessage.h */,
+				CDE0F6242F2E0E43007AED48 /* MCIMAPMessagePart.h */,
+				CDE0F6252F2E0E43007AED48 /* MCIMAPMessageRenderingOperation.h */,
+				CDE0F6262F2E0E43007AED48 /* MCIMAPMoveMessagesOperation.h */,
+				CDE0F6272F2E0E43007AED48 /* MCIMAPMultipart.h */,
+				CDE0F6282F2E0E43007AED48 /* MCIMAPNamespace.h */,
+				CDE0F6292F2E0E43007AED48 /* MCIMAPNamespaceItem.h */,
+				CDE0F62A2F2E0E43007AED48 /* MCIMAPNoopOperation.h */,
+				CDE0F62B2F2E0E43007AED48 /* MCIMAPOperation.h */,
+				CDE0F62C2F2E0E43007AED48 /* MCIMAPOperationCallback.h */,
+				CDE0F62D2F2E0E43007AED48 /* MCIMAPPart.h */,
+				CDE0F62E2F2E0E43007AED48 /* MCIMAPProgressCallback.h */,
+				CDE0F62F2F2E0E43007AED48 /* MCIMAPQuotaOperation.h */,
+				CDE0F6302F2E0E43007AED48 /* MCIMAPSearchExpression.h */,
+				CDE0F6312F2E0E43007AED48 /* MCIMAPSearchOperation.h */,
+				CDE0F6322F2E0E43007AED48 /* MCIMAPSession.h */,
+				CDE0F6332F2E0E43007AED48 /* MCIMAPSyncResult.h */,
+				CDE0F6342F2E0E43007AED48 /* MCIndexSet.h */,
+				CDE0F6352F2E0E43007AED48 /* MCIterator.h */,
+				CDE0F6362F2E0E43007AED48 /* MCJSON.h */,
+				CDE0F6372F2E0E43007AED48 /* MCLibetpanTypes.h */,
+				CDE0F6382F2E0E43007AED48 /* MCLog.h */,
+				CDE0F6392F2E0E43007AED48 /* MCMailProvider.h */,
+				CDE0F63A2F2E0E43007AED48 /* MCMailProvidersManager.h */,
+				CDE0F63B2F2E0E43007AED48 /* MCMainThread.h */,
+				CDE0F63C2F2E0E43007AED48 /* MCMD5.h */,
+				CDE0F63D2F2E0E43007AED48 /* MCMessageBuilder.h */,
+				CDE0F63E2F2E0E43007AED48 /* MCMessageConstants.h */,
+				CDE0F63F2F2E0E43007AED48 /* MCMessageHeader.h */,
+				CDE0F6402F2E0E43007AED48 /* MCMessageParser.h */,
+				CDE0F6412F2E0E43007AED48 /* MCMessagePart.h */,
+				CDE0F6422F2E0E43007AED48 /* MCMultipart.h */,
+				CDE0F6432F2E0E43007AED48 /* MCMXRecordResolverOperation.h */,
+				CDE0F6442F2E0E43007AED48 /* MCNetService.h */,
+				CDE0F6452F2E0E43007AED48 /* MCNNTP.h */,
+				CDE0F6462F2E0E43007AED48 /* MCNNTPAsyncSession.h */,
+				CDE0F6472F2E0E43007AED48 /* MCNNTPFetchAllArticlesOperation.h */,
+				CDE0F6482F2E0E43007AED48 /* MCNNTPFetchArticleOperation.h */,
+				CDE0F6492F2E0E43007AED48 /* MCNNTPFetchHeaderOperation.h */,
+				CDE0F64A2F2E0E43007AED48 /* MCNNTPFetchOverviewOperation.h */,
+				CDE0F64B2F2E0E43007AED48 /* MCNNTPFetchServerTimeOperation.h */,
+				CDE0F64C2F2E0E43007AED48 /* MCNNTPGroupInfo.h */,
+				CDE0F64D2F2E0E43007AED48 /* MCNNTPListNewsgroupsOperation.h */,
+				CDE0F64E2F2E0E43007AED48 /* MCNNTPOperation.h */,
+				CDE0F64F2F2E0E43007AED48 /* MCNNTPOperationCallback.h */,
+				CDE0F6502F2E0E43007AED48 /* MCNNTPPostOperation.h */,
+				CDE0F6512F2E0E43007AED48 /* MCNNTPProgressCallback.h */,
+				CDE0F6522F2E0E43007AED48 /* MCNNTPSession.h */,
+				CDE0F6532F2E0E43007AED48 /* MCNull.h */,
+				CDE0F6542F2E0E43007AED48 /* MCOAbstract.h */,
+				CDE0F6552F2E0E43007AED48 /* MCOAbstractMessage.h */,
+				CDE0F6562F2E0E43007AED48 /* MCOAbstractMessagePart.h */,
+				CDE0F6572F2E0E43007AED48 /* MCOAbstractMultipart.h */,
+				CDE0F6582F2E0E43007AED48 /* MCOAbstractPart.h */,
+				CDE0F6592F2E0E43007AED48 /* MCOAccountValidator.h */,
+				CDE0F65A2F2E0E43007AED48 /* MCOAddress.h */,
+				CDE0F65B2F2E0E43007AED48 /* MCOAttachment.h */,
+				CDE0F65C2F2E0E43007AED48 /* MCObjC.h */,
+				CDE0F65D2F2E0E43007AED48 /* MCObject.h */,
+				CDE0F65E2F2E0E43007AED48 /* MCOConstants.h */,
+				CDE0F65F2F2E0E43007AED48 /* MCOHTMLRendererDelegate.h */,
+				CDE0F6602F2E0E43007AED48 /* MCOHTMLRendererIMAPDelegate.h */,
+				CDE0F6612F2E0E43007AED48 /* MCOIMAP.h */,
+				CDE0F6622F2E0E43007AED48 /* MCOIMAPAppendMessageOperation.h */,
+				CDE0F6632F2E0E43007AED48 /* MCOIMAPBaseOperation.h */,
+				CDE0F6642F2E0E43007AED48 /* MCOIMAPCapabilityOperation.h */,
+				CDE0F6652F2E0E43007AED48 /* MCOIMAPCopyMessagesOperation.h */,
+				CDE0F6662F2E0E43007AED48 /* MCOIMAPCustomCommandOperation.h */,
+				CDE0F6672F2E0E43007AED48 /* MCOIMAPFetchContentOperation.h */,
+				CDE0F6682F2E0E43007AED48 /* MCOIMAPFetchContentToFileOperation.h */,
+				CDE0F6692F2E0E43007AED48 /* MCOIMAPFetchFoldersOperation.h */,
+				CDE0F66A2F2E0E43007AED48 /* MCOIMAPFetchMessagesOperation.h */,
+				CDE0F66B2F2E0E43007AED48 /* MCOIMAPFetchNamespaceOperation.h */,
+				CDE0F66C2F2E0E43007AED48 /* MCOIMAPFetchParsedContentOperation.h */,
+				CDE0F66D2F2E0E43007AED48 /* MCOIMAPFolder.h */,
+				CDE0F66E2F2E0E43007AED48 /* MCOIMAPFolderInfo.h */,
+				CDE0F66F2F2E0E43007AED48 /* MCOIMAPFolderInfoOperation.h */,
+				CDE0F6702F2E0E43007AED48 /* MCOIMAPFolderStatus.h */,
+				CDE0F6712F2E0E43007AED48 /* MCOIMAPFolderStatusOperation.h */,
+				CDE0F6722F2E0E43007AED48 /* MCOIMAPIdentity.h */,
+				CDE0F6732F2E0E43007AED48 /* MCOIMAPIdentityOperation.h */,
+				CDE0F6742F2E0E43007AED48 /* MCOIMAPIdleOperation.h */,
+				CDE0F6752F2E0E43007AED48 /* MCOIMAPMessage.h */,
+				CDE0F6762F2E0E43007AED48 /* MCOIMAPMessagePart.h */,
+				CDE0F6772F2E0E43007AED48 /* MCOIMAPMessageRenderingOperation.h */,
+				CDE0F6782F2E0E43007AED48 /* MCOIMAPMoveMessagesOperation.h */,
+				CDE0F6792F2E0E43007AED48 /* MCOIMAPMultipart.h */,
+				CDE0F67A2F2E0E43007AED48 /* MCOIMAPNamespace.h */,
+				CDE0F67B2F2E0E43007AED48 /* MCOIMAPNamespaceItem.h */,
+				CDE0F67C2F2E0E43007AED48 /* MCOIMAPOperation.h */,
+				CDE0F67D2F2E0E43007AED48 /* MCOIMAPPart.h */,
+				CDE0F67E2F2E0E43007AED48 /* MCOIMAPQuotaOperation.h */,
+				CDE0F67F2F2E0E43007AED48 /* MCOIMAPSearchExpression.h */,
+				CDE0F6802F2E0E43007AED48 /* MCOIMAPSearchOperation.h */,
+				CDE0F6812F2E0E43007AED48 /* MCOIMAPSession.h */,
+				CDE0F6822F2E0E43007AED48 /* MCOIndexSet.h */,
+				CDE0F6832F2E0E43007AED48 /* MCOMailProvider.h */,
+				CDE0F6842F2E0E43007AED48 /* MCOMailProvidersManager.h */,
+				CDE0F6852F2E0E43007AED48 /* MCOMessageBuilder.h */,
+				CDE0F6862F2E0E43007AED48 /* MCOMessageHeader.h */,
+				CDE0F6872F2E0E43007AED48 /* MCOMessageParser.h */,
+				CDE0F6882F2E0E43007AED48 /* MCOMessagePart.h */,
+				CDE0F6892F2E0E43007AED48 /* MCOMultipart.h */,
+				CDE0F68A2F2E0E43007AED48 /* MCONetService.h */,
+				CDE0F68B2F2E0E43007AED48 /* MCONNTP.h */,
+				CDE0F68C2F2E0E43007AED48 /* MCONNTPDisconnectOperation.h */,
+				CDE0F68D2F2E0E43007AED48 /* MCONNTPFetchAllArticlesOperation.h */,
+				CDE0F68E2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h */,
+				CDE0F68F2F2E0E43007AED48 /* MCONNTPFetchHeaderOperation.h */,
+				CDE0F6902F2E0E43007AED48 /* MCONNTPFetchOverviewOperation.h */,
+				CDE0F6912F2E0E43007AED48 /* MCONNTPFetchServerTimeOperation.h */,
+				CDE0F6922F2E0E43007AED48 /* MCONNTPGroupInfo.h */,
+				CDE0F6932F2E0E43007AED48 /* MCONNTPListNewsgroupsOperation.h */,
+				CDE0F6942F2E0E43007AED48 /* MCONNTPOperation.h */,
+				CDE0F6952F2E0E43007AED48 /* MCONNTPPostOperation.h */,
+				CDE0F6962F2E0E43007AED48 /* MCONNTPSession.h */,
+				CDE0F6972F2E0E43007AED48 /* MCOObjectWrapper.h */,
+				CDE0F6982F2E0E43007AED48 /* MCOOperation.h */,
+				CDE0F6992F2E0E43007AED48 /* MCOperation.h */,
+				CDE0F69A2F2E0E43007AED48 /* MCOperationCallback.h */,
+				CDE0F69B2F2E0E43007AED48 /* MCOperationQueue.h */,
+				CDE0F69C2F2E0E43007AED48 /* MCOPOP.h */,
+				CDE0F69D2F2E0E43007AED48 /* MCOPOPFetchHeaderOperation.h */,
+				CDE0F69E2F2E0E43007AED48 /* MCOPOPFetchMessageOperation.h */,
+				CDE0F69F2F2E0E43007AED48 /* MCOPOPFetchMessagesOperation.h */,
+				CDE0F6A02F2E0E43007AED48 /* MCOPOPMessageInfo.h */,
+				CDE0F6A12F2E0E43007AED48 /* MCOPOPNoopOperation.h */,
+				CDE0F6A22F2E0E43007AED48 /* MCOPOPOperation.h */,
+				CDE0F6A32F2E0E43007AED48 /* MCOPOPSession.h */,
+				CDE0F6A42F2E0E43007AED48 /* MCOProvider.h */,
+				CDE0F6A52F2E0E43007AED48 /* MCORange.h */,
+				CDE0F6A62F2E0E43007AED48 /* MCORFC822.h */,
+				CDE0F6A72F2E0E43007AED48 /* MCOSerializable.h */,
+				CDE0F6A82F2E0E43007AED48 /* MCOSMTP.h */,
+				CDE0F6A92F2E0E43007AED48 /* MCOSMTPLoginOperation.h */,
+				CDE0F6AA2F2E0E43007AED48 /* MCOSMTPOperation.h */,
+				CDE0F6AB2F2E0E43007AED48 /* MCOSMTPSendOperation.h */,
+				CDE0F6AC2F2E0E43007AED48 /* MCOSMTPSession.h */,
+				CDE0F6AD2F2E0E43007AED48 /* MCOUtils.h */,
+				CDE0F6AE2F2E0E43007AED48 /* MCPOP.h */,
+				CDE0F6AF2F2E0E43007AED48 /* MCPOPAsyncSession.h */,
+				CDE0F6B02F2E0E43007AED48 /* MCPOPFetchHeaderOperation.h */,
+				CDE0F6B12F2E0E43007AED48 /* MCPOPFetchMessageOperation.h */,
+				CDE0F6B22F2E0E43007AED48 /* MCPOPFetchMessagesOperation.h */,
+				CDE0F6B32F2E0E43007AED48 /* MCPOPMessageInfo.h */,
+				CDE0F6B42F2E0E43007AED48 /* MCPOPNoopOperation.h */,
+				CDE0F6B52F2E0E43007AED48 /* MCPOPOperation.h */,
+				CDE0F6B62F2E0E43007AED48 /* MCPOPOperationCallback.h */,
+				CDE0F6B72F2E0E43007AED48 /* MCPOPProgressCallback.h */,
+				CDE0F6B82F2E0E43007AED48 /* MCPOPSession.h */,
+				CDE0F6B92F2E0E43007AED48 /* MCProvider.h */,
+				CDE0F6BA2F2E0E43007AED48 /* MCRange.h */,
+				CDE0F6BB2F2E0E43007AED48 /* MCRenderer.h */,
+				CDE0F6BC2F2E0E43007AED48 /* MCRFC822.h */,
+				CDE0F6BD2F2E0E43007AED48 /* MCSet.h */,
+				CDE0F6BE2F2E0E43007AED48 /* MCSizeFormatter.h */,
+				CDE0F6BF2F2E0E43007AED48 /* MCSMTP.h */,
+				CDE0F6C02F2E0E43007AED48 /* MCSMTPAsyncSession.h */,
+				CDE0F6C12F2E0E43007AED48 /* MCSMTPNoopOperation.h */,
+				CDE0F6C22F2E0E43007AED48 /* MCSMTPOperation.h */,
+				CDE0F6C32F2E0E43007AED48 /* MCSMTPOperationCallback.h */,
+				CDE0F6C42F2E0E43007AED48 /* MCSMTPProgressCallback.h */,
+				CDE0F6C52F2E0E43007AED48 /* MCSMTPSession.h */,
+				CDE0F6C62F2E0E43007AED48 /* MCString.h */,
+				CDE0F6C72F2E0E43007AED48 /* MCUtils.h */,
+				CDE0F6C82F2E0E43007AED48 /* MCValue.h */,
+				CDE0F6C92F2E0E43007AED48 /* NSArray+MCO.h */,
+				CDE0F6CA2F2E0E43007AED48 /* NSData+MCO.h */,
+				CDE0F6CB2F2E0E43007AED48 /* NSDictionary+MCO.h */,
+				CDE0F6CC2F2E0E43007AED48 /* NSError+MCO.h */,
+				CDE0F6CD2F2E0E43007AED48 /* NSIndexSet+MCO.h */,
+				CDE0F6CE2F2E0E43007AED48 /* NSObject+MCO.h */,
+				CDE0F6CF2F2E0E43007AED48 /* NSString+MCO.h */,
+				CDE0F6D02F2E0E43007AED48 /* NSValue+MCO.h */,
+			);
+			path = MailCore;
+			sourceTree = "<group>";
+		};
+		CDE0F6D22F2E0E43007AED48 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				CDE0F54C2F2E0E43007AED48 /* ctemplate */,
+				CDE0F5F02F2E0E43007AED48 /* libetpan */,
+				CDE0F6D12F2E0E43007AED48 /* MailCore */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		CDE0F6D82F2E0E43007AED48 /* MailCore-prebuilt */ = {
+			isa = PBXGroup;
+			children = (
+				CDE0F6D22F2E0E43007AED48 /* include */,
+				CDE0F6D32F2E0E43007AED48 /* libctemplate.a */,
+				CDE0F6D42F2E0E43007AED48 /* libetpan.a */,
+				CDE0F6D52F2E0E43007AED48 /* libMailCore.a */,
+				CDE0F6D62F2E0E43007AED48 /* MailCore.framework */,
+				CDE0F6D72F2E0E43007AED48 /* MailCore.framework.dSYM */,
+			);
+			path = "MailCore-prebuilt";
 			sourceTree = "<group>";
 		};
 		D4BB97E5159DFE9A00415FA2 /* Configuration */ = {
@@ -221,6 +1397,407 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE0F6DE2F2E0E43007AED48 /* MCMessageConstants.h in Headers */,
+				CDE0F6DF2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h in Headers */,
+				CDE0F6E02F2E0E43007AED48 /* mailstream_low.h in Headers */,
+				CDE0F6E12F2E0E43007AED48 /* dbstorage.h in Headers */,
+				CDE0F6E22F2E0E43007AED48 /* mboxdriver.h in Headers */,
+				CDE0F6E32F2E0E43007AED48 /* mailpop3_socket.h in Headers */,
+				CDE0F6E42F2E0E43007AED48 /* mailstream_helper.h in Headers */,
+				CDE0F6E52F2E0E43007AED48 /* nntpdriver.h in Headers */,
+				CDE0F6E62F2E0E43007AED48 /* MCNNTPGroupInfo.h in Headers */,
+				CDE0F6E72F2E0E43007AED48 /* mailpop3_helper.h in Headers */,
+				CDE0F6E82F2E0E43007AED48 /* MCOPOPFetchMessagesOperation.h in Headers */,
+				CDE0F6E92F2E0E43007AED48 /* MCOPOP.h in Headers */,
+				CDE0F6EA2F2E0E43007AED48 /* mailimf_types.h in Headers */,
+				CDE0F6EB2F2E0E43007AED48 /* MCSMTPOperationCallback.h in Headers */,
+				CDE0F6EC2F2E0E43007AED48 /* MCBaseTypes.h in Headers */,
+				CDE0F6ED2F2E0E43007AED48 /* MCOIMAPFolderStatusOperation.h in Headers */,
+				CDE0F6EE2F2E0E43007AED48 /* MCMultipart.h in Headers */,
+				CDE0F6EF2F2E0E43007AED48 /* mailmbox.h in Headers */,
+				CDE0F6F02F2E0E43007AED48 /* quota_parser.h in Headers */,
+				CDE0F6F12F2E0E43007AED48 /* MCOIMAP.h in Headers */,
+				CDE0F6F22F2E0E43007AED48 /* MCIMAPNamespace.h in Headers */,
+				CDE0F6F32F2E0E43007AED48 /* mailprivacy_types.h in Headers */,
+				CDE0F6F42F2E0E43007AED48 /* MCOSMTPSession.h in Headers */,
+				CDE0F6F52F2E0E43007AED48 /* MCIMAPFetchNamespaceOperation.h in Headers */,
+				CDE0F6F62F2E0E43007AED48 /* maildriver_types.h in Headers */,
+				CDE0F6F72F2E0E43007AED48 /* MCNNTPOperation.h in Headers */,
+				CDE0F6F82F2E0E43007AED48 /* mailstorage.h in Headers */,
+				CDE0F6F92F2E0E43007AED48 /* MCOIMAPFolderStatus.h in Headers */,
+				CDE0F6FA2F2E0E43007AED48 /* mime_message_driver.h in Headers */,
+				CDE0F6FB2F2E0E43007AED48 /* MCIMAPAppendMessageOperation.h in Headers */,
+				CDE0F6FC2F2E0E43007AED48 /* MCIMAPFolderInfo.h in Headers */,
+				CDE0F6FD2F2E0E43007AED48 /* MCAccountValidator.h in Headers */,
+				CDE0F6FE2F2E0E43007AED48 /* mailmime_content.h in Headers */,
+				CDE0F6FF2F2E0E43007AED48 /* MCONNTPOperation.h in Headers */,
+				CDE0F7002F2E0E43007AED48 /* libetpan-config.h in Headers */,
+				CDE0F7012F2E0E43007AED48 /* carray.h in Headers */,
+				CDE0F7022F2E0E43007AED48 /* MCOperationQueue.h in Headers */,
+				CDE0F7032F2E0E43007AED48 /* mailprivacy_gnupg.h in Headers */,
+				CDE0F7042F2E0E43007AED48 /* xgmlabels.h in Headers */,
+				CDE0F7052F2E0E43007AED48 /* acl.h in Headers */,
+				CDE0F7062F2E0E43007AED48 /* mailimap.h in Headers */,
+				CDE0F7072F2E0E43007AED48 /* mailstream_types.h in Headers */,
+				CDE0F7082F2E0E43007AED48 /* MCOHTMLRendererDelegate.h in Headers */,
+				CDE0F7092F2E0E43007AED48 /* mailsem.h in Headers */,
+				CDE0F70A2F2E0E43007AED48 /* MCONNTPSession.h in Headers */,
+				CDE0F70B2F2E0E43007AED48 /* MCOIMAPOperation.h in Headers */,
+				CDE0F70C2F2E0E43007AED48 /* mailsmtp_types.h in Headers */,
+				CDE0F70D2F2E0E43007AED48 /* dbdriver.h in Headers */,
+				CDE0F70E2F2E0E43007AED48 /* MCPOPOperationCallback.h in Headers */,
+				CDE0F70F2F2E0E43007AED48 /* MCIMAP.h in Headers */,
+				CDE0F7102F2E0E43007AED48 /* template_namelist.h in Headers */,
+				CDE0F7112F2E0E43007AED48 /* MCIMAPCheckAccountOperation.h in Headers */,
+				CDE0F7122F2E0E43007AED48 /* mailimf.h in Headers */,
+				CDE0F7132F2E0E43007AED48 /* dbdriver_types.h in Headers */,
+				CDE0F7142F2E0E43007AED48 /* pop3driver_types.h in Headers */,
+				CDE0F7152F2E0E43007AED48 /* MCOIMAPQuotaOperation.h in Headers */,
+				CDE0F7162F2E0E43007AED48 /* imapdriver_tools.h in Headers */,
+				CDE0F7172F2E0E43007AED48 /* MCIMAPFolderInfoOperation.h in Headers */,
+				CDE0F7182F2E0E43007AED48 /* NSDictionary+MCO.h in Headers */,
+				CDE0F7192F2E0E43007AED48 /* xlist.h in Headers */,
+				CDE0F71A2F2E0E43007AED48 /* MCPOPFetchMessageOperation.h in Headers */,
+				CDE0F71B2F2E0E43007AED48 /* MCONNTPFetchOverviewOperation.h in Headers */,
+				CDE0F71C2F2E0E43007AED48 /* uidplus_types.h in Headers */,
+				CDE0F71D2F2E0E43007AED48 /* template.h in Headers */,
+				CDE0F71E2F2E0E43007AED48 /* MCIMAPOperation.h in Headers */,
+				CDE0F71F2F2E0E43007AED48 /* MCIMAPSearchExpression.h in Headers */,
+				CDE0F7202F2E0E43007AED48 /* mhdriver_message.h in Headers */,
+				CDE0F7212F2E0E43007AED48 /* mailmime_disposition.h in Headers */,
+				CDE0F7222F2E0E43007AED48 /* MCOAbstract.h in Headers */,
+				CDE0F7232F2E0E43007AED48 /* MCIterator.h in Headers */,
+				CDE0F7242F2E0E43007AED48 /* MCRFC822.h in Headers */,
+				CDE0F7252F2E0E43007AED48 /* mailimf_write_file.h in Headers */,
+				CDE0F7262F2E0E43007AED48 /* MCOAttachment.h in Headers */,
+				CDE0F7272F2E0E43007AED48 /* MCIndexSet.h in Headers */,
+				CDE0F7282F2E0E43007AED48 /* pop3storage.h in Headers */,
+				CDE0F7292F2E0E43007AED48 /* MCPOPProgressCallback.h in Headers */,
+				CDE0F72A2F2E0E43007AED48 /* MCOAccountValidator.h in Headers */,
+				CDE0F72B2F2E0E43007AED48 /* mailimap_compress.h in Headers */,
+				CDE0F72C2F2E0E43007AED48 /* MCOperation.h in Headers */,
+				CDE0F72D2F2E0E43007AED48 /* NSError+MCO.h in Headers */,
+				CDE0F72E2F2E0E43007AED48 /* imapdriver_tools_private.h in Headers */,
+				CDE0F72F2F2E0E43007AED48 /* MCOIMAPFetchNamespaceOperation.h in Headers */,
+				CDE0F7302F2E0E43007AED48 /* MCOPOPSession.h in Headers */,
+				CDE0F7312F2E0E43007AED48 /* MCOPOPOperation.h in Headers */,
+				CDE0F7322F2E0E43007AED48 /* MCIMAPIdleOperation.h in Headers */,
+				CDE0F7332F2E0E43007AED48 /* MCNNTPFetchOverviewOperation.h in Headers */,
+				CDE0F7342F2E0E43007AED48 /* mailimap_extension_types.h in Headers */,
+				CDE0F7352F2E0E43007AED48 /* MCOSerializable.h in Headers */,
+				CDE0F7362F2E0E43007AED48 /* mailmessage_types.h in Headers */,
+				CDE0F7372F2E0E43007AED48 /* MCPOPAsyncSession.h in Headers */,
+				CDE0F7382F2E0E43007AED48 /* newsnntp_types.h in Headers */,
+				CDE0F7392F2E0E43007AED48 /* mailprivacy_smime.h in Headers */,
+				CDE0F73A2F2E0E43007AED48 /* quota_sender.h in Headers */,
+				CDE0F73B2F2E0E43007AED48 /* mailsmtp_socket.h in Headers */,
+				CDE0F73C2F2E0E43007AED48 /* acl_types.h in Headers */,
+				CDE0F73D2F2E0E43007AED48 /* MCIMAPSyncResult.h in Headers */,
+				CDE0F73E2F2E0E43007AED48 /* template_modifiers.h in Headers */,
+				CDE0F73F2F2E0E43007AED48 /* MCIMAPMessage.h in Headers */,
+				CDE0F7402F2E0E43007AED48 /* feedstorage.h in Headers */,
+				CDE0F7412F2E0E43007AED48 /* MCIMAPFetchContentOperation.h in Headers */,
+				CDE0F7422F2E0E43007AED48 /* newsfeed_item.h in Headers */,
+				CDE0F7432F2E0E43007AED48 /* MCOIMAPFetchParsedContentOperation.h in Headers */,
+				CDE0F7442F2E0E43007AED48 /* MCIMAPQuotaOperation.h in Headers */,
+				CDE0F7452F2E0E43007AED48 /* MCIMAPFetchMessagesOperation.h in Headers */,
+				CDE0F7462F2E0E43007AED48 /* charconv.h in Headers */,
+				CDE0F7472F2E0E43007AED48 /* MCOProvider.h in Headers */,
+				CDE0F7482F2E0E43007AED48 /* clist.h in Headers */,
+				CDE0F7492F2E0E43007AED48 /* MCJSON.h in Headers */,
+				CDE0F74A2F2E0E43007AED48 /* mailmime_types.h in Headers */,
+				CDE0F74B2F2E0E43007AED48 /* MCAsyncSMTP.h in Headers */,
+				CDE0F74C2F2E0E43007AED48 /* MCAbstract.h in Headers */,
+				CDE0F74D2F2E0E43007AED48 /* mailmime.h in Headers */,
+				CDE0F74E2F2E0E43007AED48 /* MCONNTP.h in Headers */,
+				CDE0F74F2F2E0E43007AED48 /* nntpdriver_cached.h in Headers */,
+				CDE0F7502F2E0E43007AED48 /* MCOIMAPBaseOperation.h in Headers */,
+				CDE0F7512F2E0E43007AED48 /* maildirdriver_types.h in Headers */,
+				CDE0F7522F2E0E43007AED48 /* maildir.h in Headers */,
+				CDE0F7532F2E0E43007AED48 /* MCAbstractMessage.h in Headers */,
+				CDE0F7542F2E0E43007AED48 /* mailimap_id_types.h in Headers */,
+				CDE0F7552F2E0E43007AED48 /* mailstream_socket.h in Headers */,
+				CDE0F7562F2E0E43007AED48 /* MCIMAPPart.h in Headers */,
+				CDE0F7572F2E0E43007AED48 /* mhstorage.h in Headers */,
+				CDE0F7582F2E0E43007AED48 /* MCIMAPProgressCallback.h in Headers */,
+				CDE0F7592F2E0E43007AED48 /* namespace_parser.h in Headers */,
+				CDE0F75A2F2E0E43007AED48 /* annotatemore.h in Headers */,
+				CDE0F75B2F2E0E43007AED48 /* MCAddress.h in Headers */,
+				CDE0F75C2F2E0E43007AED48 /* MCNNTPProgressCallback.h in Headers */,
+				CDE0F75D2F2E0E43007AED48 /* per_expand_data.h in Headers */,
+				CDE0F75E2F2E0E43007AED48 /* MCPOPOperation.h in Headers */,
+				CDE0F75F2F2E0E43007AED48 /* MCIMAPSearchOperation.h in Headers */,
+				CDE0F7602F2E0E43007AED48 /* MCIMAPSession.h in Headers */,
+				CDE0F7612F2E0E43007AED48 /* maildriver_errors.h in Headers */,
+				CDE0F7622F2E0E43007AED48 /* xgmthrid.h in Headers */,
+				CDE0F7632F2E0E43007AED48 /* chash.h in Headers */,
+				CDE0F7642F2E0E43007AED48 /* MCPOPMessageInfo.h in Headers */,
+				CDE0F7652F2E0E43007AED48 /* NSIndexSet+MCO.h in Headers */,
+				CDE0F7662F2E0E43007AED48 /* MCOIMAPCustomCommandOperation.h in Headers */,
+				CDE0F7672F2E0E43007AED48 /* imapstorage.h in Headers */,
+				CDE0F7682F2E0E43007AED48 /* feeddriver_message.h in Headers */,
+				CDE0F7692F2E0E43007AED48 /* quota.h in Headers */,
+				CDE0F76A2F2E0E43007AED48 /* MCPOPFetchMessagesOperation.h in Headers */,
+				CDE0F76B2F2E0E43007AED48 /* mboxdriver_cached.h in Headers */,
+				CDE0F76C2F2E0E43007AED48 /* feeddriver_types.h in Headers */,
+				CDE0F76D2F2E0E43007AED48 /* MCIMAPCustomCommandOperation.h in Headers */,
+				CDE0F76E2F2E0E43007AED48 /* MCHashMap.h in Headers */,
+				CDE0F76F2F2E0E43007AED48 /* MCPOPNoopOperation.h in Headers */,
+				CDE0F7702F2E0E43007AED48 /* MCNNTPFetchAllArticlesOperation.h in Headers */,
+				CDE0F7712F2E0E43007AED48 /* MCUtils.h in Headers */,
+				CDE0F7722F2E0E43007AED48 /* MCICUTypes.h in Headers */,
+				CDE0F7732F2E0E43007AED48 /* imapdriver_cached.h in Headers */,
+				CDE0F7742F2E0E43007AED48 /* MailCore.h in Headers */,
+				CDE0F7752F2E0E43007AED48 /* MCAutoreleasePool.h in Headers */,
+				CDE0F7762F2E0E43007AED48 /* MCNNTPListNewsgroupsOperation.h in Headers */,
+				CDE0F7772F2E0E43007AED48 /* annotatemore_types.h in Headers */,
+				CDE0F7782F2E0E43007AED48 /* pop3driver.h in Headers */,
+				CDE0F7792F2E0E43007AED48 /* MCONNTPDisconnectOperation.h in Headers */,
+				CDE0F77A2F2E0E43007AED48 /* MCMessageHeader.h in Headers */,
+				CDE0F77B2F2E0E43007AED48 /* NSData+MCO.h in Headers */,
+				CDE0F77C2F2E0E43007AED48 /* MCSMTPOperation.h in Headers */,
+				CDE0F77D2F2E0E43007AED48 /* MCIMAPIdentity.h in Headers */,
+				CDE0F77E2F2E0E43007AED48 /* nntpdriver_cached_message.h in Headers */,
+				CDE0F77F2F2E0E43007AED48 /* mboxdriver_types.h in Headers */,
+				CDE0F7802F2E0E43007AED48 /* MCOIMAPSearchOperation.h in Headers */,
+				CDE0F7812F2E0E43007AED48 /* MCOIMAPFetchMessagesOperation.h in Headers */,
+				CDE0F7822F2E0E43007AED48 /* MCNNTPPostOperation.h in Headers */,
+				CDE0F7832F2E0E43007AED48 /* mboxdriver_message.h in Headers */,
+				CDE0F7842F2E0E43007AED48 /* MCOMultipart.h in Headers */,
+				CDE0F7852F2E0E43007AED48 /* namespace.h in Headers */,
+				CDE0F7862F2E0E43007AED48 /* mailstream_compress.h in Headers */,
+				CDE0F7872F2E0E43007AED48 /* MCOIMAPFolderInfoOperation.h in Headers */,
+				CDE0F7882F2E0E43007AED48 /* nntpdriver_types.h in Headers */,
+				CDE0F7892F2E0E43007AED48 /* MCNull.h in Headers */,
+				CDE0F78A2F2E0E43007AED48 /* template_annotator.h in Headers */,
+				CDE0F78B2F2E0E43007AED48 /* template_string.h in Headers */,
+				CDE0F78C2F2E0E43007AED48 /* MCIMAPNamespaceItem.h in Headers */,
+				CDE0F78D2F2E0E43007AED48 /* MCOSMTPOperation.h in Headers */,
+				CDE0F78E2F2E0E43007AED48 /* MCNNTPFetchArticleOperation.h in Headers */,
+				CDE0F78F2F2E0E43007AED48 /* MCSMTPAsyncSession.h in Headers */,
+				CDE0F7902F2E0E43007AED48 /* mailmime_types_helper.h in Headers */,
+				CDE0F7912F2E0E43007AED48 /* template_dictionary.h in Headers */,
+				CDE0F7922F2E0E43007AED48 /* mailmbox_types.h in Headers */,
+				CDE0F7932F2E0E43007AED48 /* MCIMAPFetchFoldersOperation.h in Headers */,
+				CDE0F7942F2E0E43007AED48 /* MCOIMAPFetchContentOperation.h in Headers */,
+				CDE0F7952F2E0E43007AED48 /* MCIMAPIdentityOperation.h in Headers */,
+				CDE0F7962F2E0E43007AED48 /* MCSizeFormatter.h in Headers */,
+				CDE0F7972F2E0E43007AED48 /* MCONNTPListNewsgroupsOperation.h in Headers */,
+				CDE0F7982F2E0E43007AED48 /* MCLibetpanTypes.h in Headers */,
+				CDE0F7992F2E0E43007AED48 /* MCONNTPPostOperation.h in Headers */,
+				CDE0F79A2F2E0E43007AED48 /* MCOSMTP.h in Headers */,
+				CDE0F79B2F2E0E43007AED48 /* mailstream_ssl.h in Headers */,
+				CDE0F79C2F2E0E43007AED48 /* MCPOPFetchHeaderOperation.h in Headers */,
+				CDE0F79D2F2E0E43007AED48 /* mail.h in Headers */,
+				CDE0F79E2F2E0E43007AED48 /* MCIMAPMessageRenderingOperation.h in Headers */,
+				CDE0F79F2F2E0E43007AED48 /* NSValue+MCO.h in Headers */,
+				CDE0F7A02F2E0E43007AED48 /* MCAsyncIMAP.h in Headers */,
+				CDE0F7A12F2E0E43007AED48 /* idle.h in Headers */,
+				CDE0F7A22F2E0E43007AED48 /* mailimap_types_helper.h in Headers */,
+				CDE0F7A32F2E0E43007AED48 /* pop3driver_cached_message.h in Headers */,
+				CDE0F7A42F2E0E43007AED48 /* MCOIMAPMessagePart.h in Headers */,
+				CDE0F7A52F2E0E43007AED48 /* mboxdriver_cached_message.h in Headers */,
+				CDE0F7A62F2E0E43007AED48 /* mailmh.h in Headers */,
+				CDE0F7A72F2E0E43007AED48 /* feeddriver.h in Headers */,
+				CDE0F7A82F2E0E43007AED48 /* MCOIMAPNamespaceItem.h in Headers */,
+				CDE0F7A92F2E0E43007AED48 /* MCOMessageHeader.h in Headers */,
+				CDE0F7AA2F2E0E43007AED48 /* MCONNTPGroupInfo.h in Headers */,
+				CDE0F7AB2F2E0E43007AED48 /* MCHTMLCleaner.h in Headers */,
+				CDE0F7AC2F2E0E43007AED48 /* condstore_types.h in Headers */,
+				CDE0F7AD2F2E0E43007AED48 /* MCIMAPMoveMessagesOperation.h in Headers */,
+				CDE0F7AE2F2E0E43007AED48 /* mailpop3_types.h in Headers */,
+				CDE0F7AF2F2E0E43007AED48 /* mboxstorage.h in Headers */,
+				CDE0F7B02F2E0E43007AED48 /* mailmime_write_generic.h in Headers */,
+				CDE0F7B12F2E0E43007AED48 /* find_ptr.h in Headers */,
+				CDE0F7B22F2E0E43007AED48 /* mailstream_cfstream.h in Headers */,
+				CDE0F7B32F2E0E43007AED48 /* MCOSMTPSendOperation.h in Headers */,
+				CDE0F7B42F2E0E43007AED48 /* MCSMTPNoopOperation.h in Headers */,
+				CDE0F7B52F2E0E43007AED48 /* hotmailstorage.h in Headers */,
+				CDE0F7B62F2E0E43007AED48 /* MCOAbstractMultipart.h in Headers */,
+				CDE0F7B72F2E0E43007AED48 /* MCIMAPFetchContentToFileOperation.h in Headers */,
+				CDE0F7B82F2E0E43007AED48 /* pop3driver_message.h in Headers */,
+				CDE0F7B92F2E0E43007AED48 /* MCSet.h in Headers */,
+				CDE0F7BA2F2E0E43007AED48 /* mailimf_write_mem.h in Headers */,
+				CDE0F7BB2F2E0E43007AED48 /* MCOAddress.h in Headers */,
+				CDE0F7BC2F2E0E43007AED48 /* newsfeed_item_enclosure.h in Headers */,
+				CDE0F7BD2F2E0E43007AED48 /* maildirdriver_cached.h in Headers */,
+				CDE0F7BE2F2E0E43007AED48 /* mhdriver.h in Headers */,
+				CDE0F7BF2F2E0E43007AED48 /* MCONetService.h in Headers */,
+				CDE0F7C02F2E0E43007AED48 /* mailstorage_types.h in Headers */,
+				CDE0F7C12F2E0E43007AED48 /* MCArray.h in Headers */,
+				CDE0F7C22F2E0E43007AED48 /* imapdriver_cached_message.h in Headers */,
+				CDE0F7C32F2E0E43007AED48 /* nntpdriver_message.h in Headers */,
+				CDE0F7C42F2E0E43007AED48 /* mailstream.h in Headers */,
+				CDE0F7C52F2E0E43007AED48 /* mailimap_oauth2.h in Headers */,
+				CDE0F7C62F2E0E43007AED48 /* MCORange.h in Headers */,
+				CDE0F7C72F2E0E43007AED48 /* template_cache.h in Headers */,
+				CDE0F7C82F2E0E43007AED48 /* qresync.h in Headers */,
+				CDE0F7C92F2E0E43007AED48 /* mailimap_socket.h in Headers */,
+				CDE0F7CA2F2E0E43007AED48 /* mailimf_types_helper.h in Headers */,
+				CDE0F7CB2F2E0E43007AED48 /* MCOIMAPSession.h in Headers */,
+				CDE0F7CC2F2E0E43007AED48 /* MCOMailProvidersManager.h in Headers */,
+				CDE0F7CD2F2E0E43007AED48 /* template_pathops.h in Headers */,
+				CDE0F7CE2F2E0E43007AED48 /* MCOSMTPLoginOperation.h in Headers */,
+				CDE0F7CF2F2E0E43007AED48 /* MCIMAPConnectOperation.h in Headers */,
+				CDE0F7D02F2E0E43007AED48 /* MCIMAPCopyMessagesOperation.h in Headers */,
+				CDE0F7D12F2E0E43007AED48 /* MCMessageParser.h in Headers */,
+				CDE0F7D22F2E0E43007AED48 /* MCNNTPSession.h in Headers */,
+				CDE0F7D32F2E0E43007AED48 /* MCIMAPFolderStatusOperation.h in Headers */,
+				CDE0F7D42F2E0E43007AED48 /* MCAbstractMultipart.h in Headers */,
+				CDE0F7D52F2E0E43007AED48 /* namespace_sender.h in Headers */,
+				CDE0F7D62F2E0E43007AED48 /* MCAttachment.h in Headers */,
+				CDE0F7D72F2E0E43007AED48 /* mailimap_ssl.h in Headers */,
+				CDE0F7D82F2E0E43007AED48 /* mailsmtp_oauth2.h in Headers */,
+				CDE0F7D92F2E0E43007AED48 /* template_emitter.h in Headers */,
+				CDE0F7DA2F2E0E43007AED48 /* pop3driver_cached.h in Headers */,
+				CDE0F7DB2F2E0E43007AED48 /* MCOMessageParser.h in Headers */,
+				CDE0F7DC2F2E0E43007AED48 /* newsnntp_ssl.h in Headers */,
+				CDE0F7DD2F2E0E43007AED48 /* maildirdriver.h in Headers */,
+				CDE0F7DE2F2E0E43007AED48 /* MCNNTPFetchHeaderOperation.h in Headers */,
+				CDE0F7DF2F2E0E43007AED48 /* MCRange.h in Headers */,
+				CDE0F7E02F2E0E43007AED48 /* mailsmtp_helper.h in Headers */,
+				CDE0F7E12F2E0E43007AED48 /* mailsmtp.h in Headers */,
+				CDE0F7E22F2E0E43007AED48 /* MCMailProvidersManager.h in Headers */,
+				CDE0F7E32F2E0E43007AED48 /* MCProvider.h in Headers */,
+				CDE0F7E42F2E0E43007AED48 /* MCSMTPProgressCallback.h in Headers */,
+				CDE0F7E52F2E0E43007AED48 /* mailmime_write_mem.h in Headers */,
+				CDE0F7E62F2E0E43007AED48 /* MCMessagePart.h in Headers */,
+				CDE0F7E72F2E0E43007AED48 /* mailpop3.h in Headers */,
+				CDE0F7E82F2E0E43007AED48 /* MCAsyncNNTP.h in Headers */,
+				CDE0F7E92F2E0E43007AED48 /* MCOPOPNoopOperation.h in Headers */,
+				CDE0F7EA2F2E0E43007AED48 /* MCIMAPFolder.h in Headers */,
+				CDE0F7EB2F2E0E43007AED48 /* MCSMTPSession.h in Headers */,
+				CDE0F7EC2F2E0E43007AED48 /* maildirstorage.h in Headers */,
+				CDE0F7ED2F2E0E43007AED48 /* NSObject+MCO.h in Headers */,
+				CDE0F7EE2F2E0E43007AED48 /* template_enums.h in Headers */,
+				CDE0F7EF2F2E0E43007AED48 /* MCAsync.h in Headers */,
+				CDE0F7F02F2E0E43007AED48 /* MCOIMAPMoveMessagesOperation.h in Headers */,
+				CDE0F7F12F2E0E43007AED48 /* maildriver.h in Headers */,
+				CDE0F7F22F2E0E43007AED48 /* MCOPOPMessageInfo.h in Headers */,
+				CDE0F7F32F2E0E43007AED48 /* MCDateFormatter.h in Headers */,
+				CDE0F7F42F2E0E43007AED48 /* MCNNTPAsyncSession.h in Headers */,
+				CDE0F7F52F2E0E43007AED48 /* MCOIndexSet.h in Headers */,
+				CDE0F7F62F2E0E43007AED48 /* MCORFC822.h in Headers */,
+				CDE0F7F72F2E0E43007AED48 /* MCMessageBuilder.h in Headers */,
+				CDE0F7F82F2E0E43007AED48 /* template_dictionary_interface.h in Headers */,
+				CDE0F7F92F2E0E43007AED48 /* mailimap_extension.h in Headers */,
+				CDE0F7FA2F2E0E43007AED48 /* MCONNTPFetchHeaderOperation.h in Headers */,
+				CDE0F7FB2F2E0E43007AED48 /* MCOIMAPIdentity.h in Headers */,
+				CDE0F7FC2F2E0E43007AED48 /* mailmessage.h in Headers */,
+				CDE0F7FD2F2E0E43007AED48 /* MCIMAPCapabilityOperation.h in Headers */,
+				CDE0F7FE2F2E0E43007AED48 /* xgmmsgid.h in Headers */,
+				CDE0F7FF2F2E0E43007AED48 /* MCAbstractMessagePart.h in Headers */,
+				CDE0F8002F2E0E43007AED48 /* MCOIMAPCapabilityOperation.h in Headers */,
+				CDE0F8012F2E0E43007AED48 /* nntpstorage.h in Headers */,
+				CDE0F8022F2E0E43007AED48 /* uidplus.h in Headers */,
+				CDE0F8032F2E0E43007AED48 /* mailprivacy_tools.h in Headers */,
+				CDE0F8042F2E0E43007AED48 /* MCPOP.h in Headers */,
+				CDE0F8052F2E0E43007AED48 /* MCOIMAPFolderInfo.h in Headers */,
+				CDE0F8062F2E0E43007AED48 /* MCAsyncPOP.h in Headers */,
+				CDE0F8072F2E0E43007AED48 /* libetpan_version.h in Headers */,
+				CDE0F8082F2E0E43007AED48 /* MCMainThread.h in Headers */,
+				CDE0F8092F2E0E43007AED48 /* MCONNTPFetchAllArticlesOperation.h in Headers */,
+				CDE0F80A2F2E0E43007AED48 /* MCNNTPOperationCallback.h in Headers */,
+				CDE0F80B2F2E0E43007AED48 /* MCAddressDisplay.h in Headers */,
+				CDE0F80C2F2E0E43007AED48 /* imapdriver_message.h in Headers */,
+				CDE0F80D2F2E0E43007AED48 /* MCOUtils.h in Headers */,
+				CDE0F80E2F2E0E43007AED48 /* mailmime_decode.h in Headers */,
+				CDE0F80F2F2E0E43007AED48 /* qresync_types.h in Headers */,
+				CDE0F8102F2E0E43007AED48 /* mailprivacy.h in Headers */,
+				CDE0F8112F2E0E43007AED48 /* MCOConstants.h in Headers */,
+				CDE0F8122F2E0E43007AED48 /* MCIMAPFolderStatus.h in Headers */,
+				CDE0F8132F2E0E43007AED48 /* MCOIMAPMultipart.h in Headers */,
+				CDE0F8142F2E0E43007AED48 /* mailmime_write_file.h in Headers */,
+				CDE0F8152F2E0E43007AED48 /* MCOPOPFetchHeaderOperation.h in Headers */,
+				CDE0F8162F2E0E43007AED48 /* MCCore.h in Headers */,
+				CDE0F8172F2E0E43007AED48 /* newsfeed.h in Headers */,
+				CDE0F8182F2E0E43007AED48 /* MCOIMAPIdleOperation.h in Headers */,
+				CDE0F8192F2E0E43007AED48 /* MCOIMAPFetchFoldersOperation.h in Headers */,
+				CDE0F81A2F2E0E43007AED48 /* MCOperationCallback.h in Headers */,
+				CDE0F81B2F2E0E43007AED48 /* enable.h in Headers */,
+				CDE0F81C2F2E0E43007AED48 /* MCValue.h in Headers */,
+				CDE0F81D2F2E0E43007AED48 /* MCLog.h in Headers */,
+				CDE0F81E2F2E0E43007AED48 /* maillock.h in Headers */,
+				CDE0F81F2F2E0E43007AED48 /* mailimap_helper.h in Headers */,
+				CDE0F8202F2E0E43007AED48 /* NSString+MCO.h in Headers */,
+				CDE0F8212F2E0E43007AED48 /* maildir_types.h in Headers */,
+				CDE0F8222F2E0E43007AED48 /* mailimap_id.h in Headers */,
+				CDE0F8232F2E0E43007AED48 /* MCObject.h in Headers */,
+				CDE0F8242F2E0E43007AED48 /* mhdriver_cached.h in Headers */,
+				CDE0F8252F2E0E43007AED48 /* MCOIMAPSearchExpression.h in Headers */,
+				CDE0F8262F2E0E43007AED48 /* MCOIMAPAppendMessageOperation.h in Headers */,
+				CDE0F8272F2E0E43007AED48 /* NSArray+MCO.h in Headers */,
+				CDE0F8282F2E0E43007AED48 /* condstore.h in Headers */,
+				CDE0F8292F2E0E43007AED48 /* MCOAbstractMessagePart.h in Headers */,
+				CDE0F82A2F2E0E43007AED48 /* newsnntp.h in Headers */,
+				CDE0F82B2F2E0E43007AED48 /* MCIMAPMessagePart.h in Headers */,
+				CDE0F82C2F2E0E43007AED48 /* MCOIMAPMessage.h in Headers */,
+				CDE0F82D2F2E0E43007AED48 /* MCIMAPFetchParsedContentOperation.h in Headers */,
+				CDE0F82E2F2E0E43007AED48 /* namespace_types.h in Headers */,
+				CDE0F82F2F2E0E43007AED48 /* str_ref.h in Headers */,
+				CDE0F8302F2E0E43007AED48 /* MCIMAPMultipart.h in Headers */,
+				CDE0F8312F2E0E43007AED48 /* MCMailProvider.h in Headers */,
+				CDE0F8322F2E0E43007AED48 /* MCNNTPFetchServerTimeOperation.h in Headers */,
+				CDE0F8332F2E0E43007AED48 /* MCMD5.h in Headers */,
+				CDE0F8342F2E0E43007AED48 /* mailsmtp_ssl.h in Headers */,
+				CDE0F8352F2E0E43007AED48 /* imapdriver.h in Headers */,
+				CDE0F8362F2E0E43007AED48 /* MCOMessageBuilder.h in Headers */,
+				CDE0F8372F2E0E43007AED48 /* dbdriver_message.h in Headers */,
+				CDE0F8382F2E0E43007AED48 /* MCOIMAPMessageRenderingOperation.h in Headers */,
+				CDE0F8392F2E0E43007AED48 /* MCNNTP.h in Headers */,
+				CDE0F83A2F2E0E43007AED48 /* mailpop3_ssl.h in Headers */,
+				CDE0F83B2F2E0E43007AED48 /* MCRenderer.h in Headers */,
+				CDE0F83C2F2E0E43007AED48 /* MCHash.h in Headers */,
+				CDE0F83D2F2E0E43007AED48 /* MCOIMAPIdentityOperation.h in Headers */,
+				CDE0F83E2F2E0E43007AED48 /* maildirdriver_cached_message.h in Headers */,
+				CDE0F83F2F2E0E43007AED48 /* data_message_driver.h in Headers */,
+				CDE0F8402F2E0E43007AED48 /* MCOMessagePart.h in Headers */,
+				CDE0F8412F2E0E43007AED48 /* maildirdriver_message.h in Headers */,
+				CDE0F8422F2E0E43007AED48 /* newsnntp_socket.h in Headers */,
+				CDE0F8432F2E0E43007AED48 /* MCOObjectWrapper.h in Headers */,
+				CDE0F8442F2E0E43007AED48 /* mailthread.h in Headers */,
+				CDE0F8452F2E0E43007AED48 /* MCOPOPFetchMessageOperation.h in Headers */,
+				CDE0F8462F2E0E43007AED48 /* mailfolder.h in Headers */,
+				CDE0F8472F2E0E43007AED48 /* MCAssert.h in Headers */,
+				CDE0F8482F2E0E43007AED48 /* mailimap_sort.h in Headers */,
+				CDE0F8492F2E0E43007AED48 /* MCOIMAPFetchContentToFileOperation.h in Headers */,
+				CDE0F84A2F2E0E43007AED48 /* MCNetService.h in Headers */,
+				CDE0F84B2F2E0E43007AED48 /* MCOIMAPNamespace.h in Headers */,
+				CDE0F84C2F2E0E43007AED48 /* mmapstring.h in Headers */,
+				CDE0F84D2F2E0E43007AED48 /* imapdriver_types.h in Headers */,
+				CDE0F84E2F2E0E43007AED48 /* newsfeed_types.h in Headers */,
+				CDE0F84F2F2E0E43007AED48 /* mailimap_sort_types.h in Headers */,
+				CDE0F8502F2E0E43007AED48 /* MCMXRecordResolverOperation.h in Headers */,
+				CDE0F8512F2E0E43007AED48 /* MCOMailProvider.h in Headers */,
+				CDE0F8522F2E0E43007AED48 /* libetpan.h in Headers */,
+				CDE0F8532F2E0E43007AED48 /* MCData.h in Headers */,
+				CDE0F8542F2E0E43007AED48 /* MCOOperation.h in Headers */,
+				CDE0F8552F2E0E43007AED48 /* maildriver_types_helper.h in Headers */,
+				CDE0F8562F2E0E43007AED48 /* mailimap_types.h in Headers */,
+				CDE0F8572F2E0E43007AED48 /* mailengine.h in Headers */,
+				CDE0F8582F2E0E43007AED48 /* MCSMTP.h in Headers */,
+				CDE0F8592F2E0E43007AED48 /* mhdriver_cached_message.h in Headers */,
+				CDE0F85A2F2E0E43007AED48 /* MCAbstractPart.h in Headers */,
+				CDE0F85B2F2E0E43007AED48 /* mhdriver_types.h in Headers */,
+				CDE0F85C2F2E0E43007AED48 /* MCObjC.h in Headers */,
+				CDE0F85D2F2E0E43007AED48 /* MCConnectionLogger.h in Headers */,
+				CDE0F85E2F2E0E43007AED48 /* MCIMAPNoopOperation.h in Headers */,
+				CDE0F85F2F2E0E43007AED48 /* generic_cache_types.h in Headers */,
+				CDE0F8602F2E0E43007AED48 /* MCHTMLRendererCallback.h in Headers */,
+				CDE0F8612F2E0E43007AED48 /* MCIMAPAsyncSession.h in Headers */,
+				CDE0F8622F2E0E43007AED48 /* MCOAbstractPart.h in Headers */,
+				CDE0F8632F2E0E43007AED48 /* MCOHTMLRendererIMAPDelegate.h in Headers */,
+				CDE0F8642F2E0E43007AED48 /* quota_types.h in Headers */,
+				CDE0F8652F2E0E43007AED48 /* mailthread_types.h in Headers */,
+				CDE0F8662F2E0E43007AED48 /* MCString.h in Headers */,
+				CDE0F8672F2E0E43007AED48 /* MCIMAPOperationCallback.h in Headers */,
+				CDE0F8682F2E0E43007AED48 /* MCOAbstractMessage.h in Headers */,
+				CDE0F8692F2E0E43007AED48 /* MCOIMAPCopyMessagesOperation.h in Headers */,
+				CDE0F86A2F2E0E43007AED48 /* MCPOPSession.h in Headers */,
+				CDE0F86B2F2E0E43007AED48 /* MCOIMAPFolder.h in Headers */,
+				CDE0F86C2F2E0E43007AED48 /* mailimf_write_generic.h in Headers */,
+				CDE0F86D2F2E0E43007AED48 /* MCOIMAPPart.h in Headers */,
+				CDE0F86E2F2E0E43007AED48 /* MCONNTPFetchServerTimeOperation.h in Headers */,
 				7F839CD907CCD6E5003F2874 /* QSMailMediator.h in Headers */,
 				D4BB97F0159DFE9A00415FA2 /* Quicksilver.pch in Headers */,
 			);
@@ -243,7 +1820,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CD52178727C3AEA100314359 /* PBXTargetDependency */,
 			);
 			name = "E-mail Support";
 			productInstallPath = "$(HOME)/Developer/Palettes";
@@ -274,12 +1850,6 @@
 			);
 			mainGroup = 0259C574FE90428111CA0C5A /* QSMailSupport */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CD52176C27C3AE8000314359 /* Products */;
-					ProjectRef = CD52176B27C3AE8000314359 /* mailcore2.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8D1AC9600486D14A00FE50C9 /* E-mail Support */,
@@ -287,70 +1857,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		CD52177727C3AE8000314359 /* libMailCore.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMailCore.a;
-			remoteRef = CD52177627C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52177927C3AE8000314359 /* libMailCore-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMailCore-ios.a";
-			remoteRef = CD52177827C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52177B27C3AE8000314359 /* tests */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = tests;
-			remoteRef = CD52177A27C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52177D27C3AE8000314359 /* test-ios.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "test-ios.app";
-			remoteRef = CD52177C27C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52177F27C3AE8000314359 /* MailCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MailCore.framework;
-			remoteRef = CD52177E27C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52178127C3AE8000314359 /* MailCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MailCore.framework;
-			remoteRef = CD52178027C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52178327C3AE8000314359 /* unittest.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = unittest.xctest;
-			remoteRef = CD52178227C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CD52178527C3AE8000314359 /* unittestcpp */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = unittestcpp;
-			remoteRef = CD52178427C3AE8000314359 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		8D1AC9660486D14A00FE50C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE0F6DD2F2E0E43007AED48 /* MailCore.framework.dSYM in Resources */,
+				CDE0F8702F2E12D6007AED48 /* Mail Sent.aiff in Resources */,
 				D4A32F1C15AB5FC10055469A /* QSMailSupportPrefPane.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,14 +1898,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		CD52178727C3AEA100314359 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "mailcore osx";
-			targetProxy = CD52178627C3AEA100314359 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		7FE7D34E0D1F00220043A815 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -406,7 +1911,25 @@
 			baseConfigurationReference = D4BB97E9159DFE9A00415FA2 /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MailCore-prebuilt",
+				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MailCore/build-mac/build/$(CONFIGURATION)/include\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MailCore-prebuilt",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-lz",
+					"-lresolv",
+					"-force_load",
+					"\"$(PROJECT_DIR)/MailCore-prebuilt/libMailCore.a\"",
+				);
 			};
 			name = Debug;
 		};
@@ -415,7 +1938,25 @@
 			baseConfigurationReference = D4BB97E9159DFE9A00415FA2 /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MailCore-prebuilt",
+				);
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../include";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MailCore-prebuilt",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-lz",
+					"-lresolv",
+					"-force_load",
+					"\"$(PROJECT_DIR)/MailCore-prebuilt/libMailCore.a\"",
+				);
 			};
 			name = Release;
 		};

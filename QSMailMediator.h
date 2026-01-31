@@ -37,6 +37,7 @@ NSString *preferredMailMediatorID();
     NSAppleScript *mailScript;
 }
 + (id <QSMailMediator>)defaultMediator;
+
 - (void) sendEmailTo:(NSArray *)addresses from:(NSString *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow;
 - (void) sendEmailWithScript:(NSAppleScript *)script to:(NSArray *)addresses from:(NSString *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow;
 - (NSAppleScript *)mailScript;

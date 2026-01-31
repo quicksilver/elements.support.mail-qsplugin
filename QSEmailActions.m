@@ -244,7 +244,7 @@
 			NSLog(@"%@", errorMessage);
 			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"SendEmailMessageFailedNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
 		} else {
-			NSSound *sound=[[[NSSound alloc] initWithContentsOfFile:@"/Applications/Mail.app/Contents/Resources/Mail Sent.aiff" byReference:YES]autorelease];
+			NSSound *sound=[[[NSSound alloc] initWithContentsOfURL:[[NSBundle bundleForClass:[self class]] URLForResource:@"Mail Sent" withExtension:@"aiff"] byReference:YES] autorelease];
 			[sound play];			}
 	}];
 	
