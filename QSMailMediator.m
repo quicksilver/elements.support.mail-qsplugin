@@ -1,11 +1,9 @@
 #import "QSMailMediator.h"
 
 NSString *defaultMailClientID(){
-	NSURL *appURL = nil; 
-	OSStatus err; 
-	err = LSGetApplicationForURL((CFURLRef)[NSURL URLWithString: @"mailto:"], kLSRolesAll, NULL, (CFURLRef *)&appURL); 
-	if (err != noErr) {
-		NSLog(@"No default mail client found. Error %ld", (long)err); 
+	NSURL *appURL = [[NSWorkspace sharedWorkspace] URLForApplicationToOpenURL:[NSURL URLWithString:@"mailto:"]];
+	if (!appURL) {
+		NSLog(@"No default mail client found");
 		return nil;
 	}
 	NSDictionary *infoDict = (NSDictionary *)CFBundleCopyInfoDictionaryForURL((CFURLRef)appURL);
