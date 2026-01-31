@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1833,7 +1833,8 @@
 		0259C573FE90428111CA0C5A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					8D1AC9600486D14A00FE50C9 = {
 						ProvisioningStyle = Manual;
@@ -1903,6 +1904,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4BB97E7159DFE9A00415FA2 /* Debug.xcconfig */;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 			};
 			name = Debug;
 		};
@@ -1911,15 +1929,18 @@
 			baseConfigurationReference = D4BB97E9159DFE9A00415FA2 /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MailCore-prebuilt",
 				);
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MailCore/build-mac/build/$(CONFIGURATION)/include\"";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MailCore-prebuilt/include";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MailCore-prebuilt",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lxml2",
@@ -1930,6 +1951,7 @@
 					"-force_load",
 					"\"$(PROJECT_DIR)/MailCore-prebuilt/libMailCore.a\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blacktree.Quicksilver.QSEmailSupport;
 			};
 			name = Debug;
 		};
@@ -1938,15 +1960,18 @@
 			baseConfigurationReference = D4BB97E9159DFE9A00415FA2 /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MailCore-prebuilt",
 				);
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MailCore-prebuilt/include";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MailCore-prebuilt",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lxml2",
@@ -1957,6 +1982,7 @@
 					"-force_load",
 					"\"$(PROJECT_DIR)/MailCore-prebuilt/libMailCore.a\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blacktree.Quicksilver.QSEmailSupport;
 			};
 			name = Release;
 		};
@@ -1964,6 +1990,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4BB97EB159DFE9A00415FA2 /* Release.xcconfig */;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 			};
 			name = Release;
 		};
