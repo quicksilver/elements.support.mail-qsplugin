@@ -15,7 +15,6 @@
 		CDE0F6DA2F2E0E43007AED48 /* libetpan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE0F6D42F2E0E43007AED48 /* libetpan.a */; };
 		CDE0F6DB2F2E0E43007AED48 /* libMailCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE0F6D52F2E0E43007AED48 /* libMailCore.a */; };
 		CDE0F6DC2F2E0E43007AED48 /* libctemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE0F6D32F2E0E43007AED48 /* libctemplate.a */; };
-		CDE0F6DD2F2E0E43007AED48 /* MailCore.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = CDE0F6D72F2E0E43007AED48 /* MailCore.framework.dSYM */; };
 		CDE0F6DE2F2E0E43007AED48 /* MCMessageConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F63E2F2E0E43007AED48 /* MCMessageConstants.h */; };
 		CDE0F6DF2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F68E2F2E0E43007AED48 /* MCONNTPFetchArticleOperation.h */; };
 		CDE0F6E02F2E0E43007AED48 /* mailstream_low.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE0F5B82F2E0E43007AED48 /* mailstream_low.h */; };
@@ -848,8 +847,6 @@
 		CDE0F6D32F2E0E43007AED48 /* libctemplate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libctemplate.a; sourceTree = "<group>"; };
 		CDE0F6D42F2E0E43007AED48 /* libetpan.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libetpan.a; sourceTree = "<group>"; };
 		CDE0F6D52F2E0E43007AED48 /* libMailCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMailCore.a; sourceTree = "<group>"; };
-		CDE0F6D62F2E0E43007AED48 /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailCore.framework; sourceTree = "<group>"; };
-		CDE0F6D72F2E0E43007AED48 /* MailCore.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = MailCore.framework.dSYM; sourceTree = "<group>"; };
 		CDE0F86F2F2E12D6007AED48 /* Mail Sent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "Mail Sent.aiff"; sourceTree = "<group>"; };
 		D4A32F1B15AB5FC10055469A /* QSMailSupportPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSMailSupportPrefPane.xib; sourceTree = "<group>"; };
 		D4BB97E6159DFE9A00415FA2 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
@@ -1370,8 +1367,6 @@
 				CDE0F6D32F2E0E43007AED48 /* libctemplate.a */,
 				CDE0F6D42F2E0E43007AED48 /* libetpan.a */,
 				CDE0F6D52F2E0E43007AED48 /* libMailCore.a */,
-				CDE0F6D62F2E0E43007AED48 /* MailCore.framework */,
-				CDE0F6D72F2E0E43007AED48 /* MailCore.framework.dSYM */,
 			);
 			path = "MailCore-prebuilt";
 			sourceTree = "<group>";
@@ -1862,7 +1857,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE0F6DD2F2E0E43007AED48 /* MailCore.framework.dSYM in Resources */,
 				CDE0F8702F2E12D6007AED48 /* Mail Sent.aiff in Resources */,
 				D4A32F1C15AB5FC10055469A /* QSMailSupportPrefPane.xib in Resources */,
 			);
