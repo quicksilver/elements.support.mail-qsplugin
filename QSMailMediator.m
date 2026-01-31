@@ -94,19 +94,17 @@ NSString *defaultMailClientID(){
 	if (!mediator){
 		mediator = [self instanceForKey:[self QSMailMediatorID] inTable:kQSMailMediators];
     }
-    if (!mediator) {
-        NSDictionary *mailMediatorsDict = [QSReg tableNamed:kQSMailMediators];
-        NSString *errorMessage = nil;
-        // if only one mediator is available, use it
-        if ([mailMediatorsDict count] == 1) {
-            NSString *defaultMediator = [[mailMediatorsDict allKeys] lastObject];
-            mediator = [self instanceForKey:defaultMediator inTable:kQSMailMediators];
-            errorMessage = [NSString stringWithFormat:@"Mail mediator %@ not found, using %@ instead", [self QSMailMediatorID], defaultMediator];
-        } else {
-			errorMessage = [NSString stringWithFormat:@"Mail mediator %@ not found", [self QSMailMediatorID]];
-			NSLog(@"%@", errorMessage);
-        }
-        QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
+	if (!mediator) {
+		NSDictionary *mailMediatorsDict = [QSReg tableNamed:kQSMailMediators];
+		NSString *errorMessage = nil;
+		// if only one mediator is available, use it
+		if ([mailMediatorsDict count] == 1) {
+			NSString *defaultMediator = [[mailMediatorsDict allKeys] lastObject];
+			mediator = [QSReg instanceForKey:defaultMediator inTable:kQSMailMediators];
+			errorMessage = [NSString stringWithFormat:@"Mail mediator %@ not found, using %@ instead", [QSReg QSMailMediatorID], defaultMediator];
+			QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
+
+		}
 	}
     if (mediator) {
         [prefInstances setObject:mediator forKey:kQSMailMediators];

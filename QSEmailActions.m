@@ -125,7 +125,12 @@
 		} else {
 			fromString = [from mailbox];
 		}
-		[[QSMailMediator defaultMediator] sendEmailTo:[dObject arrayForType:QSEmailAddressType] from:fromString subject:subject body:body attachments:attachments sendNow:sendNow];
+		id <QSMailMediator> mailMediator = [QSMailMediator defaultMediator];
+		if (mailMediator) {
+			[mailMediator sendEmailTo:[dObject arrayForType:QSEmailAddressType] from:fromString subject:subject body:body attachments:attachments sendNow:sendNow];
+		} else {
+			[self showNoMmediatorError:@"compose"];
+		}
 	}
 	return nil;
 }
@@ -171,9 +176,21 @@
 	return [MCOAddress addressWithDisplayName:senderName mailbox:senderAddress];
 }
 
+- (void)showNoMmediatorError:(NSString*)verb {
+	NSBeep();
+	NSString *errorMessage = [NSString stringWithFormat:@"Mail mediator %@ not found - unable to %@ email", [QSReg QSMailMediatorID], verb];
+	NSLog(@"%@", errorMessage);
+QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, errorMessage, QSNotifierText, nil]);
+return;
+}
+
 - (void) sendMessageTo:(NSSet *)addresses from:(MCOAddress *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow
 {
     id<QSMailMediator> mediator = [QSReg QSMailMediator];
+	if (!mediator) {
+		[self showNoMmediatorError:@"send"];
+		return;
+	}
 	if (![(QSMailMediator *)mediator respondsToSelector:@selector(smtpServerDetails)]) {
 		NSLog(@"Mail mediator does not provide SMTP server details.");
 		QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingDetailsNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, @"The chosen e-mail handler does not provide SMTP server details.", QSNotifierText, nil]);
