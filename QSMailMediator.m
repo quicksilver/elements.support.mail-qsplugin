@@ -1,6 +1,6 @@
 #import "QSMailMediator.h"
 
-NSString *defaultMailClientID(){
+NSString *defaultMailClientID(void){
 	NSURL *appURL = [[NSWorkspace sharedWorkspace] URLForApplicationToOpenURL:[NSURL URLWithString:@"mailto:"]];
 	if (!appURL) {
 		NSLog(@"No default mail client found");
@@ -42,7 +42,7 @@ NSString *defaultMailClientID(){
 	[script executeSubroutine:(sendNow?@"send_mail":@"compose_mail") arguments:[NSArray arrayWithObjects:subject, body, sender, addresses, (pathArray?pathArray:[NSArray array]), nil] error:&errorDict];
 	//  NSLog(@"%@",message);
 	if (errorDict) {
-		NSRunAlertPanel(@"An error occured while sending mail", [errorDict objectForKey:@"NSAppleScriptErrorMessage"], nil, nil, nil);
+		NSRunAlertPanel(@"An error occured while sending mail: %@", @"%@", [errorDict objectForKey:@"NSAppleScriptErrorMessage"], nil, nil, nil);
 	}
 }
 

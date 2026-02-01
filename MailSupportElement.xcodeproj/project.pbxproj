@@ -1836,7 +1836,7 @@
 				};
 			};
 			buildConfigurationList = 7FFF2462085E488500266176 /* Build configuration list for PBXProject "MailSupportElement" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -1917,7 +1917,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MailCore-prebuilt",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lxml2",
@@ -1948,7 +1947,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MailCore-prebuilt",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lxml2",

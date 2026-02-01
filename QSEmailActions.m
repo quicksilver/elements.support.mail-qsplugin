@@ -191,6 +191,10 @@ return;
 		[self showNoMmediatorError:@"send"];
 		return;
 	}
+	if ([(QSMailMediator *)mediator respondsToSelector:@selector(sendEmailTo:from:subject:body:attachments:sendNow:)]) {
+		[mediator sendEmailTo:[[addresses allObjects] arrayByPerformingSelector:@selector(mailbox)]  from:[sender mailbox] subject:subject body:body attachments:pathArray sendNow:sendNow];
+		return;
+	}
 	if (![(QSMailMediator *)mediator respondsToSelector:@selector(smtpServerDetails)]) {
 		NSLog(@"Mail mediator does not provide SMTP server details.");
 		QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"MailMediatorMissingDetailsNotification", QSNotifierType, [QSResourceManager imageNamed:@"AlertStopIcon"], QSNotifierIcon, @"Quicksilver E-mail Support", QSNotifierTitle, @"The chosen e-mail handler does not provide SMTP server details.", QSNotifierText, nil]);

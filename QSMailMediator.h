@@ -31,6 +31,9 @@ NSString *preferredMailMediatorID(void);
      QSEmailItemReverseAction
    You'll most likely just return the same one unconditionally.
 */
+
+- (void) sendEmailTo:(NSArray *)addresses from:(NSString *)sender subject:(NSString *)subject body:(NSString *)body attachments:(NSArray *)pathArray sendNow:(BOOL)sendNow;
+
 @end
 
 @interface QSMailMediator : NSObject <QSMailMediator> {
